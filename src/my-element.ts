@@ -32,7 +32,7 @@ export class MyElement extends LitElement {
       </h2>
       ${cardArray.map((card, index) => 
       html`
-        <module-card  cardTitle=${card.title} 
+        <module-card cardTitle=${card.title}
           cardDescription=${card.description} 
           cardPosition=${index+1} 
           cardColor=${card.color}

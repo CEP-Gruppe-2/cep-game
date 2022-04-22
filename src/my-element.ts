@@ -1,9 +1,7 @@
 import { html, css, LitElement } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js' // property
 import { cardArray } from './data/card-object'
-import './components/card-component.js'
-
-
+import './components/module-card/module-card'
 
 @customElement('my-element')
 export class MyElement extends LitElement {
@@ -23,23 +21,23 @@ export class MyElement extends LitElement {
     }
   `
 
-  public myfunction(): void {
+  public myfunction (): void {
 
   }
 
-  render() {
+  render () {
     return html`
       <h2 class="module-title">
         Module
       </h2>
       ${cardArray.map((card, index) => 
       html`
-        <card-component  cardTitle=${card.title} 
+        <module-card  cardTitle=${card.title} 
           cardDescription=${card.description} 
           cardPosition=${index+1} 
           cardColor=${card.color}
           cardLink=${card.link}
-          ></card-component>`
+          ></module-card>`
       )}
       `
   }
@@ -47,6 +45,7 @@ export class MyElement extends LitElement {
 }
 
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface HTMLElementTagNameMap {
     'my-element': MyElement
   }

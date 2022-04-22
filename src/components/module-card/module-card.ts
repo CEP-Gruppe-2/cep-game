@@ -1,8 +1,8 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-@customElement('card-component')
-export class CardComponent extends LitElement {
+@customElement('module-card')
+export class ModuleCard extends LitElement {
 
     @property({type: Object})
     cardInformation = {};
@@ -81,7 +81,7 @@ export class CardComponent extends LitElement {
   `
 
   render() {
-    console.log("hallo" + this.cardInformation);
+    console.log('hallo' + this.cardInformation);
 
     return html`
         <div class="card" style="background-color: ${this.cardColor};">
@@ -105,7 +105,8 @@ export class CardComponent extends LitElement {
 }
 
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface HTMLElementTagNameMap {
-    'card-component': CardComponent
+    'module-card': ModuleCard
   }
 }

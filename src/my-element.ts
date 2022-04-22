@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit'
 import { customElement } from 'lit/decorators.js' // property
 import { cardArray } from './data/card-object'
-import './components/module-card/module-card'
+import './components/module-card'
 
 @customElement('my-element')
 export class MyElement extends LitElement {

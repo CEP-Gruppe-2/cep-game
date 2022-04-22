@@ -25,7 +25,7 @@ export class ModuleCard extends LitElement {
 
   static styles = css`
 
-    .card{
+    :host{
         padding: 24px;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -46,7 +46,7 @@ export class ModuleCard extends LitElement {
     .card-text-box{
         text-align: left;
         color: #000;
-        font-family: monospace
+        font-family: monospace;
         padding: 0;
         margin: 100px 0 0 0;
     }
@@ -63,7 +63,7 @@ export class ModuleCard extends LitElement {
 
     .card-break-line{
         height: 1px;
-        widht: 100%;
+        width: 100%;
         background-color: #000;
         border: none;
     }
@@ -84,21 +84,19 @@ export class ModuleCard extends LitElement {
     console.log('hallo' + this.cardInformation);
 
     return html`
-        <div class="card" style="background-color: ${this.cardColor};">
-            <img src="/src/icons/Frame 37.svg" class="icon-size"/>
-            <div class="card-text-box">   
-                <span class="card-number">${this.cardPosition}</span>
-                <div class="card-header">
-                    <h2 class="card-title">
-                        ${this.cardTitle}
-                    </h2>
-                    <a class="card-arrow-btn" href="${this.cardLink}">
-                        <img class="card-arrow" src="/src/icons/arrow.svg"/>  
-                    </a>
-                </div>
-                <hr class="card-break-line"/>
-                <p class="card-description">${this.cardDescription}</p>
+        <img src="/src/icons/Frame 37.svg" class="icon-size"/>
+        <div class="card-text-box">
+            <span class="card-number">${this.cardPosition}</span>
+            <div class="card-header">
+                <h2 class="card-title">
+                    ${this.cardTitle}
+                </h2>
+                <a class="card-arrow-btn" href="${this.cardLink}">
+                    <img class="card-arrow" src="/src/icons/arrow.svg"/>  
+                </a>
             </div>
+            <hr class="card-break-line"/>
+            <p class="card-description">${this.cardDescription}</p>
         </div>
     `
   }

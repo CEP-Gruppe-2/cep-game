@@ -22,23 +22,27 @@ export class ModuleCard extends LitElement {
     @property({type: String})
     cardLink = "";
 
+    @property({type: String})
+    cardImageName = "";
+
 
   static styles = css`
-
+    
     :host{
         padding: 24px;
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
         flex-direction: column;
-        width: 300px;
-        height: 400px;
+        width: 250px;
+        height: auto;
         border-radius: 20px;
+        //margin: 0 16px;
     }
-
+   
     .icon-size{
-        width: 72px;
-        height: 72px;
+        width: 36px;
+        height: 36px;
         padding: 0;
         margin: 0;
     }
@@ -78,13 +82,12 @@ export class ModuleCard extends LitElement {
         color: #585858;
         font-size: 16px;
     }
+
   `
 
   render() {
-    console.log('hallo' + this.cardInformation);
-
     return html`
-        <img src="/src/icons/Frame 37.svg" class="icon-size"/>
+        <img src="/src/icons/${this.cardImageName}" class="icon-size"/>
         <div class="card-text-box">
             <span class="card-number">${this.cardPosition}</span>
             <div class="card-header">

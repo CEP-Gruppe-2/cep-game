@@ -16,9 +16,10 @@ export class NavBar extends LitElement {
         justify-content: space-between;
         direction: rtl;
     }
-    
-
     `
+
+    @property({type: String})
+    dir = ""
 
     @property({type: String})
     username = ""
@@ -28,7 +29,20 @@ export class NavBar extends LitElement {
         <div>
             Hello ${this.username}
         </div>
+        ${this.dir == "" ? '' : html`
+        <div>
+            ${this.dir}
+            <button @click="${this.back}">
+                Back
+            </button>
+        </div>
+        `}
         `
+    }
+
+    back(): void {
+        console.log("clicked")
+        this.dispatchEvent(new CustomEvent('back', {bubbles: true, composed: true}));
     }
 
 }

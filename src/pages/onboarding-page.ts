@@ -1,6 +1,7 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../components/header/index'
+import '../components/popup/index'
 
 @customElement('onboarding-page')
 export class Onboarding extends LitElement {
@@ -161,7 +162,17 @@ export class Onboarding extends LitElement {
                     </div>
 
                 </div>
+
             </div>
+        
+            <popup-window
+                popupTitle="Willkommen"
+                popupDescrtiption="Willkomen bei unserer Awareness Schulung. Wir wollen dich mit deinem Namen ansprechene, deswegen bitten wir dich deinen Namen einzugeben und dann kannst du mit unserer Schulung loslegen!"
+                gratulation="Wir wünschen dir Viel Erfolg!"
+            >
+
+            </popup-window>
+
         `
     }
 

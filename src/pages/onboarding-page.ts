@@ -89,6 +89,20 @@ export class Onboarding extends LitElement {
         .project-creator-section{
             margin: 4em 0 0 0;
         }
+
+        .face-images-container, .project-creator-section{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .face-img{
+            height: 40px;
+            max-height: 40px;
+            width: 40px;
+            max-width: 40px;
+        }
     `
 
     render() {
@@ -138,7 +152,12 @@ export class Onboarding extends LitElement {
                             Erstellt von:
                         </p>
 
-                        
+                        <div class="face-images-container">
+                            <img class="face-img" src="src/icons/faceFirst.svg" />
+                            <img class="face-img" src="src/icons/faceSecond.svg"  />
+                            <img class="face-img" src="src/icons/faceThird.svg"  />
+                            <img class="face-img" src="src/icons/faceFourth.svg"  />
+                        </div>
                     </div>
 
                 </div>

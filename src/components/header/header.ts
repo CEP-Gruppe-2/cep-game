@@ -8,19 +8,42 @@ export class Header extends LitElement {
     :host{
         display: flex;
         width: 100%;
-        height: 40px;
-        border: 1px solid #000;
+        height: 60px;
+        //border: 1px solid #000;
         justify-content: space-between;
         align-items: center;
+        padding: 0 1em 0 1em;
+        flex-wrap: nowrap;
+        box-sizing: border-box;
     }
 
-    `
+    .text-decoration-none{
+            text-decoration: none ;
+    }
 
+    .header-btn{
+        text-align: center;
+        text-shadow: none;
+        font-size: 1.25em;
+        font-style: solid;
+        font-weight: 400;
+        font-family: "Arial";
+        color: #000;
+    }
+
+    .header-btn-course{
+        color: #68C382 !important; 
+    }
+
+    .header-btn-course:hover{
+        color: #1B9A3F !important;
+    }
+    `
 
     render() {
         return html`
-            <a href="#start">SafeWise</a>
-            <a href="#kurse">Kurse</a>
+            <a class="text-decoration-none header-btn" href="#start">SafeWise</a>
+            <a class="text-decoration-none header-btn header-btn-course" href="#kurse">Kurse</a>
         `
     }
 

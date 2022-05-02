@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 import '../components/header/index'
-import '../components/popup/index'
+import '../components/speech/index'
 
 @customElement('onboarding-page')
 export class Onboarding extends LitElement {

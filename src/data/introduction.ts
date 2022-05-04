@@ -7,6 +7,7 @@ export const introduction = {
     backButtonText: '',
     details: [
         {
+            test: "",
             roboterExist: false,
             heyImageExists: true,
             roboterImage: '',

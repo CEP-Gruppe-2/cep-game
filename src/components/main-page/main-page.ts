@@ -1,15 +1,13 @@
-import { html, css, LitElement, PropertyValueMap } from 'lit'
+import { html, css, LitElement } from 'lit'
 import { customElement } from 'lit/decorators.js' // property
-import { MainPage } from './components/main-page'
-import './components/nav-bar'
+import { cardArray } from '../../data/card-object'
+import '../module-card'
 
-@customElement('my-element')
-export class MyElement extends LitElement {
+@customElement('main-page')
+export class MainPage extends LitElement {
   static styles = css`
 
-    :host{}
-
-    .module-section{
+    :host{
       margin: 0 0.5em;
       padding: 0;
       text-align: center;
@@ -41,7 +39,7 @@ export class MyElement extends LitElement {
     }
 
     @media (min-width: 743px) {
-      .module-section{
+      :host{
         margin: 0 auto;
         max-width: 743px;
       }
@@ -59,13 +57,6 @@ export class MyElement extends LitElement {
       }
     }
   `
-  pageStack: HTMLElement[] = []
-  
-  protected firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
-      const m = new MainPage();
-      this.pageStack.push(m);
-      this.append(m);
-  }
 
   public myfunction (): void {
 
@@ -73,9 +64,22 @@ export class MyElement extends LitElement {
 
   render () {
     return html`
-    <nav-bar username="SampleText"></nav-bar>
-    <main-page></main-page>
-      `
+      <h2 class="module-title">
+        Module
+      </h2>
+      <div class="flex-card">
+        ${cardArray.map((card, index) => 
+        html`
+          <module-card .cardTitle=${card.title}
+            .cardDescription=${card.description} 
+            .cardPosition=${index+1} 
+            .cardLink=${card.link}
+            .cardImageName=${card.cardImageName}
+            style="background-color: ${card.color};"
+          ></module-card>`
+        )}
+      </div>
+    `
   }
 
 }
@@ -83,6 +87,6 @@ export class MyElement extends LitElement {
 declare global {
   // eslint-disable-next-line no-unused-vars
   interface HTMLElementTagNameMap {
-    'my-element': MyElement
+    'main-page': MainPage
   }
 }

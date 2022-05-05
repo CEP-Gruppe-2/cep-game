@@ -64,7 +64,7 @@ export class MyElement extends LitElement {
   protected firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
       const m = new MainPage();
       this.pageStack.push(m);
-      this.append(m);
+      this.shadowRoot?.append(m);
   }
 
   public myfunction (): void {
@@ -74,8 +74,7 @@ export class MyElement extends LitElement {
   render () {
     return html`
     <nav-bar username="SampleText"></nav-bar>
-    <main-page></main-page>
-      `
+    `
   }
 
 }

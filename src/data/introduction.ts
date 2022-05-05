@@ -82,5 +82,14 @@ export const intro = {
             emailVisible: false,
             cityVisible: true
         }
+    ],
+    hackerVerfolgen: [
+
+
+    ],
+    schwachstellenBeheben: [
+
+
     ]
+
 }

@@ -1,6 +1,7 @@
 import { html, css, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../components/circle/index'
+import '../components/button/index'
 import '../data/introduction'
 import { intro } from '../data/introduction'
 
@@ -262,10 +263,24 @@ export class Introduction extends LitElement {
             position: absolute;
             right: 0; left: 0; bottom: 20px;
         }
+        
+        #hackerVerfolgen-button{
+            position:absolute;   
+            top: 50%;
+            left: 30%;
+        }
+
+        #schwachstellenFixen-button{
+            position:absolute;   
+            top: 50%;
+            left: 55%;
+        }
     `
 
     @property({type: Number})
     position = 0;
+
+    
 
     _handleClick() {
         this.position++;
@@ -313,8 +328,14 @@ export class Introduction extends LitElement {
                 `
             }else if(this.position == intro.roboterImages.length){
                 console.log("lasdasdsa");
-                displayPosition = html ` <img class="align-left roboter-img" src="${src}" @click="${this._handleClick}"/>
-                                        <img class="city-img rotate-90" src="${intro.cityImage}"/>`
+                
+                displayPosition = html `
+                                        <img class="align-left roboter-img" src="${src}" @click="${this._handleClick}"/>
+                                        <img class="city-img rotate-90" src="${intro.cityImage}"/>
+                                        <button-component id="hackerVerfolgen-button" textButton="Hacker verfolgen!" @click="${this._handleClick}"></button-component>
+                                        <button-component id="schwachstellenFixen-button" textButton="Schwachstellen beheben!"  @click="${this._handleClick}"></button-component>
+                                        `
+                                        
             }else{
                 if(cityVisible){
                     displayPosition = html ` <img class="align-left roboter-img" src="${src}" @click="${this._handleClick}"/>

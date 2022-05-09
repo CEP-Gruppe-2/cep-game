@@ -7,6 +7,9 @@ import { intro } from '../data/introduction'
 
 @customElement('introduction-page')
 export class Introduction extends LitElement {
+    
+    
+
 
     static styles = css`
         :host{
@@ -279,14 +282,28 @@ export class Introduction extends LitElement {
 
     @property({type: Number})
     position = 0;
-
+    verfolgen:boolean=false;
+    beheben:boolean=false;
     
 
-    _handleClick() {
-        this.position++;
-        console.log("position: " + this.position);
+    _handleClick(e:Event) {
+        if((e.target as HTMLDivElement).textContent=="Hacker verfolgen!"){
+            console.log("erstes");  
+            this.verfolgen=true;
+        }
         
+        if((e.target as HTMLDivElement).textContent=="Schwachstellen beheben!"){
+        console.log("zweites");  
+            this.beheben=true;
+        }
+
+
+        this.position++;
+        console.log("position: " + this.position); 
     }
+
+    
+    
 
     render() {
         let displayPosition;
@@ -332,8 +349,8 @@ export class Introduction extends LitElement {
                 displayPosition = html `
                                         <img class="align-left roboter-img" src="${src}" @click="${this._handleClick}"/>
                                         <img class="city-img rotate-90" src="${intro.cityImage}"/>
-                                        <button-component id="hackerVerfolgen-button" textButton="Hacker verfolgen!" @click="${this._handleClick}"></button-component>
-                                        <button-component id="schwachstellenFixen-button" textButton="Schwachstellen beheben!"  @click="${this._handleClick}"></button-component>
+                                        <button-component id="hackerVerfolgen-button" textButton="Hacker verfolgen!" @click="${this._handleClick}">Hacker verfolgen!</button-component>
+                                        <button-component id="schwachstellenFixen-button" textButton="Schwachstellen beheben!"  @click="${this._handleClick}">Schwachstellen beheben!</button-component>
                                         `
                                         
             }else{

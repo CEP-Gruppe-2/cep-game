@@ -3,6 +3,11 @@ import { customElement } from 'lit/decorators.js' // property
 import { MainPage } from './components/main-page'
 import './components/nav-bar'
 
+interface Page {
+  dir: string,
+  element: HTMLElement
+}
+
 @customElement('my-element')
 export class MyElement extends LitElement {
   static styles = css`
@@ -59,21 +64,27 @@ export class MyElement extends LitElement {
       }
     }
   `
-  pageStack: HTMLElement[] = []
+  pageStack: Page[] = []
   
   protected firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
-      const m = new MainPage();
-      this.pageStack.push(m);
-      this.shadowRoot?.append(m);
+      const p = {dir: "", element: new MainPage()};
+      this.pageStack.push(p);
+      this.shadowRoot?.append(p.element);
   }
 
-  public myfunction (): void {
+  public back(): void {
+    if (this.pageStack.length == 1) return;
 
+    this.pageStack.pop()?.element.remove();
+
+    const page = this.pageStack[this.pageStack.length-1];
+    this.shadowRoot?.append(page.element);
+    this.shadowRoot?.firstElementChild?.setAttribute("dir", page.dir);
   }
 
-  render () {
+  render() {
     return html`
-    <nav-bar username="SampleText"></nav-bar>
+      <nav-bar @back=${this.back} username="SampleText"></nav-bar>
     `
   }
 

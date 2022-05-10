@@ -4,9 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 @customElement('module-card')
 export class ModuleCard extends LitElement {
 
-    @property({type: Object})
-    cardInformation = {};
-
     @property({type: String})
     cardTitle = "";
 
@@ -83,24 +80,31 @@ export class ModuleCard extends LitElement {
         font-size: 16px;
     }
 
+    .card-arrow-btn{
+      cursor: pointer;
+    }
   `
+
+  private _click(): void {
+    //this.dispatchEvent()
+  }
 
   render() {
     return html`
-        <img src="/src/icons/${this.cardImageName}" class="icon-size"/>
-        <div class="card-text-box">
-            <span class="card-number">${this.cardPosition}</span>
-            <div class="card-header">
-                <h2 class="card-title">
-                    ${this.cardTitle}
-                </h2>
-                <a class="card-arrow-btn" href="${this.cardLink}">
-                    <img class="card-arrow" src="/src/icons/arrow.svg"/>  
-                </a>
-            </div>
-            <hr class="card-break-line"/>
-            <p class="card-description">${this.cardDescription}</p>
+      <img src="/src/icons/${this.cardImageName}" class="icon-size"/>
+      <div class="card-text-box">
+        <span class="card-number">${this.cardPosition}</span>
+        <div class="card-header">
+          <h2 class="card-title">
+            ${this.cardTitle}
+          </h2>
+          <a class="card-arrow-btn" @click="${this._click}">
+            <img class="card-arrow" src="/src/icons/arrow.svg"/>  
+          </a>
         </div>
+        <hr class="card-break-line"/>
+        <p class="card-description">${this.cardDescription}</p>
+      </div>
     `
   }
 }

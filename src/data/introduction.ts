@@ -35,7 +35,7 @@ export const introduction = {
 }
 
 export const intro = {
-    roboterName: 'Jouiles',
+    roboterName: 'Joules',
     emailImage: 'src/images/introduction/email.svg',
     cityImage: 'src/images/introduction/city.svg',
     cloudImage: 'src/images/introduction/cloud.svg',
@@ -84,12 +84,38 @@ export const intro = {
         }
     ],
     hackerVerfolgen: [
-
-
+        {src: 'src/images/introduction/hackerVerfolgenFirst.svg',
+        left: true,
+        right: false,
+        emailVisible: false,
+        cityVisible: true
+        }, 
+        {src: 'src/images/introduction/hackerVerfolgenSecond.svg',
+        left: true,
+        right: false,
+        emailVisible: false,
+        cityVisible: true
+        },
+        {src: 'src/images/introduction/hackerVerfolgenThird.svg',
+        left: true,
+        right: false,
+        emailVisible: false,
+        cityVisible: true
+        }
     ],
     schwachstellenBeheben: [
-
-
+        {src: 'src/images/introduction/schwachstellenBehebenFirst.svg',
+        left: true,
+        right: false,
+        emailVisible: false,
+        cityVisible: true
+        },
+        {src: 'src/images/introduction/schwachstellenBehebenSecond.svg',
+        left: true,
+        right: false,
+        emailVisible: false,
+        cityVisible: true
+        }
     ]
 
 }

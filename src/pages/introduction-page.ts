@@ -7,6 +7,12 @@ import { intro } from '../data/introduction'
 
 @customElement('introduction-page')
 export class Introduction extends LitElement {
+    private verfolgen:boolean=false;
+    private beheben:boolean=false;
+    private src : String="";
+    private alignLeft : boolean=false;
+    private alignRight : boolean=false;
+    private cityVisible : boolean=false;
 
     static styles = css`
         :host{
@@ -279,17 +285,38 @@ export class Introduction extends LitElement {
 
     @property({type: Number})
     position = 0;
-
+    
     
 
-    _handleClick() {
-        this.position++;
-        console.log("position: " + this.position);
+    _handleClick(e:Event) {
+        if((e.target as HTMLDivElement).textContent=="Hacker verfolgen!"){
+            console.log("erstes");  
+            this.verfolgen=true;
+            this.position = 0;
+        }
         
+        if((e.target as HTMLDivElement).textContent=="Schwachstellen beheben!"){
+        console.log("zweites");  
+            this.beheben=true;
+            this.position = 0;
+        }
+
+
+        this.position++;
+        console.log("position: " + this.position); 
     }
+
+    
+    
 
     render() {
         let displayPosition;
+        
+        if(this.verfolgen&&this.position==4)
+        console.log("Done");
+
+        if(this.beheben&&this.position==3)
+        console.log("Done");
 
         if(this.position == 0){
             displayPosition = html `
@@ -315,41 +342,52 @@ export class Introduction extends LitElement {
             </div>
             `
         }else {
-            const src = intro.roboterImages[this.position - 1].src;
-            const alignLeft = intro.roboterImages[this.position - 1].left;
-            const alignRight = intro.roboterImages[this.position - 1].right;
-            const cityVisible = intro.roboterImages[this.position - 1].cityVisible
+                this.src= intro.roboterImages[this.position - 1].src;
+                this.alignLeft = intro.roboterImages[this.position - 1].left;
+                this.alignRight = intro.roboterImages[this.position - 1].right;
+                this.cityVisible = intro.roboterImages[this.position - 1].cityVisible;
+            if(this.verfolgen){
+                this.src = intro.hackerVerfolgen[this.position-1].src;
+                this.alignLeft = intro.hackerVerfolgen[this.position-1].left;
+                this.alignRight = intro.hackerVerfolgen[this.position-1].right;
+                this.cityVisible = intro.hackerVerfolgen[this.position-1].cityVisible;
+            }else if(this.beheben){
+                this.src = intro.schwachstellenBeheben[this.position - 1].src;
+                this.alignLeft = intro.schwachstellenBeheben[this.position - 1].left;
+                this.alignRight = intro.schwachstellenBeheben[this.position - 1].right;
+                this.cityVisible = intro.schwachstellenBeheben[this.position - 1].cityVisible;
+            }
             
-            if(!alignLeft && alignRight){
-                displayPosition = html `<img class="align-right roboter-img" src="${src}" @click="${this._handleClick}"/>`
+            if(!this.alignLeft && this.alignRight){
+                displayPosition = html `<img class="align-right roboter-img" src="${this.src}" @click="${this._handleClick}"/>`
             }else if(intro.roboterImages[this.position - 1].emailVisible){
                 displayPosition = html `<img class="email-img" src="${intro.emailImage}" @click="${this._handleClick}"/>
                                         <button class="email-btn" @click="${this._handleClick}">Schließen</button>
                 `
             }else if(this.position == intro.roboterImages.length){
-                console.log("lasdasdsa");
-                
                 displayPosition = html `
-                                        <img class="align-left roboter-img" src="${src}" @click="${this._handleClick}"/>
+                                        <img class="align-left roboter-img" src="${this.src}" @click="${this._handleClick}"/>
                                         <img class="city-img rotate-90" src="${intro.cityImage}"/>
-                                        <button-component id="hackerVerfolgen-button" textButton="Hacker verfolgen!" @click="${this._handleClick}"></button-component>
-                                        <button-component id="schwachstellenFixen-button" textButton="Schwachstellen beheben!"  @click="${this._handleClick}"></button-component>
+                                        <button-component id="hackerVerfolgen-button" textButton="Hacker verfolgen!" @click="${this._handleClick}">Hacker verfolgen!</button-component>
+                                        <button-component id="schwachstellenFixen-button" textButton="Schwachstellen beheben!"  @click="${this._handleClick}">Schwachstellen beheben!</button-component>
                                         `
                                         
             }else{
-                if(cityVisible){
-                    displayPosition = html ` <img class="align-left roboter-img" src="${src}" @click="${this._handleClick}"/>
+                if(this.cityVisible){
+                    displayPosition = html ` <img class="align-left roboter-img" src="${this.src}" @click="${this._handleClick}"/>
                                              <img class="city-img" src="${intro.cityImage}"/>
                                              <img class="cloud-img" src="${intro.cloudImage}" @click="${this._handleClick}"/>
                                              <img class="cloud-img" style="right: 260px !important; bottom: 180px !important;" src="${intro.cloudImage}" @click="${this._handleClick}"/>
                     `
                 }else{
-                    displayPosition = html ` <img class="align-left roboter-img" src="${src}" @click="${this._handleClick}"/>`
+                    displayPosition = html ` <img class="align-left roboter-img" src="${this.src}" @click="${this._handleClick}"/>`
                 }
 
             }
 
         }
+
+       
 
         return html`
             

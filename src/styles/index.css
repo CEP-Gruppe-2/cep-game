@@ -1,0 +1,18 @@
+/*
+Hier könnt ihr eure Variablen anlegen, um es in den Komponenten zu benutzen
+*/
+:root{
+ /* Beispiel */
+ --fontsize-xxl: 40px;
+ --fontsize-xl: 16px;
+ --fontsize-l: 16px;
+ --fontsize-md: 16px;
+ --fontsize-sm: 16px;
+ --fontsize-xs: 16px;
+ /*font-size: var(--fontsize-xxl);  */
+
+ --border-radius: 1em;
+ --popup-title-fontsize: 1.5em;
+ --popup-title-color: #000; 
+ --popup-paragraph-fontsize: 1em; 
+}

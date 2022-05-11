@@ -1,6 +1,5 @@
 import { CtLit, html, property, customElement, css } from '@conectate/ct-lit';
 
-
 @customElement('app-login')
 export class AppLogin extends CtLit {
 

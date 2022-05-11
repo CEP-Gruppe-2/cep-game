@@ -26,6 +26,7 @@ export class Popup extends  LitElement {
                 border-radius: 1em;
                 padding: 1em;
                 box-sizing: border-box;
+                z-index: 600;
 			}
 
             @media (min-width: 500px){
@@ -45,7 +46,18 @@ export class Popup extends  LitElement {
                 margin: 1em 0 0 0;
                 padding: 0;
                 text-align: center;
-                font-size: 1.5em;
+                font-size: var(--popup-title-fontsize);
+                font-weight: 500;
+                font-style: normal;
+                color: #000;
+            }
+
+            .popup-paragraph{
+                display: block;
+                margin: 1em 0 0 0;
+                padding: 0;
+                text-align: left;
+                font-size: var(--popup-paragraph-fontsize);
                 font-weight: 500;
                 font-style: normal;
                 color: #000;

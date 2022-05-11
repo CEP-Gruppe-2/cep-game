@@ -1,4 +1,4 @@
-import './base/app-router';
+import './pages/base/app-router';
 import { css, customElement, html, LitElement } from '@conectate/ct-lit';
 import { property } from 'lit/decorators.js';
 import "./component/popup";
@@ -10,7 +10,7 @@ export class LitApp extends  LitElement {
 		css`
 			:host{
 				width: 100%;
-				height: 100%;
+				height: 100vh;
 			}
 
 			header{
@@ -142,7 +142,8 @@ export class LitApp extends  LitElement {
 
 	render() {
 		return html`
-			<popup-component ?componentvisible=${true}></popup-component>
+
+			<popup-component ?componentvisible=${false}></popup-component>
 			<header id="header">
 				<a href="#startseite" class="header-brand no-decoration font-black">
 					SafeWise

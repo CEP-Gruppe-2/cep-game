@@ -331,7 +331,7 @@ export class Introduction extends LitElement {
                             Es gibt viele interessante Dinge, die auf dich warten, aber wir wollen sie dir nicht verraten. Du musst es mit eigenen Augen erleben und in die Atmosphäre eintauchen.
 
                             <br>
-                            Wenn du bereit für das Abendteuer bist, warte nicht und klicke auf die Schaltfläche unten. Dort wirst du erfahren, was dich erwartet!
+                            Wenn du bereit für das Abenteuer bist, warte nicht und klicke auf die Schaltfläche unten!
                         </p>
                         
                         <button class="welcome-btn" @click="${this._handleClick}">Fortfahren</button>

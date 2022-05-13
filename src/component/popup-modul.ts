@@ -13,7 +13,7 @@ export class Popup extends  LitElement {
 
 			:host{
 				width: 80%;
-                height: 230px;
+                height: 270px;
                 background-color: #fff;
                 padding: 1em;
                 margin: auto;
@@ -25,6 +25,12 @@ export class Popup extends  LitElement {
                 border: none;
                 border-radius: var(--border-radius);
 			}
+
+            @media only screen and (min-width: 600px) {
+                :host{
+                    width: 500px;
+                }
+            }
 
             .popup-moduls-title{
                 display: block;
@@ -72,6 +78,8 @@ export class Popup extends  LitElement {
                 float: right;
                 cursor: pointer;
             }
+
+
 		`
 	];
 
@@ -80,18 +88,14 @@ export class Popup extends  LitElement {
     @property({type: String}) popupText = "";
     @property({type: String}) popupNextPageLink = "";
 
-    _change(e: Event, pageLink : String ) {
-        console.log();
-        this.dispatchEvent(new CustomEvent('popup-btn-clicked', {detail: this.popupNextPageLink}));
-        console.log("neues event unter dem Namen popup-btn-clicked erstellt");
-        
+    _closeComponent(e : Event){
+        this.dispatchEvent(new CustomEvent('close-component', { detail: e }));
     }
-
 
 	render() {
 
 		return html`
-            <close-component></close-component>
+            <close-component @click="${(e : Event) => this._closeComponent(e)}"></close-component>
             <h2 class="popup-moduls-title">
                 Willkommen zurück!
             </h2>
@@ -101,9 +105,7 @@ export class Popup extends  LitElement {
                 durchgehen möchtest, klicke einfach auf die Schaltfläche unten, 
                 ansonsten klicke auf das Kreuz in der rechten Ecke
             </p>
-            <a
-                @click=${(e: Event) => this._change(e, this.popupNextPageLink)}
-                href="#${this.popupNextPageLink}" class="popup-moduls-btn">Fortfahren</a>
+            <a href="${this.popupNextPageLink}" class="popup-moduls-btn">Fortfahren</a>
 		`;
 	}
 }

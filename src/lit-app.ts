@@ -22,6 +22,7 @@ export class LitApp extends  LitElement {
 				justify-content: space-between;
 				align-items: center;
 				background-color: transparent;
+				z-index: 700;
 			}
 
 			.header-brand{
@@ -92,6 +93,7 @@ export class LitApp extends  LitElement {
 				width: 50%;
 				top: 0;
 				left: 0;
+				z-index: 700;
 			}
 		`
 	];

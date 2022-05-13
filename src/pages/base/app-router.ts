@@ -33,6 +33,13 @@ export class AppRouter extends CtLit {
 			from: () => import('../login/activities/app-login'),
 			auth: false,
 			title: () => `Login • Example.com`
+		},
+		{
+			path: '/einleitung',
+			element: html`<app-einleitung></app-einleitung>`,
+			from: () => import('../einleitung/activities/einleitung-app'),
+			auth: false,
+			title: () => `Einleitung • Example.com`
 		}
 	];
 

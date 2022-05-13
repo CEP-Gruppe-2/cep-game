@@ -3,6 +3,7 @@ import '../../../component/moduls-card'
 import { cardData } from '../../../data/card.data';
 import "../../../component/popup-modul";
 import Cookies from 'js-cookie'
+import { redirectTo } from '../../../functions/redirect';
 
 @customElement('home-app')
 export class HomeApp extends CtLit {
@@ -54,35 +55,36 @@ export class HomeApp extends CtLit {
 
 	private _configurePopup(e : Event): void{
 		
+		this.cardLink = e.detail;
+
 		if(Cookies.get('einleitung') != undefined){
-			this.cardLink = e.detail;
+			
 			if (this.popupEntryExist && this.showPopup) {
 				
 			}else if(this.popupEntryExist && !this.showPopup){
 				this.showPopup = true;
-				//this._displayPopup();
 				this.update();
 			}
 		}else{
 			Cookies.set('einleitung', true, { expires: 7, path: '' })
 			this.popupEntryExist = true;
+			redirectTo(this.cardLink, "")
 		}
 
 		console.log(`${this.showPopup}, ${this.popupEntryExist}`);
 	}
 
 	_displayPopup(){
-		if(Cookies.get('einleitung') != undefined){
-			
-		}
 		if(this.showPopup){
-			return html`
-				<popup-moduls @custom="${this._wup}"></popup-moduls>
-			`
-		}else{
-			return html ``;
-		}
-		
+			return html` <popup-moduls id="popup-moduls" @custom="${this._wup}" popupNextPageLink="${this.cardLink}" @close-component="${this._closeComponent}"></popup-moduls>`
+		}else{ return html ``; }
+	}
+
+	_closeComponent(){
+		this.showPopup = false; 
+		this.update();
+
+		console.log(`${this.showPopup}, ${this.popupEntryExist}`);
 	}
 
 	render() {

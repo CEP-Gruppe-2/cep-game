@@ -1,50 +1,56 @@
 export const einleitung = {
     roboterName: 'Joules',
-    emailImage: 'src/images/introduction/email.svg',
-    cityImage: 'src/images/introduction/city.svg',
-    cloudImage: 'src/images/introduction/cloud.svg',
+    emailImage: 'res/einleitung/01-email.svg',
+    cityImage: 'res/einleitung/01-stadt.svg',
+    cloudImage: 'res/einleitung/01-wolken.svg',
     roboterImages: [
         {
             src: 'res/einleitung/01-roboter.svg',
             left: false,
             right: true,
             emailVisible: false,
-            cityVisible: false
+            cityVisible: false,
+            roboterVisible: true
         },
         {
             src: 'res/einleitung/02-roboter.svg',
             left: true,
             right: false,
             emailVisible: false,
-            cityVisible: false
+            cityVisible: false,
+            roboterVisible: true
         },
         {
-            src: 'src/images/introduction/roboterThird.svg',
+            src: 'res/einleitung/03-roboter.svg',
             left: true,
             right: false,
             emailVisible: false,
-            cityVisible: false
+            cityVisible: false,
+            roboterVisible: true
+        },
+        {
+            src: 'res/einleitung/04-roboter.svg',
+            left: true,
+            right: false,
+            emailVisible: false,
+            cityVisible: false,
+            roboterVisible: true
         },
         {
             src: 'src/images/introduction/roboterFourth.svg',
             left: true,
             right: false,
             emailVisible: false,
-            cityVisible: true
-        },
-        {
-            src: 'src/images/introduction/roboterFourth.svg',
-            left: true,
-            right: false,
-            emailVisible: true,
-            cityVisible: false
+            cityVisible: true,
+            roboterVisible: false
         },
         {
             src: 'src/images/introduction/roboterSixth.svg',
             left: true,
             right: false,
-            emailVisible: false,
-            cityVisible: true
+            emailVisible: true,
+            cityVisible: false,
+            roboterVisible: false
         }
     ],
     hackerVerfolgen: [

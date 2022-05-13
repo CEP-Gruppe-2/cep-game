@@ -50,15 +50,114 @@ export class AppEinleitung extends CtLit {
         }
 
 
+        .roboter-img, .city-img{
+            z-index: 20;
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 80%;
+            margin: 0 auto;
+        }
+
+        .city-img{
+            margin: 1em auto;
+        }
+
+        @media only screen and (min-width: 540px) {
+            .roboter-img{
+                width: 80%;
+            }   
+        }
+
+        @media only screen and (min-width: 768px) {
+            .roboter-img{
+                width: 570px;
+            }   
+        }
+
+        @media only screen and (min-width: 1100px) {
+            .roboter-img{
+                width: 670px;
+                height: 90%;
+            }   
+        }
+
+        .city-container, .email-container{
+            z-index: 20;
+            display: block; 
+            position: relative;
+            height: 50%;
+            top: 10%;
+        }
+
+        .email-container{
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .email-img{
+            z-index: 20;
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 80%;
+            margin: 0 auto;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .email-container{
+                width: 500px;
+            }
+        }
+
+        .cloud-img{
+            width: 40%;
+            display: block;
+            position: absolute;
+            z-index: 30;
+            top: -30px;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .cloud-img{
+                width: 260px;
+            }
+        }
+
+        .cloud-right{
+            float: right;
+            right: 30px;
+            top: 20px;
+        }
+
+        .cloud-left{
+            
+        }
     `;
 
     _displayEinleitung(){
-        return html `<img @click="${this._count}" src="${this.roboterArray[this.positionArray].src}"/>`
+        if(!this.roboterArray[this.positionArray].roboterVisible && this.roboterArray[this.positionArray].cityVisible){
+            return html `
+                <div class="city-container">
+                    <img class="cloud-img cloud-right" @click="${this._count}" src="${einleitung.cloudImage}"/>
+                    <img class="cloud-img" @click="${this._count}" src="${einleitung.cloudImage}"/>
+                    <img class="city-img" @click="${this._count}" src="${einleitung.cityImage}"/>
+                </div>
+            `
+        }else if(this.roboterArray[this.positionArray].emailVisible){
+            return html `
+                <div class="email-container">
+                    <img class="email-img" @click="${this._count}" src="${einleitung.emailImage}"/>
+
+                </div>
+            `
+        }else{
+            return html `<img class="roboter-img" @click="${this._count}" src="${this.roboterArray[this.positionArray].src}"/>`
+        }
+
     }
 
-    _count(){
-        console.log(1);
-        
+    async _count(){
         this.positionArray = this.positionArray + 1;
 
         console.log(this.positionArray);

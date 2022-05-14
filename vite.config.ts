@@ -44,7 +44,7 @@ export default (opts: { mode: 'production' | 'development'; command: 'build' | '
 			assetsInlineLimit: 100000,
 			rollupOptions: {
 				input: {
-					app: './src/lit-app.ts'
+					app: 'src/lit-app.ts'
 				},
 				// input: ['src/my-element.ts'],
 				// Specifies two JS output configurations, modern and legacy, which the HTML plugin will
@@ -70,8 +70,9 @@ export default (opts: { mode: 'production' | 'development'; command: 'build' | '
                         format: {
                             comments: false
                         },
-                        compress: false,
-                        module: true
+                        compress: true,
+                        module: true,
+						
                     }),
 					// Print bundle summary
 					summary({}) as any

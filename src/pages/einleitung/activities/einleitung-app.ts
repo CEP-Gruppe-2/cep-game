@@ -133,6 +133,17 @@ export class AppEinleitung extends CtLit {
         .cloud-left{
             
         }
+        
+        .email-btn{
+            margin: 1em auto;   
+            display: block;
+            background-color: #FFD037;
+            color: #fff;
+            width: 100px;
+            padding: 0.75em 1em;
+            border: none;
+            border-radius: 1em;
+        }
     `;
 
     _displayEinleitung(){
@@ -148,7 +159,7 @@ export class AppEinleitung extends CtLit {
             return html `
                 <div class="email-container">
                     <img class="email-img" @click="${this._count}" src="${einleitung.emailImage}"/>
-
+                    <button class="email-btn" @click="${this._count}">Schließen</button>
                 </div>
             `
         }else{

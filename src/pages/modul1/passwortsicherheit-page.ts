@@ -160,8 +160,8 @@ export class Passwortsicherheit extends LitElement{
 
 
       _bearbeitePasswortEingabe(){
-                      /*   Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:  */
-        let pattern=  "^(?=.*[a-z])(?=.*[A-Z]).{8}$";
+                      /*Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character*/
+        let pattern=  "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$";
 
         this.passwort=this._input.value;
         this._input.value = '';

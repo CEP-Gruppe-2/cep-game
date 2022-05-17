@@ -10,7 +10,7 @@ export const passwortsicherheit={
         },
         {
             backgroundcolor:'#68C382',
-            inhalt:'res/modul1/modul1/passwortsicherheit/einfuehrungSecond.svg',
+            inhalt:'res/modul1/passwortsicherheit/einfuehrungSecond.svg',
             text:'Hier steht warum',
             buttonText:``
         },

@@ -40,6 +40,13 @@ export class AppRouter extends CtLit {
 			from: () => import('../einleitung/activities/einleitung-app'),
 			auth: false,
 			title: () => `Einleitung • Example.com`
+		},
+		{
+			path: '/passwortsicherheit',
+			element: html`<passwortsicherheit-page></passwortsicherheit-page>`,
+			from: () => import('../modul1/passwortsicherheit-page'),
+			auth: false,
+			title: () => `Passwortsicherheit`
 		}
 	];
 

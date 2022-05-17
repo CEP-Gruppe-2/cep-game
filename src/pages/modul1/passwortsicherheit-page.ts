@@ -1,7 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { passwortsicherheit } from "../../data/modul1/passwortsicherheit";
-import '../../components/button/index';
 import "../../component/button";
 
 @customElement('passwortsicherheit-page')
@@ -30,27 +29,77 @@ export class Passwortsicherheit extends LitElement{
     _input!: HTMLInputElement;
     
     static styles = css`
-    :host{
-            
+  
+        :host {
+            display: block;
+            width: 100%;
+            height: 100vh;
+            background-color: #68C382;  
+            position: relative;    
+            overflow: hidden;      
+        }   
 
-            #buttons{
-                float: left;
-                width: 30%;
-                margin-right: 3.33333%;
-                padding: 20px;
-                background: #eee;
-                box-sizing: border-box;
-                display: flex;
-                justify-content: space-between;
-                padding-left: 30%;
-                padding-right: 30%;
-            }
-            
+       /* .multipleChoiceButtonsBox {
+            display: flex;
+            position: relative;
+            margin: 0 auto;
+           
+        }
+       */
+         
+        .text-joules{
+            z-index: 20;
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 80%;
+            margin: 0 auto;
+        }
+
+        .aufgabenstellung{
+            z-index: 20;
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 80%;
+            margin: 0 auto;
+        }
+
+        
+
+        .passworteingabefeld{}
+
+        .fehlermeldung{}
+
+
+        @media only screen and (min-width: 540px) {
+            .text-joules ,.aufgabenstellung{
+                width: 80%;
+            }   
+        }
+
+        @media only screen and (min-width: 768px) {
+            .text-joules ,.aufgabenstellung{
+                width: 570px;
+            }   
+        }
+
+        @media only screen and (min-width: 1100px) {
+            .text-joules ,.aufgabenstellung{
+                width: 670px;
+                height: 90%;
+            }   
+        }
+
+
+
+        
+
           
-    }
     `
     
     _handleClick(e:Event):void{
+        console.log((e.target as HTMLDivElement).textContent)
         /*wenn im spielmodus mit multiple choice lösung überprüfen*/
        spielLogikMultipleChoice: if(!this.modi2&&this.start){
             if((e.target as HTMLDivElement).textContent==="weiterNachErklärung"){
@@ -112,7 +161,7 @@ export class Passwortsicherheit extends LitElement{
 
       _bearbeitePasswortEingabe(){
                       /*   Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:  */
-        let pattern=  "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+        let pattern=  "^(?=.*[a-z])(?=.*[A-Z]).{8}$";
 
         this.passwort=this._input.value;
         this._input.value = '';
@@ -153,12 +202,12 @@ export class Passwortsicherheit extends LitElement{
 
         if(this.buttonText!=''){
             displayPosition=html`
-            <img position: "absolute" width="2000" height="700" srcset=${this.inhalt}  alt=${this.alt}/>
-            <div><button-component  id="starten-button" textButton=""+${this.buttonText} @click="${this._handleClick}">${this.buttonText}</button-component></div>
+            <img class="text-joules" position: "absolute" width="2000" height="700" srcset=${this.inhalt}  alt=${this.alt}/>
+            <div><button-component  id="starten-button" textButton=${this.buttonText} @click="${this._handleClick}">${this.buttonText}</button-component></div>
             `
         }else{
             displayPosition = html `
-            <img position: "absolute" width="2000" height="700" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>
+            <img class="text-joules" position: "absolute" width="2000" height="700" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>
             `
         }
 
@@ -175,13 +224,13 @@ export class Passwortsicherheit extends LitElement{
                     this.alt=passwortsicherheit.aufgabe1[this.position].text;
 
                     displayPosition = html`
-                        <img position: "absolute" width="2000" height="700" srcset=${this.inhalt}  alt=${this.alt}/>
+                        <img class="text-joules" position: "absolute" width="2000" height="700" srcset=${this.inhalt}  alt=${this.alt}/>
             
-                        <div class="buttons">
-                            <button-component id="antwort-button" textButton='A' @click="${this._handleClick}">A</button-component>
-                            <button-component id="antwort-button" textButton='B' @click="${this._handleClick}">B</button-component>
-                            <button-component id="antwort-button" textButton='C' @click="${this._handleClick}">C</button-component>
-                            <button-component id="antwort-button" textButton='D' @click="${this._handleClick}">D</button-component>
+                        <div class="multipleChoiceButtonsBox">
+                            <button-component textButton='A' @click="${this._handleClick}">A</button-component>
+                            <button-component textButton='B' @click="${this._handleClick}">B</button-component>
+                            <button-component textButton='C' @click="${this._handleClick}">C</button-component>
+                            <button-component textButton='D' @click="${this._handleClick}">D</button-component>
                         </div>
             
                         `
@@ -198,7 +247,7 @@ export class Passwortsicherheit extends LitElement{
                     }
                 this.positionErklaerung++;
                 displayPosition = html`
-                        <img srcset=${this.inhalt} />
+                        <img class="aufgabenstellung" srcset=${this.inhalt} />
                         <button-component type="submit" id="weiter" textButton='weiter' @click="${this._handleClick}">weiterNachErklärung</button-component>
                 `
                 

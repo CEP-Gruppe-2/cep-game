@@ -37,7 +37,7 @@ export const einleitung = {
             roboterVisible: true
         },
         {
-            src: 'src/images/introduction/roboterFourth.svg',
+            src: '',
             left: true,
             right: false,
             emailVisible: false,
@@ -45,52 +45,23 @@ export const einleitung = {
             roboterVisible: false
         },
         {
-            src: 'src/images/introduction/roboterSixth.svg',
+            src: '',
             left: true,
             right: false,
             emailVisible: true,
             cityVisible: false,
             roboterVisible: false
-        }
-    ],
-    hackerVerfolgen: [
-        {
-            src: 'src/images/introduction/hackerVerfolgenFirst.svg',
-            left: true,
-            right: false,
-            emailVisible: false,
-            cityVisible: true
-        }, 
-        {
-            src: 'src/images/introduction/hackerVerfolgenSecond.svg',
-            left: true,
-            right: false,
-            emailVisible: false,
-            cityVisible: true
         },
         {
-            src: 'src/images/introduction/hackerVerfolgenThird.svg',
+            src: 'res/einleitung/06-roboter.svg',
             left: true,
             right: false,
             emailVisible: false,
-            cityVisible: true
+            cityVisible: false,
+            roboterVisible: true
         }
     ],
-    schwachstellenBeheben: [
-        {
-            src: 'src/images/introduction/schwachstellenBehebenFirst.svg',
-            left: true,
-            right: false,
-            emailVisible: false,
-            cityVisible: true
-        },
-        {
-            src: 'src/images/introduction/schwachstellenBehebenSecond.svg',
-            left: true,
-            right: false,
-            emailVisible: false,
-            cityVisible: true
-        }
-    ]
+    hackerVerfolgen: ['res/einleitung/08-roboter.svg', 'res/einleitung/09-roboter.svg', 'res/einleitung/10-roboter.svg' ],
+    schwachstellenBeheben: ['res/einleitung/11-roboter.svg', 'res/einleitung/12-roboter.svg', 'res/einleitung/13-roboter.svg' ]
 
 }

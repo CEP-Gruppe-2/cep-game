@@ -1,5 +1,8 @@
 import { CtLit, html, property, customElement, css } from '@conectate/ct-lit';
+import { CtRouter, getCtRouter } from '@conectate/ct-router';
 import { einleitung } from '../../../data/einleitung.data';
+import { setCookieIfNotExist } from '../../../functions/cookies';
+import { AppRouter } from '../../base/app-router';
 
 
 @customElement('app-einleitung')
@@ -21,6 +24,8 @@ export class AppEinleitung extends CtLit {
 
         this.roboterArray = einleitung.roboterImages;
         this.positionArray = 0;
+        this.schwachstellenArray = einleitung.schwachstellenBeheben;
+        this.hackerArray = einleitung.hackerVerfolgen
     }
 
     static styles = css`
@@ -134,7 +139,7 @@ export class AppEinleitung extends CtLit {
             
         }
         
-        .email-btn{
+        .email-btn, .last-btn{
             margin: 1em auto;   
             display: block;
             background-color: #FFD037;
@@ -144,15 +149,29 @@ export class AppEinleitung extends CtLit {
             border: none;
             border-radius: 1em;
         }
+
+        .last-btn{
+            display: inline-block;
+            width: auto;
+        }
+
+        .last-container{
+            display: block;
+            margin: auto;
+            white-space: nowrap;
+            text-align: center;
+        }
     `;
 
     _displayEinleitung(){
+        console.log('router', this.$pages)
+
         if(!this.roboterArray[this.positionArray].roboterVisible && this.roboterArray[this.positionArray].cityVisible){
             return html `
                 <div class="city-container">
                     <img class="cloud-img cloud-right" @click="${this._count}" src="${einleitung.cloudImage}"/>
                     <img class="cloud-img" @click="${this._count}" src="${einleitung.cloudImage}"/>
-                    <img class="city-img" @click="${this._count}" src="${einleitung.cityImage}"/>
+                    <img class="city-img"  @click="${this._count}" src="${einleitung.cityImage}"/>
                 </div>
             `
         }else if(this.roboterArray[this.positionArray].emailVisible){
@@ -162,17 +181,61 @@ export class AppEinleitung extends CtLit {
                     <button class="email-btn" @click="${this._count}">Schließen</button>
                 </div>
             `
+        }else if(einleitung.roboterImages.length - 1 == this.positionArray){
+            return html `
+                    <img class="roboter-img" src="${this.roboterArray[this.positionArray].src}"/>
+                    <div class="last-container">
+                        <button class="last-btn" name="hacker" @click="${this._count}">Hacker verfolgen</button>
+                        <button class="last-btn" name="anlage" @click="${this._count}">Anlage reparieren</button>
+                    </div>
+            `
+        }else if(this.schwachstellen){
+            if(this.schwachstellenArray.length - 1 == this.positionArray){
+                if(setCookieIfNotExist(true, {name: 'einleitungClosed', value: true})){
+
+                    console.log(`   der Nutzer hat die Einleitung erfolgreich abgeschlossen. 
+                                    Wir können den Nutzer zum ersten Kapitel weiterleiten
+                                    wir können ihm Punkte addieren
+                                `);
+                }else{
+
+                    console.log(`   der Nutzer hat die Einleitung bereits abgeschlossen. 
+                                    Wir können den Nutzer zum ersten Kapitel weiterleiten
+                                    wir können ihm keine Punkte addieren
+                                `);
+                }
+            }
+            
+            
+            return html `<img class="roboter-img" @click="${this._count}" src="${this.schwachstellenArray[this.positionArray]}"/>`;
+        }else if(this.hacker){
+            
+            return html `
+                <img class="roboter-img" @click="${this._count}" src="${this.hackerArray[this.positionArray]}"/>
+            `;
         }else{
             return html `<img class="roboter-img" @click="${this._count}" src="${this.roboterArray[this.positionArray].src}"/>`
         }
 
     }
 
-    async _count(){
+    async _count(e : Event){
+
         this.positionArray = this.positionArray + 1;
 
         console.log(this.positionArray);
 
+        if(e.target.name == 'hacker'){
+            this.positionArray = 0;
+            this.hacker = true;
+        }else if(e.target.name == 'anlage'){
+            this.schwachstellen = true;
+            this.positionArray = 0;
+        }
+
+
+        console.log(`${this.hacker}, ${this.schwachstellen}`);
+        
         this.update();
     }
 
@@ -188,7 +251,7 @@ export class AppEinleitung extends CtLit {
             </svg>
 
             ${this._displayEinleitung()}
-
         `;
     }
+
 }

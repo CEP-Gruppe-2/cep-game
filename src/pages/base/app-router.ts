@@ -1,9 +1,10 @@
-import { CtLit, html, customElement, css } from '@conectate/ct-lit';
+import { CtLit, html, customElement, css, query } from '@conectate/ct-lit';
 import { Page } from '@conectate/ct-router';
 import '@conectate/ct-router';
 
 @customElement('app-router')
 export class AppRouter extends CtLit {
+
 	static styles = [
 		css`
 			:host {
@@ -51,6 +52,7 @@ export class AppRouter extends CtLit {
 	];
 
 	render() {
-		return html` <ct-router loginFallback="/login" loginFallback="/404" .pages=${AppRouter.pages}> </ct-router>`;
+		return html` <ct-router id="ctroute" loginFallback="/login" loginFallback="/404" .pages=${AppRouter.pages}> </ct-router>`;
+		
 	}
 }

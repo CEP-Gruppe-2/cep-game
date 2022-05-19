@@ -2,6 +2,8 @@ import './pages/base/app-router';
 import { css, customElement, html, LitElement } from '@conectate/ct-lit';
 import { property } from 'lit/decorators.js';
 import "./component/popup";
+import { CtRouter } from '@conectate/ct-router';
+import { AppRouter } from './pages/base/app-router';
 
 @customElement('lit-app')
 export class LitApp extends  LitElement {
@@ -98,8 +100,6 @@ export class LitApp extends  LitElement {
 		`
 	];
 
-	@property({ type: Number }) foo = 1;
-
 	@property({ type: Boolean }) menuSelected = false;
 
 	@property({type: Object}) menuNav = this.shadowRoot?.getElementById("mobile-nav");
@@ -143,6 +143,9 @@ export class LitApp extends  LitElement {
 	}
 
 	render() {
+		console.log('widnwo: ', document.location.search);
+		
+		
 		return html`
 
 			<popup-component ?componentvisible=${false}></popup-component>
@@ -181,7 +184,6 @@ export class LitApp extends  LitElement {
 				</a>
 			</div>
 			<app-router></app-router>
-
 		`;
 	}
 }

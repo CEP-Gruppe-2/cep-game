@@ -39,13 +39,13 @@ export class Passwortsicherheit extends LitElement{
             overflow: hidden;      
         }   
 
-       /* .multipleChoiceButtonsBox {
-            display: flex;
-            position: relative;
-            margin: 0 auto;
+        .multipleChoiceButtonsBox {
+            position: absolute;
+            left: 38%;
+            top: 91%;
            
         }
-       */
+       
          
         .text-joules{
             z-index: 20;
@@ -55,6 +55,25 @@ export class Passwortsicherheit extends LitElement{
             height: 80%;
             margin: 0 auto;
         }
+
+        .starten-button{
+            position: absolute;
+            left: 45%;
+
+        }
+
+        #weiter-button{
+            position: absolute;
+            left: 45%;
+
+        }
+
+      /*  #passwortÜberprüfen-button{
+            position: absolute;
+            top:20;
+            left: 50;
+        }
+        */
 
         .aufgabenstellung{
             z-index: 20;
@@ -67,9 +86,39 @@ export class Passwortsicherheit extends LitElement{
 
         
 
-        .passworteingabefeld{}
+        .passworteingabe-container {
+            margin: 10px 0 0 10px;
+            width:100%;
+            float: left;
+            position: absolute;
+            left: 40%;
+            top:30%;
+        }
 
-        .fehlermeldung{}
+        #passwort-input {
+            float: both;
+            text-align: middle;
+            width: 20%;
+            padding-bottom: 30px;
+        }
+
+        #fehlermeldung-container {
+            float: both;
+            width: 20%;
+            background-color: whitesmoke;
+            border: black;
+            border-radius: 5px;
+            box-shadow: 0 5px #99999911;
+            word-wrap: break-word;
+            
+        }
+
+        #passwortÜberprüfen-button {
+            float: both;
+            margin-left: 0px;
+            margin-top: 0px;
+            padding-top: 30px;
+        }
 
 
         @media only screen and (min-width: 540px) {
@@ -99,7 +148,13 @@ export class Passwortsicherheit extends LitElement{
     `
     
     _handleClick(e:Event):void{
-        console.log((e.target as HTMLDivElement).textContent)
+        if((e.target as HTMLDivElement).textContent==="Beenden"){
+            console.log("spiel wurde beendet!");
+            return;
+
+        }
+            
+
         /*wenn im spielmodus mit multiple choice lösung überprüfen*/
        spielLogikMultipleChoice: if(!this.modi2&&this.start){
             if((e.target as HTMLDivElement).textContent==="weiterNachErklärung"){
@@ -116,11 +171,7 @@ export class Passwortsicherheit extends LitElement{
             this.erklärung=true;
         }else if(this.start){
             if((e.target as HTMLDivElement).textContent==="Passwort überprüfen!"){
-                this._bearbeitePasswortEingabe()
-                if(this.richtig)
-                console.log("JA");
-                    /*rufe neue seite auf*/
-                else
+                this._bearbeitePasswortEingabe();
                 return;
 
                 
@@ -138,15 +189,10 @@ export class Passwortsicherheit extends LitElement{
         
         
         /*wenn aufgabe falsch oder richtig gemacht wurde erklärung durchgehen und Eklärungsposition hochzählen, ansonsten normale position weitermachen*/
-        if(this.erklärung){
-            console.log("Position Erklärung: "+this.positionErklaerung);
-            /*positionerklärung wird woanders hochgezählt*/
-        }else{
+        if(!this.erklärung){
             this.position++;
-            console.log("Position: "+this.position);
             if(this.positionErklaerung>0){
                 this.positionErklaerung=0;
-                console.log("Position Erklärung auf 0 gesetzt!");
             }
                 
         }
@@ -161,14 +207,13 @@ export class Passwortsicherheit extends LitElement{
 
       _bearbeitePasswortEingabe(){
                       /*Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character*/
-        let pattern=  "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$";
+        let pattern=  "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-.,]).{8,}$";
 
         this.passwort=this._input.value;
         this._input.value = '';
         this._submitEnabled = false;
-        console.log(this.richtig);
         if(!this.passwort.match(pattern))
-            this.fehlerMeldungPasswort="Das Passwort: "+this.passwort+" ist zu unsicher.";
+            this.fehlerMeldungPasswort='Das Passwort: \n'+this.passwort+' ist zu unsicher.';
         else 
             this.erklärung=true;
 
@@ -202,12 +247,12 @@ export class Passwortsicherheit extends LitElement{
 
         if(this.buttonText!=''){
             displayPosition=html`
-            <img class="text-joules" position: "absolute" width="2000" height="700" srcset=${this.inhalt}  alt=${this.alt}/>
-            <div><button-component  id="starten-button" textButton=${this.buttonText} @click="${this._handleClick}">${this.buttonText}</button-component></div>
+            <img class="text-joules" srcset=${this.inhalt}  alt=${this.alt}/>
+            <div><button-component  class="starten-button" textButton=${this.buttonText} @click="${this._handleClick}">${this.buttonText}</button-component></div>
             `
         }else{
             displayPosition = html `
-            <img class="text-joules" position: "absolute" width="2000" height="700" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>
+            <img class="text-joules" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>
             `
         }
 
@@ -218,13 +263,12 @@ export class Passwortsicherheit extends LitElement{
             if(!this.modi2){
                 if(!this.erklärung){
                     /* ausgabe aufgabenstellung*/
-                    console.log("ausgabe aufgabe an Position: "+this.position)
                     this.inhalt=passwortsicherheit.aufgabe1[this.position].frage;
                     this.lösung=passwortsicherheit.aufgabe1[this.position].lösung;
                     this.alt=passwortsicherheit.aufgabe1[this.position].text;
 
                     displayPosition = html`
-                        <img class="text-joules" position: "absolute" width="2000" height="700" srcset=${this.inhalt}  alt=${this.alt}/>
+                        <img class="text-joules" srcset=${this.inhalt} alt=${this.alt}/>
             
                         <div class="multipleChoiceButtonsBox">
                             <button-component textButton='A' @click="${this._handleClick}">A</button-component>
@@ -248,7 +292,7 @@ export class Passwortsicherheit extends LitElement{
                 this.positionErklaerung++;
                 displayPosition = html`
                         <img class="aufgabenstellung" srcset=${this.inhalt} />
-                        <button-component type="submit" id="weiter" textButton='weiter' @click="${this._handleClick}">weiterNachErklärung</button-component>
+                        <button-component id="weiter-button" textButton='weiter' @click="${this._handleClick}">weiterNachErklärung</button-component>
                 `
                 
                 /*ab jetzt nur noch modi2 verwenden*/
@@ -269,20 +313,35 @@ export class Passwortsicherheit extends LitElement{
 
                 /*ausgabe Aufgabenstellung*/
                 if(!this.erklärung){
-                    console.log("Modi 2 aufgabenstellung wird geladen")
                     displayPosition = html`
-                            <label>Gib hier ein Passwort an: 
-                                <input id="passwort-input" @input=${this._inputChanged}/>
-                            </label>
+                    <div class="passworteingabe-container">
+                        <tr>
+                                <th><label>Gib hier ein Passwort an: 
+                                <div id="passwort-input"><input @input=${this._inputChanged}/></div>
+                            </label></th>
+                        </tr>
+                        <tr>
                             <div id="fehlermeldung-container">${this.fehlerMeldungPasswort}</div>
-                            <button-component id="passwort-button" textButton="Passwort überprüfen!" @click=${this._handleClick} .disabled=${!this._submitEnabled}>Passwort überprüfen!</button-component>
-                       
-                    `
+                        </tr>
+                        <tr>
+                            <div id="passwortÜberprüfen-button"><button-component  textButton="Passwort überprüfen!" @click=${this._handleClick} .disabled=${!this._submitEnabled}>Passwort überprüfen!</button-component></div>
+                            </div>
+                        </tr>
+                    </div>
+               
+                    ` /*<div>
+                    <img src="../../../res/einleitung/01-roboter.svg"/>
+                </div>*/
 
                 }else{/*ausgabe Lösung*/
-                console.log("Modi 2 lösung wird geladen")
+                this.inhalt=passwortsicherheit.endeAufgabeZwei[0].inhalt;
+                this.buttonText=passwortsicherheit.endeAufgabeZwei[0].buttonText;
+                this.alt=passwortsicherheit.endeAufgabeZwei[0].text;
+                
+               
                 displayPosition = html`
-                    <h1>erklärung und ende kapitel</h1>
+                        <img class="text-joules" srcset=${this.inhalt} alt=${this.alt}/>
+                        <button-component class="starten-button" textButton=${this.buttonText} @click=${this._handleClick}>${this.buttonText}</button-component>
                 `
                 }
 

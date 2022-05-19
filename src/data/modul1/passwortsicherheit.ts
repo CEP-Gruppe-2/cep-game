@@ -59,7 +59,7 @@ export const passwortsicherheit={
             ],
             falsch:[
                {
-                   text:'res/modul1/passwortsicherheit/fragezweifalschFirst.svg' 
+                text:'res/modul1/passwortsicherheit/fragezweifalschFirst.svg' 
                }
             ]
         },
@@ -98,6 +98,13 @@ export const passwortsicherheit={
             inhalt:'res/modul1/passwortsicherheit/einfuehrungAufgabeZweiThird.svg',
             text:'',
             buttonText:"Starten"
+        }
+    ],
+    endeAufgabeZwei: [
+        {
+            inhalt:'res/modul1/passwortsicherheit/endeAufgabeZweiFirst.svg',
+            text:'Super! Du hast das erste Spiel “Passwortsicherheit” abgeschlossen. Hierfür erhälst du von mir... Punkte. Schaue mal nach, ob du schon genug Punkte hast, um E-City wieder mit Energie zu versorgen.',
+            buttonText:`Beenden`
         }
     ]
 

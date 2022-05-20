@@ -66,6 +66,7 @@ export class MyElement extends LitElement {
   `
   pageStack: Page[] = []
   
+  // eslint-disable-next-line no-unused-vars
   protected firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
       const p = {dir: "", element: new MainPage()};
       this.pageStack.push(p);

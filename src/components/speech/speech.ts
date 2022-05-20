@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 @customElement('speech-component')
 export class Speech extends LitElement {

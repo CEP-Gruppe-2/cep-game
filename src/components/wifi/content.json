@@ -1,0 +1,34 @@
+{
+    "networks": [{
+            "name": "McMonalds Wifi",
+            "security": 0,
+            "channel": 7,
+            "dubious": true
+        },
+        {
+            "name": "IT Personell",
+            "security": 3,
+            "channel": 11,
+            "dubious": false
+        },
+        {
+            "name": "Printer Network",
+            "security": 1,
+            "channel": 5,
+            "dubious": true
+        },
+        {
+            "name": "IT Personell 2",
+            "security": 3,
+            "channel": 14,
+            "dubious": true
+        },
+        {
+            "name": "Office",
+            "security": 2,
+            "channel": 1,
+            "dubious": false
+        }
+    ]
+
+}

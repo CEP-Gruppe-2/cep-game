@@ -39,11 +39,16 @@ const deleteCookieWithPath = (cookieName : String) => {
     Cookies.remove(cookieName, { path: '' });
 }
 
+const changeCookie = (cookie : Object) => {
+    Cookies.set(cookie.name, cookie.value, { expires: 7, path: '' })
+}
+
 export {
     cookieExist,
     setCookieIfNotExist,
     deleteCookieWithoutPath,
     deleteCookieWithPath,
     getCookie,
+    changeCookie
 }
 

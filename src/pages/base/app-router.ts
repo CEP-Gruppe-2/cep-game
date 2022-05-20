@@ -66,6 +66,14 @@ export class AppRouter extends CtLit {
 			auth: false,
 			title: () => `Page 1 • Example.com`
 
+		},
+		{
+			path: '/belohnung',
+			element: html`<app-belohnung></app-belohnung>`,
+			from: () => import('../belohnung/app-belohnung'),
+			auth: false,
+			title: () => `Belohnungssystem`
+
 		}
 	];
 

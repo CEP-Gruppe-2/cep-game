@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property} from "lit/decorators.js";
-import {sicherheitsvorfaelle } from "../../data/modul1/sicherheitsvorfaelle";
+import {sicherheitsvorfaelle } from "../../data/modul1/sicherheitsvorfaelle.data";
 import "../../component/button";
 
 

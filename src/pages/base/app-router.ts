@@ -61,8 +61,7 @@ export class AppRouter extends CtLit {
 	];
 
 	render() {
-		return html`<ct-router id="ctroute" loginFallback="/login" loginFallback="/404" .pages=${AppRouter.pages}> </ct-router>`;
-		
+		return html`<ct-router id="ctrouter" loginFallback="/login" loginFallback="/404" .pages=${AppRouter.pages}> </ct-router>`;
 	}
 
 	printCurrentState(){

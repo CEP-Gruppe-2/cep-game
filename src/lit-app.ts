@@ -2,8 +2,9 @@ import './pages/base/app-router';
 import { css, customElement, html, LitElement } from '@conectate/ct-lit';
 import { property } from 'lit/decorators.js';
 import "./component/popup";
-import { CtRouter } from '@conectate/ct-router';
+import { CtRouter, LocationChanged } from '@conectate/ct-router';
 import { AppRouter } from './pages/base/app-router';
+import { cookieExist, getCookie, setCookieIfNotExist } from './functions/cookies';
 
 @customElement('lit-app')
 export class LitApp extends  LitElement {
@@ -104,7 +105,23 @@ export class LitApp extends  LitElement {
 
 	@property({type: Object}) menuNav = this.shadowRoot?.getElementById("mobile-nav");
 
-	firstUpdated() {}
+	@property({type: Object}) ctrouter = this.shadowRoot?.getElementById("ctroute");
+
+	firstUpdated() {
+		console.log("router: ", this.ctrouter);
+	}
+
+	private punkte() : Number{
+		console.log("win: ", );
+		
+		if(!setCookieIfNotExist(true, {name: "points", value: "0"})){
+			return parseInt(getCookie("points"));
+		}
+
+		return -1;
+	}
+
+
 	
 	show_Close_Menu(){
 		
@@ -137,15 +154,9 @@ export class LitApp extends  LitElement {
 		}
 	}
 
-	async handleMenuCloseClicked(){
-		
-		this.menuSelected = !this.menuSelected;
-	}
+	async handleMenuCloseClicked(){ this.menuSelected = !this.menuSelected; }
 
 	render() {
-		console.log('widnwo: ', document.location.search);
-		
-		
 		return html`
 
 			<popup-component ?componentvisible=${false}></popup-component>
@@ -181,6 +192,11 @@ export class LitApp extends  LitElement {
 
 				<a href="#profil" class="mobile-btn">
 					Profil
+				</a>
+
+				<a href="#profil" class="mobile-btn">
+					Energie ${this.punkte()}
+					<img class="mobile-img" src="res/icons/energie.svg"/>
 				</a>
 			</div>
 			<app-router></app-router>

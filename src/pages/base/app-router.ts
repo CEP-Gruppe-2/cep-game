@@ -1,6 +1,7 @@
 import { CtLit, html, customElement, css, query } from '@conectate/ct-lit';
 import { Page } from '@conectate/ct-router';
 import '@conectate/ct-router';
+import "../modul1/sicherheitsvorfaelle-page";
 
 @customElement('app-router')
 export class AppRouter extends CtLit {
@@ -48,6 +49,13 @@ export class AppRouter extends CtLit {
 			from: () => import('../modul1/passwortsicherheit-page'),
 			auth: false,
 			title: () => `Passwortsicherheit`
+		},
+		{
+			path: '/sicherheitsvorfaelle',
+			element: html`<sicherheitsvorfaelle-page></sicherheitsvorfaelle-page>`,
+			from: () => import('../modul1/sicherheitsvorfaelle-page'),
+			auth: false,
+			title: () => `Sicherheitsvorfälle`
 		}
 	];
 

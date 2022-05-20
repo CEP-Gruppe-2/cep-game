@@ -1,8 +1,9 @@
 import { CtLit, html, property, customElement, css } from '@conectate/ct-lit';
-import { CtRouter, getCtRouter } from '@conectate/ct-router';
 import { einleitung } from '../../../data/einleitung.data';
 import { setCookieIfNotExist } from '../../../functions/cookies';
 import { AppRouter } from '../../base/app-router';
+import  '../../../component/notification';
+import { redirectToWithParameter } from '../../../functions/redirect';
 
 
 @customElement('app-einleitung')
@@ -25,6 +26,9 @@ export class AppEinleitung extends CtLit {
         this.roboterArray = einleitung.roboterImages;
         this.positionArray = 0;
         this.schwachstellenArray = einleitung.schwachstellenBeheben;
+        console.log(einleitung.schwachstellenBeheben);
+        console.log(this.schwachstellenArray);
+        
         this.hackerArray = einleitung.hackerVerfolgen
     }
 
@@ -164,7 +168,8 @@ export class AppEinleitung extends CtLit {
     `;
 
     _displayEinleitung(){
-        console.log('router', this.$pages)
+        console.log(this.schwachstellenArray[this.positionArray]);
+        
 
         if(!this.roboterArray[this.positionArray].roboterVisible && this.roboterArray[this.positionArray].cityVisible){
             return html `
@@ -189,41 +194,64 @@ export class AppEinleitung extends CtLit {
                         <button class="last-btn" name="anlage" @click="${this._count}">Anlage reparieren</button>
                     </div>
             `
-        }else if(this.schwachstellen){
-            if(this.schwachstellenArray.length - 1 == this.positionArray){
+        }else if(this.schwachstellen || this.hacker){
+            
+            if(this.schwachstellenArray.length - 1 == this.positionArray || this.hackerArray.length - 1 == this.positionArray){
+                
                 if(setCookieIfNotExist(true, {name: 'einleitungClosed', value: true})){
 
-                    console.log(`   der Nutzer hat die Einleitung erfolgreich abgeschlossen. 
-                                    Wir können den Nutzer zum ersten Kapitel weiterleiten
-                                    wir können ihm Punkte addieren
-                                `);
+                    console.log(`der Nutzer hat die Einleitung erfolgreich abgeschlossen. Wir können den Nutzer zum ersten Kapitel weiterleiten wir können ihm Punkte addieren`);
+
+                    if(this.schwachstellen){
+                        return html `
+                            <notification-component notification="success" @notify=${(e : Event) => this.hello(e)}></notification-component>
+                            <img class="roboter-img" src="${this.schwachstellenArray[this.positionArray]}"/>
+                        `; 
+                    }else{
+                        return html `
+                            <notification-component notification="success" @notify=${(e : Event) => this.hello(e)}></notification-component>
+                            <img class="roboter-img" @click="${this._count}" src="${this.hackerArray[this.positionArray]}"/>
+                        `;
+                    }
                 }else{
 
-                    console.log(`   der Nutzer hat die Einleitung bereits abgeschlossen. 
-                                    Wir können den Nutzer zum ersten Kapitel weiterleiten
-                                    wir können ihm keine Punkte addieren
-                                `);
+                    console.log(`der Nutzer hat die Einleitung bereits abgeschlossen. Wir können den Nutzer zum ersten Kapitel weiterleiten wir können ihm keine Punkte addieren`);
+
+                    if(this.schwachstellen){
+                        return html `
+                            <notification-component notification="error" @notify=${(e : Event) => this.nextKapitel(e)}></notification-component>
+                            <img class="roboter-img" src="${this.schwachstellenArray[this.positionArray]}"/>
+                        `; 
+                    }else{
+                        return html `
+                            <notification-component notification="error" @notify=${(e : Event) => this.nextKapitel(e)}></notification-component>
+                            <img class="roboter-img" @click="${this._count}" src="${this.hackerArray[this.positionArray]}"/>
+                        `;
+                    }
+                }
+            }else{
+                if(this.schwachstellen){
+                    return html `
+                        <img class="roboter-img" @click="${this._count}" src="${this.schwachstellenArray[this.positionArray]}"/>
+                    `; 
+                }else{
+                    return html `
+                        <img class="roboter-img" @click="${this._count}" src="${this.hackerArray[this.positionArray]}"/>
+                    `;
                 }
             }
             
-            
-            return html `<img class="roboter-img" @click="${this._count}" src="${this.schwachstellenArray[this.positionArray]}"/>`;
-        }else if(this.hacker){
-            
-            return html `
-                <img class="roboter-img" @click="${this._count}" src="${this.hackerArray[this.positionArray]}"/>
-            `;
         }else{
             return html `<img class="roboter-img" @click="${this._count}" src="${this.roboterArray[this.positionArray].src}"/>`
         }
 
     }
 
+    
+
     async _count(e : Event){
 
         this.positionArray = this.positionArray + 1;
-
-        console.log(this.positionArray);
 
         if(e.target.name == 'hacker'){
             this.positionArray = 0;
@@ -233,11 +261,14 @@ export class AppEinleitung extends CtLit {
             this.positionArray = 0;
         }
 
-
-        console.log(`${this.hacker}, ${this.schwachstellen}`);
+        console.log(`${this.hacker}, ${this.schwachstellen}, ${this.positionArray}`);
         
         this.update();
     }
+
+    private async nextKapitel(e : Event){
+        redirectToWithParameter("/modul", "1", "mod" );
+   }
 
 
     render() {

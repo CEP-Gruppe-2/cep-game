@@ -61,7 +61,7 @@ export const einleitung = {
             roboterVisible: true
         }
     ],
-    hackerVerfolgen: ['res/einleitung/08-roboter.svg', 'res/einleitung/09-roboter.svg', 'res/einleitung/10-roboter.svg' ],
-    schwachstellenBeheben: ['res/einleitung/11-roboter.svg', 'res/einleitung/12-roboter.svg', 'res/einleitung/13-roboter.svg' ]
+    hackerVerfolgen: ['res/einleitung/08-roboter.svg', 'res/einleitung/09-roboter.svg', 'res/einleitung/10-roboter.svg'],
+    schwachstellenBeheben: ['res/einleitung/11-roboter.svg', 'res/einleitung/12-roboter.svg', 'res/einleitung/13-roboter.svg']
 
 }

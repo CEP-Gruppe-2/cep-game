@@ -7,3 +7,8 @@ export const redirectTo = (redirectUrl : String, connectionType : String) => {
     window.location.href = "" + redirectUrl;
    
 }
+
+export const redirectToWithParameter = (redirectUrl : String, urlParameters : String, urlParameter : String) => {
+
+    window.location.href = "" + redirectUrl + "?" + urlParameter + "=" + urlParameters;
+}

@@ -6,6 +6,8 @@ import "../modul1/sicherheitsvorfaelle-page";
 @customElement('app-router')
 export class AppRouter extends CtLit {
 
+	@query('#ctrouter') $ctrouter!: HTMLElementTagNameMap['ct-router'];
+
 	static styles = [
 		css`
 			:host {
@@ -56,11 +58,57 @@ export class AppRouter extends CtLit {
 			from: () => import('../modul1/sicherheitsvorfaelle-page'),
 			auth: false,
 			title: () => `Sicherheitsvorfälle`
+		},
+		{
+			path: '/modul/:mod',
+			element: html`<home-app></home-app>`,
+			from: () => import('../home/activities/home-app'),
+			auth: false,
+			title: () => `Page 1 • Example.com`
+
 		}
 	];
 
 	render() {
-		return html` <ct-router id="ctroute" loginFallback="/login" loginFallback="/404" .pages=${AppRouter.pages}> </ct-router>`;
+		return html`<ct-router id="ctroute" loginFallback="/login" loginFallback="/404" .pages=${AppRouter.pages}> </ct-router>`;
 		
 	}
+
+	printCurrentState(){
+		// More details in interface LocationChanged
+		console.log('Current patternMatched',this.$ctrouter.path);
+		console.log('Current pathname',this.$ctrouter.pathname);
+		console.log('Current queryParams',this.$ctrouter.queryParams);
+		console.log('Current params',this.$ctrouter.params);
+		console.log('is Logged?',this.$ctrouter.auth);
+	  }
+	
+	  loginNeeded(e : CustomEvent< { path: string } >){
+		let path = e.detail.path;
+		alert(`loginNeeded on: ${path}`);
+	  }
+	
+	  isLoading(e : CustomEvent< boolean >){
+		console.log('loading...', e.detail);
+	  }
+	
+	  pathChanged(e : CustomEvent<LocationChanged>){
+		console.log('path changed',location.href);
+		console.log('patternMatched',this.$ctrouter.path,'==',e.detail.path);
+		console.log('pathname',this.$ctrouter.pathname,'==',e.detail.pathname,'==',location.pathname);
+		console.log(this.$ctrouter.queryParams,'==',e.detail.queryParams);
+		console.log(this.$ctrouter.params,'==',e.detail.params);
+	  }
+	
 }
+
+interface LocationChanged {
+	//patternMatched like a: /:profile/preferences
+	path: string,
+	// pathname like a: /herberthobregon/preferences
+	pathname: string,
+	// if path is /home?hello=word then queryParams is { hello : "world" }
+	queryParams?: { [x:string] : string },
+	// if href is /herberth/preference and path is /:username/preference then params is { username : "herberth" }
+	params?: { [x:string] : string }
+  }

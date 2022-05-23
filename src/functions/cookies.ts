@@ -1,12 +1,16 @@
 import Cookies from 'js-cookie'
 
+const getCookie = (cookieName: String) => {
+    return Cookies.get(cookieName);
+}
+
 const cookieExist = (cookieName : String) => {
     return Cookies.get(cookieName) == undefined ? false : true;
 }
 
 const setCookieIfNotExist = (setCookie : Boolean, cookieData : Object) => {
     let cookieExist = Cookies.get(cookieData.name) == undefined ? false : true;
-
+    
     if(!cookieExist && setCookie){
         Cookies.set(cookieData.name, cookieData.value, { expires: 7, path: '' })
         return true;
@@ -35,10 +39,16 @@ const deleteCookieWithPath = (cookieName : String) => {
     Cookies.remove(cookieName, { path: '' });
 }
 
+const changeCookie = (cookie : Object) => {
+    Cookies.set(cookie.name, cookie.value, { expires: 7, path: '' })
+}
+
 export {
     cookieExist,
     setCookieIfNotExist,
     deleteCookieWithoutPath,
-    deleteCookieWithPath
+    deleteCookieWithPath,
+    getCookie,
+    changeCookie
 }
 

@@ -1,6 +1,6 @@
 import { CtLit, html, property, customElement, css } from '@conectate/ct-lit';
 import { einleitung } from '../../../data/einleitung.data';
-import { setCookieIfNotExist } from '../../../functions/cookies';
+import { changeCookie, cookieExist, getCookie, setCookieIfNotExist } from '../../../functions/cookies';
 import { AppRouter } from '../../base/app-router';
 import  '../../../component/notification';
 import { redirectToWithParameter } from '../../../functions/redirect';
@@ -202,7 +202,18 @@ export class AppEinleitung extends CtLit {
 
                     console.log(`der Nutzer hat die Einleitung erfolgreich abgeschlossen. Wir können den Nutzer zum ersten Kapitel weiterleiten wir können ihm Punkte addieren`);
 
+                    if(cookieExist('points')){
+                        console.log(1236);
+                        
+                        if(getCookie("points")  == "-1" || parseInt(getCookie("points")) == -1){
+                            changeCookie({name: "points", value: "101"})
+                        }else{
+                            changeCookie({name: "points", value: "100"})
+                        }
+                    }
+
                     if(this.schwachstellen){
+                        
                         return html `
                             <notification-component notification="success" @notify=${(e : Event) => this.hello(e)}></notification-component>
                             <img class="roboter-img" src="${this.schwachstellenArray[this.positionArray]}"/>
@@ -219,6 +230,7 @@ export class AppEinleitung extends CtLit {
 
                     if(this.schwachstellen){
                         return html `
+
                             <notification-component notification="error" @notify=${(e : Event) => this.nextKapitel(e)}></notification-component>
                             <img class="roboter-img" src="${this.schwachstellenArray[this.positionArray]}"/>
                         `; 

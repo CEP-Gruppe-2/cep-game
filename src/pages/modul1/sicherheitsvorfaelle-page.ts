@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property} from "lit/decorators.js";
-import {sicherheitsvorfaelle } from "../../data/modul1/sicherheitsvorfaelle";
+import {sicherheitsvorfaelle } from "../../data/modul1/sicherheitsvorfaelle.data";
 import "../../component/button";
 
 
@@ -20,7 +20,7 @@ export class Sicherheitsvorfaelle extends LitElement{
     }   
 
     .svg{
-        z-index: 20;
+            z-index: 20;
             position: relative;
             display: block;
             width: 70%;
@@ -28,11 +28,28 @@ export class Sicherheitsvorfaelle extends LitElement{
             margin: 0 auto;
         }
 
-    #ein-button{}
+        .buttons{
+            margin-left: 40px;
+            margin-top: 20px;
+        }
 
-    #zwei-buttons{}
+    #ein-button{
+        text-align: center;
+    }
 
-    #vier-buttons{}
+    #zwei-buttons{ 
+            text-align: center;
+            z-index: 20;
+            position: relative;
+            display: block;
+            width: 70%;
+            height: 80%;
+            margin: 0 auto;
+        }
+
+    #vier-buttons{
+        text-align: center;
+    }
 
     `
 
@@ -91,20 +108,20 @@ export class Sicherheitsvorfaelle extends LitElement{
     private schreibeButtons(): any{
         if(this.buttons.length==1)
             return html`<div id="ein-button">
-                <button-component textButton=${this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
+                <button-component class="buttons" textButton=${""+this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
             </div>`
         else if(this.buttons.length==2){
             return html`<div id="zwei-buttons">
-                <button-component textButton=${this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
-                <button-component textButton=${this.buttons[1]} @click=${this._handleClickButton} >${this.buttons[1]}</button-component>
+                <button-component class="buttons" textButton=${""+this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
+                <button-component class="buttons"  textButton=${""+this.buttons[1]} @click=${this._handleClickButton} >${this.buttons[1]}</button-component>
             </div>`
         }
         else if(this.buttons.length==4){
             return html`<div id="vier-buttons">
-                <button-component textButton=${this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
-                <button-component textButton=${this.buttons[1]} @click=${this._handleClickButton} >${this.buttons[1]}</button-component>
-                <button-component textButton=${this.buttons[2]} @click=${this._handleClickButton} >${this.buttons[2]}</button-component>
-                <button-component textButton=${this.buttons[3]} @click=${this._handleClickButton} >${this.buttons[3]}</button-component>
+                <button-component class="buttons" textButton=${""+this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
+                <button-component class="buttons" textButton=${""+this.buttons[1]} @click=${this._handleClickButton} >${this.buttons[1]}</button-component>
+                <button-component class="buttons" textButton=${""+this.buttons[2]} @click=${this._handleClickButton} >${this.buttons[2]}</button-component>
+                <button-component class="buttons" textButton=${""+this.buttons[3]} @click=${this._handleClickButton} >${this.buttons[3]}</button-component>
             </div>`
         }
         else 

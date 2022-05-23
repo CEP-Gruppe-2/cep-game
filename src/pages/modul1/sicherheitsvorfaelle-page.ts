@@ -51,6 +51,7 @@ export class Sicherheitsvorfaelle extends LitElement{
         text-align: center;
     }
 
+
     `
 
 
@@ -75,6 +76,7 @@ export class Sicherheitsvorfaelle extends LitElement{
     _handleClickButton(e:Event):void{
         this.buttons.length=0;
         this.position++;
+        this.requestUpdate;
     }
 
     /*lädt pfad zu bild aus JSON*/

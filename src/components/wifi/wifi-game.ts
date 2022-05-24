@@ -9,9 +9,10 @@ export class Wifi extends LitElement {
 
   static styles = css`
     :host{
+      display: contents;
     }
 
-    .devices {
+    .device {
       width: 500px;
       border: solid black;
       border-radius: 20px;
@@ -24,17 +25,44 @@ export class Wifi extends LitElement {
       margin-right: 15px
     }
 
+    button {
+      margin-top: 20px;
+    }
   `
 
-
   render() {
-    const first = content.networks.shift()!;
-    return html`<div class="devices">
+    const first = content.networks[0];
+    return html`<div class="device">
       <wifi-network .name=${first.name} security=${first.security} .channel=${first.channel}></wifi-network>
       <div class="seperator"></div>
-      ${content.networks.map( n => html`<wifi-network .name=${n.name} security=${n.security} .channel=${n.channel} .connected=${false}></wifi-network>`)}
-    </div>`
+      ${content.networks.slice(1).map( n => html`<wifi-network .name=${n.name} security=${n.security} .channel=${n.channel} .connected=${false}></wifi-network>`)}
+    </div>
+    <button @click=${this.solve}>
+      Solve
+    </button>
+    `
   }
+
+  solve() {
+    const device = this.shadowRoot?.querySelector(".device")!;
+    const children = device.children
+    
+
+    let points = 0;
+    let skipped = 0;
+    for(let i = 0; i < children.length; i++) {
+      if(children.item(i)?.tagName != "WIFI-NETWORK") {
+        skipped++;
+        continue
+      }
+      if (content.networks[i-skipped].dubious == children.item(i)?.hasAttribute("checked")) {
+        points++;
+      }
+    }
+
+    alert("You got " + String(points) + " right!");
+  }
+
 }
 
 @customElement('wifi-network')
@@ -99,7 +127,11 @@ export class WifiNetwork extends LitElement {
           <h6> Ch. ${this.channel} </h6>
         </div>
       </div>
-      <input type="checkbox">
+      <input type="checkbox" @click=${this._click}>
     `
+  }
+
+  _click(): void {
+    this.toggleAttribute('checked')
   }
 }

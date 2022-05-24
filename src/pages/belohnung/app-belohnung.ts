@@ -5,7 +5,7 @@ import { belohnung } from '../../data/belohnung/belohnung.data';
 export class Belohnung extends CtLit {
     private spielername:String="";
     private punkte:number=0;
-    private quelle:any="";
+    private eindrücke:String[]=[];
     /*public aktuelleSeite:Pages=0;*/
     /*private spielerkennung*/
 
@@ -68,18 +68,26 @@ export class Belohnung extends CtLit {
         return belohnung.cityHell;
     }
 
+
+    private ladeEindrücke():void{
+        for(var i:number=0;i<belohnung.eindrücke.length;i++){
+            this.eindrücke[i]=""+belohnung.eindrücke[i].img;
+            console.log(this.eindrücke[i])
+        }
+    }
+
+
     /* gibt eindrücke als HTML zurück*/
     private getEindrücke():any{
         /* for eindrücke des spielers
             this.eindrücke=this.eindrücke+ <div> <img src.../> </div>
         */
-        let eindrücke=""
-            for(var i:number=0;i<belohnung.eindrücke.length;i++){
-                this.quelle=belohnung.eindrücke[i];
-                eindrücke=eindrücke+ `<div class="eindrücke-img"> <img srcset="res/belohnung/belohnung${i}.jpg" alt="Image"/></div>`
+        let display=html`<div class='eindrücke-img' ><img srcset='${this.eindrücke[0]}' alt='Image'/></div>`
+            for(var i:number=0;i<this.eindrücke.length;i++){
+                display+=`<div class='eindrücke-img' ><img srcset='${this.eindrücke[i]}' alt='Image'/></div>`;
             }
-            console.log("hier"+eindrücke)
-            return html`${eindrücke}`
+            console.log(display)
+            return display
     }
 
     /* gibt Page 1 als HTML zurück*/
@@ -109,9 +117,6 @@ export class Belohnung extends CtLit {
                     <h1>Eindrücke aus E-City</h1>
                     <div>
                         <h4>füge hier bilder von e City ein</h4>
-                        ${this.getEindrücke()}
-                    </div>
-                </div>
                 `
     }
     
@@ -121,19 +126,26 @@ export class Belohnung extends CtLit {
 
 
     render() {
-        let display;
+        
         if(this.spielername=="")
             this.ladeSpieler();
 
-        display=this.ladePage();
-            
-        
+        this.ladeEindrücke();
+        let page=this.ladePage();
+        let eindrücke=this.getEindrücke();
+        console.log(page)
+        console.log(eindrücke)
            
 
 
 
         return html`
-            ${display}`;
+            ${page}
+            ${eindrücke}
+                    </div>
+                </div>
+            </div>`
+            
     }
 }
 

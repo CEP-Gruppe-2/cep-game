@@ -3,9 +3,8 @@ export const sicherheitsvorfaelle={
 ablauf: [
     {
         hintergrund:'res/modul1/sicherheitsvorfälle/01-sicherheitsvorfälle.svg',
-        richtigeAntwort:"",
-       /* text1:"",
-        text2:"",*/
+        richtigerButton:"",
+        text:"",
       buttons:  [
           {
             buttonText:""
@@ -20,13 +19,14 @@ ablauf: [
             buttonText:""
           }
             
-        ]
+        ],
+        richtig: [],
+        falsch:[]
     },
     {
         hintergrund:'res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg',
-        richtigeAntwort:"",
-       /* text1:"",
-        text2:"",*/
+        richtigerButton:"",
+        text:"",
       buttons:  [
           {
             buttonText:""
@@ -41,12 +41,13 @@ ablauf: [
             buttonText:""
           }
             
-        ]
+        ],
+        richtig: [],
+        falsch:[]
     },{
         hintergrund:'res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg',
-        richtigeAntwort:"",
-       /* text1:"",
-        text2:"",*/
+        richtigerButton:"",
+        text:"",
       buttons:  [
           {
             buttonText:"Antworten: “Nein.” und weiterarbeiten."
@@ -61,12 +62,13 @@ ablauf: [
             buttonText:""
           }
             
-        ]
+        ],
+        richtig: [],
+        falsch:[]
     },{
         hintergrund:'res/modul1/sicherheitsvorfälle/04-sicherheitsvorfälle.svg',
-        richtigeAntwort:"",
-       /* text1:"",
-        text2:"",*/
+        richtigerButton:"",
+        text:"",
       buttons:  [
           {
             buttonText:""
@@ -81,12 +83,13 @@ ablauf: [
             buttonText:""
           }
             
-        ]
+        ],
+        richtig: [],
+        falsch:[]
     },{
         hintergrund:'res/modul1/sicherheitsvorfälle/05-sicherheitsvorfälle.svg',
-        richtigeAntwort:"",
-       /* text1:"",
-        text2:"",*/
+        richtigerButton:"",
+        text:"",
       buttons:  [
           {
             buttonText:""
@@ -101,13 +104,14 @@ ablauf: [
             buttonText:""
           }
             
-        ]
+        ],
+        richtig: [],
+        falsch:[]
     },
     {
-      hintergrund:'res/modul1/sicherheitsvorfälle/06-sicherheitsvorfälle.svg',
-      richtigeAntwort:"",
-     /* text1:"",
-      text2:"",*/
+      hintergrund:'res/modul1/sicherheitsvorfälle/07-sicherheitsvorfälle.svg',
+      richtigerButton:"",
+      text:"",
     buttons:  [
         {
           buttonText:""
@@ -122,8 +126,230 @@ ablauf: [
           buttonText:""
         }
           
-      ]
-  }
+      ],
+      richtig: [],
+      falsch:[]
+  },
+  {
+    hintergrund:'res/modul1/sicherheitsvorfälle/08-sicherheitsvorfälle.svg',
+    richtigerButton:"",
+    text:"",
+  buttons:  [
+      {
+        buttonText:""
+      },
+      {
+        buttonText:""
+      },
+      {
+        buttonText:""
+      },
+      {
+        buttonText:""
+      }
+        
+    ],
+    richtig: [],
+    falsch:[]
+},
+{
+  hintergrund:'res/modul1/sicherheitsvorfälle/09-sicherheitsvorfälle.svg',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+},
+{
+  hintergrund:'res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälle.svg',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+},
+{
+  hintergrund:'res/modul1/sicherheitsvorfälle/11-sicherheitsvorfälle.svg',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+},
+{
+  hintergrund:'res/modul1/sicherheitsvorfälle/12-sicherheitsvorfälle.svg',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+},
+{
+  hintergrund:'res/modul1/sicherheitsvorfälle/13-sicherheitsvorfälle.svg',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+},
+{
+  hintergrund:'res/modul1/sicherheitsvorfälle/14-sicherheitsvorfälle.svg',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+},
+{
+  hintergrund:'',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+},
+{
+  hintergrund:'',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+},
+{
+  hintergrund:'',
+  richtigerButton:"",
+  text:"",
+buttons:  [
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    },
+    {
+      buttonText:""
+    }
+      
+  ],
+  richtig: [],
+  falsch:[]
+}
     
 
 

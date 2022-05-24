@@ -147,9 +147,7 @@ export class Passwortsicherheit extends LitElement{
           
     `
 
-    private getButtonText():String{
-        return this.buttonText;
-    }
+   
     
     _handleClick(e:Event):void{
         if((e.target as HTMLDivElement).textContent==="Beenden"){
@@ -252,7 +250,7 @@ export class Passwortsicherheit extends LitElement{
         if(this.buttonText!=''){
             displayPosition=html`
             <img class="text-joules" srcset=${this.inhalt}  alt=${this.alt}/>
-            <div><button-component  class="starten-button" textButton=${this.getButtonText} @click="${this._handleClick}">${this.buttonText}</button-component></div>
+            <div><button-component  class="starten-button" textButton=${this.buttonText} @click="${this._handleClick}">${this.buttonText}</button-component></div>
             `
         }else{
             displayPosition = html `
@@ -345,7 +343,7 @@ export class Passwortsicherheit extends LitElement{
                
                 displayPosition = html`
                         <img class="text-joules" srcset=${this.inhalt} alt=${this.alt}/>
-                        <button-component class="starten-button" textButton=${this.getButtonText} @click=${this._handleClick}>${this.buttonText}</button-component>
+                        <button-component class="starten-button" textButton=${this.buttonText} @click=${this._handleClick}>${this.buttonText}</button-component>
                 `
                 }
 

@@ -32,13 +32,6 @@ export class AppRouter extends CtLit {
 			title: () => `404 • Example.com`
 		},
 		{
-			path: '/login',
-			element: html`<app-login></app-login>`,
-			from: () => import('../login/activities/app-login'),
-			auth: false,
-			title: () => `Login • Example.com`
-		},
-		{
 			path: '/einleitung',
 			element: html`<app-einleitung></app-einleitung>`,
 			from: () => import('../einleitung/activities/einleitung-app'),
@@ -78,7 +71,7 @@ export class AppRouter extends CtLit {
 	];
 
 	render() {
-		return html`<ct-router id="ctrouter" loginFallback="/login" loginFallback="/404" .pages=${AppRouter.pages}> </ct-router>`;
+		return html`<ct-router id="ctrouter"  .pages=${AppRouter.pages}> </ct-router>`;
 	}
 
 	printCurrentState(){

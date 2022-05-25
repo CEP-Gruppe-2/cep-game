@@ -72,43 +72,6 @@ export class AppRouter extends CtLit {
 
 	render() {
 		return html`<ct-router id="ctrouter"  .pages=${AppRouter.pages}> </ct-router>`;
-	}
-
-	printCurrentState(){
-		// More details in interface LocationChanged
-		console.log('Current patternMatched',this.$ctrouter.path);
-		console.log('Current pathname',this.$ctrouter.pathname);
-		console.log('Current queryParams',this.$ctrouter.queryParams);
-		console.log('Current params',this.$ctrouter.params);
-		console.log('is Logged?',this.$ctrouter.auth);
-	  }
-	
-	  loginNeeded(e : CustomEvent< { path: string } >){
-		let path = e.detail.path;
-		alert(`loginNeeded on: ${path}`);
-	  }
-	
-	  isLoading(e : CustomEvent< boolean >){
-		console.log('loading...', e.detail);
-	  }
-	
-	  pathChanged(e : CustomEvent<LocationChanged>){
-		console.log('path changed',location.href);
-		console.log('patternMatched',this.$ctrouter.path,'==',e.detail.path);
-		console.log('pathname',this.$ctrouter.pathname,'==',e.detail.pathname,'==',location.pathname);
-		console.log(this.$ctrouter.queryParams,'==',e.detail.queryParams);
-		console.log(this.$ctrouter.params,'==',e.detail.params);
-	  }
-	
+	}	
 }
 
-interface LocationChanged {
-	//patternMatched like a: /:profile/preferences
-	path: string,
-	// pathname like a: /herberthobregon/preferences
-	pathname: string,
-	// if path is /home?hello=word then queryParams is { hello : "world" }
-	queryParams?: { [x:string] : string },
-	// if href is /herberth/preference and path is /:username/preference then params is { username : "herberth" }
-	params?: { [x:string] : string }
-  }

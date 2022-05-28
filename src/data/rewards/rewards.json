@@ -1,0 +1,10 @@
+{
+  "batterie":"res/rewards/batterie.svg",
+  "cityHell":"res/rewards/cityHell.svg",
+  "cityDunkel":"",
+
+  "eindrücke": [
+    {"img1":"res/rewards/belohnung1.jpg"},
+    {"img2":"res/rewards/belohnung1.jpg"}
+  ]
+}

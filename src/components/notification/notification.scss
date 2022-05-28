@@ -1,0 +1,70 @@
+:host{
+    display: block;
+    position: absolute;
+    padding: 0.5em;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    right: 0.5em;
+    top: 0.5em;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.notification-error, .notification-success{
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+}
+
+.notification-error{
+    background-color: #fbd3cc;
+    color: #fff;
+}
+
+.notification-success{
+    background-color: #d5f9dd;
+    color: #fff;
+}
+
+.notification-container{
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.notification-information{
+
+}
+
+.notification-text{
+    margin: 0 0 0 0.5em;
+    color: #848484;
+}
+
+.notification-information{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.notification-box{
+    margin: 0;
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.close-icon{
+    margin: 0 0 0 3em;
+    padding: 0.3em 0.5em;
+    border-radius: 0.3em;
+}
+
+.close-icon:hover{
+    background-color: #fff;
+}

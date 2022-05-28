@@ -1,0 +1,44 @@
+:host {
+    display: block;
+}
+
+#main-div {
+    display: grid;
+    grid-template-columns: 1fr 0fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "info-punkte info-history info-history"
+        "img-E-City img-E-City img-E-City"
+        "eindrücke eindrücke eindrücke";
+}
+
+#info-punkte { grid-area: info-punkte; }
+
+#info-history { grid-area: info-history; }
+
+#img-E-City { grid-area: img-E-City; }
+
+#eindrücke { grid-area: eindrücke; }
+
+#city {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#eintauschen-btn{
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#img-energie{
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

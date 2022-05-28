@@ -1,0 +1,23 @@
+:host {
+    display: block;
+}
+
+.flex-card{
+    display: flex;
+    overflow-x: auto;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {}
+
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {}
+
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1200px) {}

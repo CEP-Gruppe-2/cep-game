@@ -1,0 +1,1 @@
+export { ModulePopup } from './module-popup';

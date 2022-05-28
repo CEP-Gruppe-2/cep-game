@@ -16,8 +16,9 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": false,
+    "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "typings/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

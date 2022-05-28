@@ -1,0 +1,132 @@
+:host {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: #68C382;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle-icon{
+    display: block;
+    position: absolute;
+    z-index: 10;
+}
+
+.float-left-top{
+    left: -250px;
+    top: -250px;
+}
+
+.float-right-bottom{
+    bottom: -250px;
+    right: -250px;
+}
+
+
+.roboter-img, .city-img{
+    z-index: 20;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.city-img{
+    margin: 1em auto;
+}
+
+@media only screen and (min-width: 540px) {
+    .roboter-img{
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .roboter-img{
+        width: 570px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .roboter-img{
+        width: 670px;
+        height: 90%;
+    }
+}
+
+.city-container, .email-container{
+    z-index: 20;
+    display: block;
+    position: relative;
+    height: 50%;
+    top: 10%;
+}
+
+.email-container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.email-img{
+    z-index: 20;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .email-container{
+        width: 500px;
+    }
+}
+
+.cloud-img{
+    width: 40%;
+    display: block;
+    position: absolute;
+    z-index: 30;
+    top: -30px;
+}
+
+@media only screen and (min-width: 768px) {
+    .cloud-img{
+        width: 260px;
+    }
+}
+
+.cloud-right{
+    float: right;
+    right: 30px;
+    top: 20px;
+}
+
+.cloud-left{
+
+}
+
+.email-btn, .last-btn{
+    margin: 1em auto;
+    display: block;
+    background-color: #FFD037;
+    color: #fff;
+    width: 100px;
+    padding: 0.75em 1em;
+    border: none;
+    border-radius: 1em;
+}
+
+.last-btn{
+    display: inline-block;
+    width: auto;
+}
+
+.last-container{
+    display: block;
+    margin: auto;
+    white-space: nowrap;
+    text-align: center;
+}

@@ -1,117 +1,65 @@
-import { html, css, LitElement } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { unsafeCSS, html, LitElement } from 'lit';
+import {property} from 'lit/decorators.js';
+import styles from './module-card.scss?inline';
 
-@customElement('module-card')
+
 export class ModuleCard extends LitElement {
 
-    @property({type: String})
-    cardTitle = "";
+  static styles = unsafeCSS(styles);
 
-    @property({type: String})
-    cardDescription = "";
+  @property()
+    cardTitle = '';
 
-    @property({type: Number})
+  @property()
+    cardDescription = '';
+
+  @property({type: Number})
     cardPosition = 0;
 
-    @property({type: String})
-    cardColor = "";
+  @property()
+    cardColor = '';
 
-    @property({type: String})
-    cardLink = "";
+  @property()
+    cardLink = '';
 
-    @property({type: String})
-    cardImageName = "";
+  @property()
+    cardImageName = '';
 
-
-  static styles = css`
-    
-    :host{
-        padding: 24px;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        flex-direction: column;
-        width: 250px;
-        height: auto;
-        border-radius: 20px;
-        //margin: 0 16px;
+  private getChapter(e : Event) {
+    e.preventDefault();
+    if(this.cardTitle == 'Einleitung'){
+      this.dispatchEvent(new CustomEvent('einleitung-btn-clicked', {detail: this.cardLink}));
+    }else{
+      //let kapitel = this.cardTitle.replace(/[^a-zA-Z]/g, '');
+      let kapitelNumber = this.cardTitle.replace(/[^0-9]/g, '');
+      location.href = '/chapter/' + kapitelNumber;
     }
-   
-    .icon-size{
-        width: 36px;
-        height: 36px;
-        padding: 0;
-        margin: 0;
-    }
-
-    .card-text-box{
-        text-align: left;
-        color: #000;
-        font-family: monospace;
-        padding: 0;
-        margin: 100px 0 0 0;
-    }
-
-    .card-header{
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .card-break-line{
-        height: 1px;
-        width: 100%;
-        background-color: #000;
-        border: none;
-    }
-
-    .card-number{
-        font-size: 12px;
-        font-family: fantasy;
-        
-    }
-
-    .card-description{
-        color: #585858;
-        font-size: 16px;
-    }
-
-    .card-arrow-btn{
-      cursor: pointer;
-    }
-  `
-
-  private _click(): void {
-    //this.dispatchEvent()
   }
 
   render() {
     return html`
-      <img src="/src/icons/${this.cardImageName}" class="icon-size"/>
-      <div class="card-text-box">
-        <span class="card-number">${this.cardPosition}</span>
-        <div class="card-header">
-          <h2 class="card-title">
-            ${this.cardTitle}
-          </h2>
-          <a class="card-arrow-btn" @click="${this._click}">
-            <img class="card-arrow" src="/src/icons/arrow.svg"/>  
-          </a>
+			<img src="${this.cardImageName}" class="card-icon" alt=""/>
+        <div class="card-text-box">
+          <!--<span class="card-number">${this.cardPosition}</span>-->
+          <div class="card-header">
+            <h2 class="card-title">
+              ${this.cardTitle}
+            </h2>
+            <a class="card-arrow-btn" @click="${(e : Event) => this.getChapter(e)}">
+              <img class="card-arrow" src="res/icons/icon-arrow.svg" alt=""/>  
+            </a>
+          </div>
+          <hr class="card-break-line"/>
+          <p class="card-description">${this.cardDescription}</p>
         </div>
-        <hr class="card-break-line"/>
-        <p class="card-description">${this.cardDescription}</p>
-      </div>
-    `
+		`;
   }
 }
 
-declare global {
-  // eslint-disable-next-line no-unused-vars
-  interface HTMLElementTagNameMap {
-    'module-card': ModuleCard
-  }
-}
+customElements.define('module-card', ModuleCard);
+
+// declare global {
+//   interface HTMLElementTagNameMap {
+//     'module-card': ModuleCard
+//   }
+// }

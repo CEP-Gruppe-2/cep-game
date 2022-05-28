@@ -1,0 +1,67 @@
+{
+    "roboterName": "Joules",
+    "emailImage": "res/einleitung/01-email.svg",
+    "cityImage": "res/einleitung/01-stadt.svg",
+    "cloudImage": "res/einleitung/01-wolken.svg",
+    "roboterImages": [
+        {
+            "src": "res/einleitung/01-roboter.svg",
+            "left": false,
+            "right": true,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        },
+        {
+            "src": "res/einleitung/02-roboter.svg",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        },
+        {
+            "src": "res/einleitung/03-roboter.svg",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        },
+        {
+            "src": "res/einleitung/04-roboter.svg",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        },
+        {
+            "src": "",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": true,
+            "roboterVisible": false
+        },
+        {
+            "src": "",
+            "left": true,
+            "right": false,
+            "emailVisible": true,
+            "cityVisible": false,
+            "roboterVisible": false
+        },
+        {
+            "src": "res/einleitung/06-roboter.svg",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        }
+    ],
+    "hackerVerfolgen": ["res/einleitung/08-roboter.svg", "res/einleitung/09-roboter.svg", "res/einleitung/10-roboter.svg"],
+    "schwachstellenBeheben": ["res/einleitung/11-roboter.svg", "res/einleitung/12-roboter.svg", "res/einleitung/13-roboter.svg"]
+
+}

@@ -45,7 +45,6 @@ export class Rewards extends LitElement {
               <div id="info-history">
                   <h1> Hier steht die history</h1>
                   <div class="history-cards">
-
                       <!-- 
                         History Card zeigt alle Punkte, die man bis jetzt erhalten hat.
                         History Card soll durch map Funktion gerendert werden 

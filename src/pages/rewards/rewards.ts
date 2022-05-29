@@ -22,52 +22,56 @@ export class Rewards extends LitElement {
     return rewards.cityHell;
   }
 
-  /* gibt eindrücke als HTML zurück*/
-  private getEindrücke():any{
-    /* for eindrücke des spielers
-        this.eindrücke=this.eindrücke+ <div> <img src.../> </div>
-    */
-    let eindrücke='';
-    for(var i:number=0;i<rewards.eindrücke.length;i++){
-      this.quelle=rewards.eindrücke[i];
-      eindrücke=eindrücke+ `<div class="eindrücke-img"> <img srcset="res/belohnung/belohnung${i}.jpg" alt="Image"/></div>`;
-    }
-    console.log('hier'+eindrücke);
-    return html`${eindrücke}`;
-  }
-
   /* gibt Page 1 als HTML zurück*/
   private ladePage():any{
-    var batterie=rewards.batterie;
-    console.log(batterie);
     return html`
-      <div id="main-div">
-        <div id="info-Energie">
-          <div id="img-energie">
-            <img srcset=${batterie} alt="Batterie"/>
-          </div>
-          <div id=Punkte>
-            <h1>Gesamtanzahl deiner Punkte</h1>
-            <p>${this.punkte} Points / Kwh</p>
-          </div>
-          <div id="eintauschen-btn"> <my-button>Eintauschen</my-button>
-          </div>
-        </div>
-        <div id="info-history">
-            <h1> Hier steht die history</h1>
-        </div>
-      
-        <div id="img-E-City">
-            <img id="city" srcset="${this.getECity()}" alt="Bild von E-City"/>
-        </div>
-        <div id="eindrücke">
-            <h1>Eindrücke aus E-City</h1>
-            <div>
-                <h4>füge hier bilder von e City ein</h4>
-                ${this.getEindrücke()}
+          <div id="main-div">
+              <div id="info-Energie">
+
+                  <div id="img-energie">
+                      <img srcset=${rewards.batterie} alt="Batterie"/>
+                  </div>
+
+                  <div id=Punkte>
+                      <h1>Gesamtanzahl deiner Punkte</h1>
+                      <p>${this.punkte} Points / Kwh</p>
+                  </div>
+
+                  <div id="eintauschen-btn"> 
+                      <my-button>Eintauschen</my-button>
+                  </div>
+              </div>
+
+              <div id="info-history">
+                  <h1> Hier steht die history</h1>
+                  <div class="history-cards">
+
+                      <!-- 
+                        History Card zeigt alle Punkte, die man bis jetzt erhalten hat.
+                        History Card soll durch map Funktion gerendert werden 
+                      -->
+                      <div class="history-card">
+                          <h1>Willkommen</h1>
+
+                      </div>
+                  </div>
+              </div>
+          
+            <div id="img-E-City">
+                <img id="city" srcset="${this.getECity()}" alt="Bild von E-City"/>
             </div>
-      </div>
-    `;
+
+            <div id="eindrücke">
+                <h1>Eindrücke aus E-City</h1>
+                <div>
+                    <h4>füge hier bilder von e City ein</h4>
+                    ${rewards.eindrücke.map((img, index) => 
+                        html `<img class="img-win" src="${rewards.eindrücke[index]}"/>`
+                    )}
+                </div>
+            </div>
+        </div>
+      `;
   }
 
   render() {
@@ -83,9 +87,3 @@ export class Rewards extends LitElement {
 }
 
 customElements.define('rewards-page', Rewards);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'rewards-page': Rewards
-//   }
-// }

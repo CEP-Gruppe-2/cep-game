@@ -16,9 +16,3 @@ export class Button extends HTMLElement {
 }
 
 customElements.define('my-button', Button);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'my-button': Button
-//   }
-// }

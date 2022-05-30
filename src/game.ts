@@ -8,6 +8,8 @@ import './components/popup';
 import './pages/intro';
 import './pages/rewards';
 import './pages/wifi';
+import './pages/secure-password';
+import './pages/security-incidents';
 
 import { getCookie, setCookieIfNotExist } from './functions/cookies';
 
@@ -30,8 +32,8 @@ export class Game extends LitElement {
 
     {path: '/chapter/*', render: () => html`<chapter-router></chapter-router>`},
     {path: '/wifi', render: () => html`<wifi-game></wifi-game>`},
-    {path: '/secure-password', render: () => html`<rewards-page></rewards-page>`},
-    {path: '/security-incidents', render: () => html`<rewards-page></rewards-page>`},
+    {path: '/secure-password', render: () => html`<secure-password></secure-password>`},
+    {path: '/security-incidents', render: () => html`<security-incidents></security-incidents>`},
 
     {path: '/*', render: () => html`<h1>404 - Not found</h1>`},
   ]);

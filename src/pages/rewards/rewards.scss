@@ -2,21 +2,26 @@
     display: block;
 }
 
-#main-div {
+#main-div { 
     display: grid;
     grid-template-columns: 1fr 0fr 1fr;
     grid-template-rows: 1fr 0.5fr 0.5fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "info-punkte info-history info-history"
-        "img-E-City img-E-City img-E-City"
-        "eindrücke eindrücke eindrücke";
+    "info-punkte info-history info-history"
+    "img-E-City img-E-City img-E-City"
+    "eindrücke eindrücke eindrücke";
+    height: 500px;
+    max-height: 500px;
 }
 
 #info-punkte { grid-area: info-punkte; }
 
-#info-history { grid-area: info-history; }
+#info-history { 
+    grid-area: info-history; 
+    overflow-y: auto;
+}
 
 #img-E-City { grid-area: img-E-City; }
 
@@ -27,7 +32,7 @@
     height: auto;
     margin-top: 40px;
     margin-bottom: 40px;
-}
+    }
 
 #eintauschen-btn{
     width: 100%;
@@ -41,4 +46,26 @@
     height: auto;
     margin-top: 40px;
     margin-bottom: 40px;
+}
+
+
+.img-win{
+    width: 160px;
+    height: 160px;
+    display: inline-block;
+    padding: 0;
+    margin: 0.5em 0.5em;
+}
+
+.history-cards{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.history-cards .history-card {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0px;
 }

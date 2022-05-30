@@ -2,115 +2,115 @@
 
   "ablauf": [
     {
-      "hintergrund":'res/firstModule/sicherheitsvorfälle/01-sicherheitsvorfälle.svg',
-      "richtigeAntwort":'',
+      "hintergrund":"res/firstModule/sicherheitsvorfälle/01-sicherheitsvorfälle.svg",
+      "richtigeAntwort":"",
       "buttons":  [
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         }
             
       ]
     },
     {
-      "hintergrund":'res/firstModule/sicherheitsvorfälle/02-sicherheitsvorfälle.svg',
-      "richtigeAntwort":'',
+      "hintergrund":"res/firstModule/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
+      "richtigeAntwort":"",
       "buttons":  [
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         }
             
       ]
     },{
-      "hintergrund":'res/firstModule/sicherheitsvorfälle/02-sicherheitsvorfälle.svg',
-      "richtigeAntwort":'',
-      'buttons':  [
+      "hintergrund":"res/firstModule/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
+      "richtigeAntwort":"",
+      "buttons":  [
         {
-          "buttonText":'Antworten: “Nein.” und weiterarbeiten.'
+          "buttonText":"Antworten: “Nein.” und weiterarbeiten."
         },
         {
-          "buttonText":'Antworten: “Nein, und zum Glück war nichts Schädliches darauf!”.'
+          "buttonText":"Antworten: “Nein, und zum Glück war nichts Schädliches darauf!”."
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         }
             
       ]
     },{
-      "hintergrund":'res/firstModule/sicherheitsvorfälle/04-sicherheitsvorfälle.svg',
-      "richtigeAntwort":'',
+      "hintergrund":"res/firstModule/sicherheitsvorfälle/04-sicherheitsvorfälle.svg",
+      "richtigeAntwort":"",
 
-      'buttons':  [
+      "buttons":  [
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         }
             
       ]
     },{
-      "hintergrund":'res/firstModule/sicherheitsvorfälle/05-sicherheitsvorfälle.svg',
-      "richtigeAntwort":'',
+      "hintergrund":"res/firstModule/sicherheitsvorfälle/05-sicherheitsvorfälle.svg",
+      "richtigeAntwort":"",
 
-      'buttons':  [
+      "buttons":  [
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         },
         {
-          "buttonText":''
+          "buttonText":""
         }
             
       ]
     },
     {
-      'hintergrund':'res/firstModule/sicherheitsvorfälle/06-sicherheitsvorfälle.svg',
-      'richtigeAntwort':'',
+      "hintergrund":"res/firstModule/sicherheitsvorfälle/06-sicherheitsvorfälle.svg",
+      "richtigeAntwort":"",
 
       "buttons":  [
         {
-          'buttonText':''
+          "buttonText":""
         },
         {
-          'buttonText':''
+          "buttonText":""
         },
         {
-          'buttonText':''
+          "buttonText":""
         },
         {
-          'buttonText':''
+          "buttonText":""
         }
           
       ]
@@ -122,4 +122,4 @@
   ]
 
 
-};
+}

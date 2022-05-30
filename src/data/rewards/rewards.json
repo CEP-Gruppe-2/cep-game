@@ -1,10 +1,27 @@
 {
   "batterie":"res/rewards/batterie.svg",
   "cityHell":"res/rewards/cityHell.svg",
-  "cityDunkel":"",
+  "cityDunkel":"res/rewards/cityDunkel.svg",
 
   "eindrücke": [
-    {"img1":"res/rewards/belohnung1.jpg"},
-    {"img2":"res/rewards/belohnung1.jpg"}
+    "res/rewards/belohnung1.jpg",
+    "res/rewards/belohnung2.jpg",
+    "res/rewards/belohnung3.jpg",
+    "res/rewards/belohnung4.jpg",
+    "res/rewards/belohnung5.jpg",
+    "res/rewards/belohnung6.jpg",
+    "res/rewards/belohnung7.jpg",
+    "res/rewards/belohnung8.jpg",
+    "res/rewards/belohnung9.jpg",
+    "res/rewards/belohnung10.jpg",
+    "res/rewards/belohnung11.jpg",
+    "res/rewards/belohnung12.jpg",
+    "res/rewards/belohnung13.jpg",
+    "res/rewards/belohnung14.jpg",
+    "res/rewards/belohnung15.jpg",
+    "res/rewards/belohnung16.jpg",
+    "res/rewards/belohnung17.jpg",
+    "res/rewards/belohnung18.jpg",
+    "res/rewards/belohnung19.jpg"
   ]
 }

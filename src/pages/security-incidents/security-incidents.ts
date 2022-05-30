@@ -68,20 +68,20 @@ export class SecurityIncidents extends LitElement {
   private schreibeButtons(): any{
       if(this.buttons.length==1)
           return html`<div id="ein-button">
-              <button-component class="buttons" textButton=${""+this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
+              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
           </div>`
       else if(this.buttons.length==2){
           return html`<div id="zwei-buttons">
-              <button-component class="buttons" textButton=${""+this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
-              <button-component class="buttons"  textButton=${""+this.buttons[1]} @click=${this._handleClickButton} >${this.buttons[1]}</button-component>
+              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
+              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
           </div>`
       }
       else if(this.buttons.length==4){
           return html`<div id="vier-buttons">
-              <button-component class="buttons" textButton=${""+this.buttons[0]} @click=${this._handleClickButton} >${this.buttons[0]}</button-component>
-              <button-component class="buttons" textButton=${""+this.buttons[1]} @click=${this._handleClickButton} >${this.buttons[1]}</button-component>
-              <button-component class="buttons" textButton=${""+this.buttons[2]} @click=${this._handleClickButton} >${this.buttons[2]}</button-component>
-              <button-component class="buttons" textButton=${""+this.buttons[3]} @click=${this._handleClickButton} >${this.buttons[3]}</button-component>
+              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
+              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
+              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[2]}</my-button>
+              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[3]}</my-button>
           </div>`
       }
       else 

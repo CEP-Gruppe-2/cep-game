@@ -44,7 +44,7 @@ export class SecurePassword extends LitElement {
 
     /*wenn im spielmodus mit multiple choice lösung überprüfen*/
     spielLogikMultipleChoice: if(!this.modi2&&this.start){
-      if((e.target as HTMLDivElement).textContent==='weiterNachErklärung'){
+      if((e.target as HTMLDivElement).textContent==='weiter'){
         this.erklärung=false;
         break spielLogikMultipleChoice;
       }
@@ -165,7 +165,7 @@ export class SecurePassword extends LitElement {
           this.positionErklaerung++;
           displayPosition = html`
                         <img class="aufgabenstellung" srcset=${this.inhalt} />
-                        <my-button id="weiter-button" @click="${this._handleClick}">weiterNachErklärung</my-button>
+                        <my-button id="weiter-button" @click="${this._handleClick}">weiter</my-button>
                 `;
 
           /*ab jetzt nur noch modi2 verwenden*/

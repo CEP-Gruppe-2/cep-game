@@ -1,6 +1,7 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './secure-password.scss?inline';
 import { property, state, query } from 'lit/decorators.js';
+import passwortsicherheit from '../../data/firstModule/passwortsicherheit.json';
 
 export class SecurePassword extends LitElement {
 

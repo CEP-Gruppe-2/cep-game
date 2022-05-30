@@ -309,3 +309,4 @@ $RECYCLE.BIN/
 .DS_STORE
 dist/
 types/
+.vitebook/public/res/

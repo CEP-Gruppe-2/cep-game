@@ -32,10 +32,33 @@ const getAllLocalStorage = () => {
     return archive;
 }
 
+const getArrayWithGainedPoints = () : Array<string> => {
+    let stringArray : string = localStorage.getItem("point")!;
+    return stringArray.split(",");
+}
+
+const addPointsToLocalStorage = (name: string, value : string) : void => {
+    let jsonArray : string, arr : Array<any>;
+    
+    if(name != null && value != null){
+        jsonArray = localStorage.getItem("point")!;
+        arr = jsonArray.split(",")
+        arr.push([name, value])
+        localStorage.setItem("point", JSON.parse(JSON.stringify(arr)))   
+    }
+}
+
+const addPointsArrayToLocalStorage = (points : Array<any>) : void => {
+    localStorage.setItem("point", JSON.parse(JSON.stringify(points)))
+}
+
 export {
     setItemJsonLocalStorage,
     setItemLocalStorage,
     getItemLocalStorage,
     getItemJsonLocalStorage,
-    getAllLocalStorage
+    getAllLocalStorage,
+    addPointsArrayToLocalStorage,
+    addPointsToLocalStorage,
+    getArrayWithGainedPoints
 }

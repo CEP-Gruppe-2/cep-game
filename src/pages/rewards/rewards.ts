@@ -1,6 +1,8 @@
-import { unsafeCSS, html, LitElement } from 'lit';
+import { unsafeCSS, html, LitElement, PropertyValueMap } from 'lit';
 import styles from './rewards.scss?inline';
 import rewards from '../../data/rewards/rewards.json';
+import '/src/components/button/button.ts'
+import {getArrayWithGainedPoints } from '../../functions/localstorage';
 
 export class Rewards extends LitElement {
 
@@ -9,12 +11,50 @@ export class Rewards extends LitElement {
   private spielername:String='';
   private punkte:number=0;
   private quelle:any='';
+
+  private cards : HTMLElement;
   /*public aktuelleSeite:Pages=0;*/
   /*private spielerkennung*/
+
+  constructor(){
+    super();
+    if(localStorage.getItem("points") !== null){
+      this.punkte = parseInt(localStorage.getItem("points")!);
+    }else{
+      localStorage.setItem("points", "0")
+    }
+
+
+  }
+
+  firstUpdated(){
+    this.cards = this.shadowRoot?.getElementById("cards")!;
+    console.log(this.cards);
+    
+    
+  }
 
   /*lädt die spielerdaten*/
   private ladeSpieler():void{
 
+  }
+
+  private loadGainedPoints() : any{
+    let card : any, arr : Array<any>;  
+
+    arr = getArrayWithGainedPoints();
+
+    for (let index = 0; index < arr.length; index++) {
+      
+      this.cards.innerHTML = 'asdasd'
+      card = card + html `
+        <div class="history-card">
+            <h1>${arr[index]}</h1>
+        </div>
+      `;
+    }
+
+    return card;
   }
 
   private getECity():String{
@@ -44,15 +84,11 @@ export class Rewards extends LitElement {
 
               <div id="info-history">
                   <h1> Hier steht die history</h1>
-                  <div class="history-cards">
+                  <div class="history-cards" id="cards">
                       <!-- 
                         History Card zeigt alle Punkte, die man bis jetzt erhalten hat.
                         History Card soll durch map Funktion gerendert werden 
                       -->
-                      <div class="history-card">
-                          <h1>Willkommen</h1>
-
-                      </div>
                   </div>
               </div>
           
@@ -74,6 +110,7 @@ export class Rewards extends LitElement {
   }
 
   render() {
+    this.loadGainedPoints()
     let display;
     if(this.spielername=='')
       this.ladeSpieler();

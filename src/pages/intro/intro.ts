@@ -126,9 +126,3 @@ export class Intro extends LitElement {
 }
 
 customElements.define('intro-page', Intro);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'intro-page': Intro
-//   }
-// }

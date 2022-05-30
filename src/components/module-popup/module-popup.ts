@@ -8,10 +8,14 @@ export class ModulePopup extends LitElement {
 
   static styles = unsafeCSS(styles);
 
-  @property({type: Boolean}) popupRedirect = false;
-  @property({type: Boolean}) popupVisible = false;
-  @property() popupText = '';
-  @property() popupNextPageLink = '';
+  @property({type: Boolean}) 
+    popupRedirect = false;
+  @property({type: Boolean})
+    popupVisible = false;
+  @property()
+    popupText = '';
+  @property()
+    popupNextPageLink = '';
 
   _closeComponent(e : Event){
     this.dispatchEvent(new CustomEvent('close-component', { detail: e }));

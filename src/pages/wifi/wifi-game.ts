@@ -1,11 +1,14 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { GameMixin } from '../../functions/gameMixin';
+
 import content from '../../data/wifi.json';
+
 
 const security: String[] = ['Open Network', 'WEP', 'WPA', 'WPA2'];
 
 @customElement('wifi-game')
-export class Wifi extends LitElement {
+export class Wifi extends GameMixin(LitElement) {
 
   static styles = css`
     :host{
@@ -61,6 +64,7 @@ export class Wifi extends LitElement {
     }
 
     alert('You got ' + String(points) + ' right!');
+    this.savePoints(7);
   }
 
 }

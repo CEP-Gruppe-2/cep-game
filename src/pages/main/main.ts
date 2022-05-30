@@ -13,13 +13,12 @@ export class Main extends LitElement {
 
   @state()
   private showPopup : Boolean = false;
-  private cardLink: String = '';
+  private cardLink: string = '';
 
 
   _wup(e : any){
     console.log(e.detail);
     console.log(e);
-
   }
 
   private _showPopup(e : Event): void{

@@ -1,7 +1,5 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-// @ts-ignore
-import Cookies from 'js-cookie';
 import '../close';
 import styles from './popup.scss?inline';
 
@@ -18,9 +16,7 @@ export class Popup extends LitElement {
   }
 
   _saveName(){
-    //console.log(this.inputValue);
-    console.log(Cookies.set('name', this.inputValue, { expires: 7, path: '' }));
-    console.log(Cookies.get('name'));
+    localStorage.setItem('name', 'asdasda');
     this._closePopup();
     this.componentVisible = false;
   }

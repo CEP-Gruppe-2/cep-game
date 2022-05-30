@@ -8,11 +8,8 @@ export default defineConfig({
   base: './',
   build: {
     lib: {
-      entry: 'index.ts',
+      entry: './src/game.ts',
       formats: ['es']
-    },
-    rollupOptions: {
-      external: /^lit/
     }
   },
   plugins: [

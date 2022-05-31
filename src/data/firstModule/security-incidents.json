@@ -20,7 +20,7 @@
               }
                 
             ],
-            "richtig": [],
+    
             "falsch": [],
             "antworten": [
               {"hintergrund":""},
@@ -48,7 +48,7 @@
               }
                 
             ],
-            "richtig": [],
+    
             "falsch": [],
             "antworten": [
               {"hintergrund":""},
@@ -75,7 +75,7 @@
               }
                 
             ],
-            "richtig": [],
+    
             "falsch": [],
             "antworten": [
               {"hintergrund":""},
@@ -102,7 +102,7 @@
               }
                 
             ],
-            "richtig": [],
+    
             "falsch": [],
             "antworten": [
               {"hintergrund":""},
@@ -129,7 +129,7 @@
               }
                 
             ],
-            "richtig": [],
+    
             "falsch": [],
             "antworten": [
               {"hintergrund":""},
@@ -157,7 +157,7 @@
             }
               
           ],
-          "richtig": [],
+  
           "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -184,7 +184,7 @@
           }
             
         ],
-        "richtig": [],
+
         "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -211,7 +211,6 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -238,7 +237,6 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
               {"hintergrund":"res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortFirst.svg"},
               {"hintergrund":"res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortSecond.svg"},
@@ -266,7 +264,6 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -293,7 +290,6 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -320,7 +316,6 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -347,7 +342,6 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -374,7 +368,6 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -401,7 +394,6 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},
@@ -411,14 +403,14 @@
     },
     {
       "hintergrund":"res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
-    "richtigerButton": "",
+      "richtigerButton": "0",
       "text":"",
     "buttons":  [
         {
-          "buttonText":"Antworten: “Nein. “ und davon ausgehen, dass der Kollege schon weiß, was zu tun ist."
+          "buttonText":"Antworten: “Nein. Aber den Stick sollten wir besser an die IT zum Überprüfen geben!”"
         },
         {
-          "buttonText":"Antworten: “Nein. Aber den Stick sollten wir besser an die IT zum Überprüfen geben!”"
+          "buttonText":"Antworten: “Nein. “ und davon ausgehen, dass der Kollege schon weiß, was zu tun ist."
         },
         {
           "buttonText":""
@@ -428,16 +420,15 @@
         }
           
       ],
-      "richtig": [],
       "antworten": [
-              {"hintergrund":""},
-              {"hintergrund":""},
+              {"hintergrund":"res/modul1/sicherheitsvorfälle/16-sicherheitsvorfälleAntwortFirst.svg"},
+              {"hintergrund":"res/modul1/sicherheitsvorfälle/16-sicherheitsvorfälleAntwortSecond.svg"},
               {"hintergrund":""},
               {"hintergrund":""}
             ]
     },
     {
-      "hintergrund":"",
+      "hintergrund":"res/modul1/sicherheitsvorfälle/17-sicherheitsvorfälle.svg",
       "richtigerButton":"",
       "text":"",
     "buttons":  [
@@ -455,7 +446,81 @@
         }
           
       ],
-      "richtig": [],
+      "antworten": [
+              {"hintergrund":""},
+              {"hintergrund":""},
+              {"hintergrund":""},
+              {"hintergrund":""}
+            ]
+    },{
+      "hintergrund":"res/modul1/sicherheitsvorfälle/18-sicherheitsvorfälle.svg",
+      "richtigerButton":"",
+      "text":"",
+    "buttons":  [
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        }
+          
+      ],
+      "antworten": [
+              {"hintergrund":""},
+              {"hintergrund":""},
+              {"hintergrund":""},
+              {"hintergrund":""}
+            ]
+    },{
+      "hintergrund":"res/modul1/sicherheitsvorfälle/19-sicherheitsvorfälle.svg",
+      "richtigerButton":"",
+      "text":"",
+    "buttons":  [
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        }
+          
+      ],
+      "antworten": [
+              {"hintergrund":""},
+              {"hintergrund":""},
+              {"hintergrund":""},
+              {"hintergrund":""}
+            ]
+    },{
+      "hintergrund":"res/modul1/sicherheitsvorfälle/20-sicherheitsvorfälle.svg",
+      "richtigerButton":"",
+      "text":"",
+    "buttons":  [
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        },
+        {
+          "buttonText":""
+        }
+          
+      ],
       "antworten": [
               {"hintergrund":""},
               {"hintergrund":""},

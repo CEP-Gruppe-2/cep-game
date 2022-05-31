@@ -34,7 +34,11 @@ const getAllLocalStorage = () => {
 
 const getArrayWithGainedPoints = () : Array<string> => {
     let stringArray : string = localStorage.getItem("point")!;
-    return stringArray.split(",");
+
+    if(stringArray != null || stringArray != undefined){
+        return stringArray.split(",");
+    }
+    return [];
 }
 
 const addPointsToLocalStorage = (name: string, value : string) : void => {

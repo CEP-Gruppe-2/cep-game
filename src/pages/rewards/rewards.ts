@@ -71,8 +71,8 @@ export class Rewards extends LitElement {
                             if(index % 2 == 0){
                               return html `
                                 <div class="history-card">
-                                  <h1>${arr[index]}</h1>
-                                  <p>${arr[index + 1]}</p>
+                                  <h1 class="history-card-title">${arr[index]}</h1>
+                                  <p class="history-card-desc">${arr[index + 1]}</p>
                                 </div>
                               `
                             }

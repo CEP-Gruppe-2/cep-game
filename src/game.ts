@@ -10,6 +10,7 @@ import './pages/rewards';
 import './pages/wifi';
 import './pages/secure-password';
 import './pages/security-incidents';
+import './pages/module-page'
 
 import { getCookie, setCookieIfNotExist } from './functions/cookies';
 
@@ -25,12 +26,12 @@ export class Game extends LitElement {
 
   static styles = unsafeCSS(styles);
 
-  private _router = new Router(this, [
+  public _router = new Router(this, [
     {path: '/', render: () => html`<main-page></main-page>`},
     {path: '/introduction', render: () => html`<intro-page></intro-page>`},
     {path: '/rewards', render: () => html`<rewards-page></rewards-page>`},
 
-    {path: '/chapter/*', render: () => html`<chapter-router></chapter-router>`},
+    {path: '/chapter/:id', render: () => html`<module-page></module-page>`},
     {path: '/wifi', render: () => html`<wifi-game></wifi-game>`},
     {path: '/secure-password', render: () => html`<secure-password></secure-password>`},
     {path: '/security-incidents', render: () => html`<security-incidents></security-incidents>`},

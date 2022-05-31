@@ -1,0 +1,16 @@
+{
+    "module": [
+        {
+            "title": "",
+            "description": "In diesem Modul lernst du die grundlegenden Aspekte der Cyber-Sicherheit kennen, testest deine Geschicklichkeit und erfährst, wie du dich im Internet schützen kannst und nicht erwischt wirst. Die Themen in diesem Modul sind als Spiele gestaltet, damit du sie so einfach wie möglich durchspielen kannst und so viel Spaß wie möglich hast.\n \nWenn du an mehr Infos zu den Themen aus diesem Modul interessiert bist, kannst du auf 'Download PDF' klicken oder wenn du zum ersten Spiel gehen willst, klicke auf 'Los gehts'.",
+            "downloadLink": "",
+            "games": [
+                {
+                    "title": "Passwortsicherheit",
+                    "description": "Passwortsicherheit ist ein sehr subtiles und interessantes Thema. In diesem Spiel lernst du, welche Schlupflöcher Hacker nutzen, um sich in dein Konto einzuhacken und dir so viele Daten und Geld wie möglich aus der Tasche zu ziehen. Hier erfährst du, wie du dich online schützen kannst und wie du dich mit einem gut gewählten Passwort gegen Hacker wehren kannst. Wir verraten dir auch, wie lange Hacker brauchen, um ein Passwort zu knacken und auf dein Konto zuzugreifen."
+                }
+            ]
+        }
+    ]
+    
+}

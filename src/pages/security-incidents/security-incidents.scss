@@ -7,6 +7,17 @@
     overflow: hidden;      
 }   
 
+.main-div{}
+
+.text{}
+
+.button-container{}
+
+    h1{
+        text-align: center;
+    }
+  
+  
 .svg{
         z-index: 20;
         position: relative;
@@ -19,13 +30,14 @@
     .buttons{
         margin-left: 40px;
         margin-top: 20px;
+        width: 70%;
     }
 
-#ein-button{
-    text-align: center;
-}
+    #ein-button{
+        text-align: center;
+    }
 
-#zwei-buttons{ 
+   /* #zwei-buttons{ 
         text-align: center;
         z-index: 20;
         position: relative;
@@ -33,9 +45,34 @@
         width: 70%;
         height: 80%;
         margin: 0 auto;
-    }
+    }*/
 
-#vier-buttons{
-    text-align: center;
-}
+    #zwei-buttons {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1.3fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "button1 button2"; 
+      }
+
+   /* text-align: center;*/
+    #vier-buttons {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1.3fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "button1 button2 button3 button4";
+      }
+      
+      .button1 { grid-area: button1; }
+      
+      .button2 { grid-area: button2; }
+      
+      .button3 { grid-area: button3; }
+      
+      .button4 { grid-area: button4; }
+      
 

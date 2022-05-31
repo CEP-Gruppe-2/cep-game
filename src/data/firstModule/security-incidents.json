@@ -506,34 +506,9 @@
               {"hintergrund":""}
             ]
     },{
-      "hintergrund":"res/modul1/sicherheitsvorfälle/19-sicherheitsvorfälle.svg",
+      "hintergrund":"",
       "richtigerButton":"",
-      "text":"",
-    "buttons":  [
-        {
-          "buttonText":""
-        },
-        {
-          "buttonText":""
-        },
-        {
-          "buttonText":""
-        },
-        {
-          "buttonText":""
-        }
-          
-      ],
-      "antworten": [
-              {"hintergrund":""},
-              {"hintergrund":""},
-              {"hintergrund":""},
-              {"hintergrund":""}
-            ]
-    },{
-      "hintergrund":"res/modul1/sicherheitsvorfälle/20-sicherheitsvorfälle.svg",
-      "richtigerButton":"",
-      "text":"",
+      "text":"Inhalte Folgen...",
     "buttons":  [
         {
           "buttonText":""
@@ -556,6 +531,7 @@
               {"hintergrund":""}
             ]
     }
+  
         
     
     

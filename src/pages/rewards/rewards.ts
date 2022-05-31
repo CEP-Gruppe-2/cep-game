@@ -12,7 +12,6 @@ export class Rewards extends LitElement {
   private punkte:number=0;
   private quelle:any='';
 
-  private cards : HTMLElement;
   /*public aktuelleSeite:Pages=0;*/
   /*private spielerkennung*/
 
@@ -27,34 +26,9 @@ export class Rewards extends LitElement {
 
   }
 
-  firstUpdated(){
-    this.cards = this.shadowRoot?.getElementById("cards")!;
-    console.log(this.cards);
-    
-    
-  }
-
   /*lädt die spielerdaten*/
   private ladeSpieler():void{
 
-  }
-
-  private loadGainedPoints() : any{
-    let card : any, arr : Array<any>;  
-
-    arr = getArrayWithGainedPoints();
-
-    for (let index = 0; index < arr.length; index++) {
-      
-      this.cards.innerHTML = 'asdasd'
-      card = card + html `
-        <div class="history-card">
-            <h1>${arr[index]}</h1>
-        </div>
-      `;
-    }
-
-    return card;
   }
 
   private getECity():String{
@@ -89,6 +63,21 @@ export class Rewards extends LitElement {
                         History Card zeigt alle Punkte, die man bis jetzt erhalten hat.
                         History Card soll durch map Funktion gerendert werden 
                       -->
+                      ${getArrayWithGainedPoints().map(function(val, index, arr){
+                          console.log(arr.length);
+                          if(arr.length - 1 == index){
+                              return html ``
+                          }else{
+                            if(index % 2 == 0){
+                              return html `
+                                <div class="history-card">
+                                  <h1>${arr[index]}</h1>
+                                  <p>${arr[index + 1]}</p>
+                                </div>
+                              `
+                            }
+                          }
+                      })}
                   </div>
               </div>
           
@@ -110,7 +99,6 @@ export class Rewards extends LitElement {
   }
 
   render() {
-    this.loadGainedPoints()
     let display;
     if(this.spielername=='')
       this.ladeSpieler();
@@ -118,7 +106,8 @@ export class Rewards extends LitElement {
     display=this.ladePage();
 
     return html`
-            ${display}`;
+            ${display}
+    `;
   }
 }
 

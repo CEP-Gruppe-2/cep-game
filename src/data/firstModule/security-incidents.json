@@ -404,7 +404,7 @@
     {
       "hintergrund":"res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
       "richtigerButton": "0",
-      "text":"",
+      "text":"Frage",
     "buttons":  [
         {
           "buttonText":"Antworten: “Nein. Aber den Stick sollten wir besser an die IT zum Überprüfen geben!”"

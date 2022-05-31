@@ -1,16 +1,32 @@
 {
     "module": [
         {
-            "title": "",
+            "title": "Grundlagen der Cyber-Sicherheit",
             "description": "In diesem Modul lernst du die grundlegenden Aspekte der Cyber-Sicherheit kennen, testest deine Geschicklichkeit und erfährst, wie du dich im Internet schützen kannst und nicht erwischt wirst. Die Themen in diesem Modul sind als Spiele gestaltet, damit du sie so einfach wie möglich durchspielen kannst und so viel Spaß wie möglich hast.\n \nWenn du an mehr Infos zu den Themen aus diesem Modul interessiert bist, kannst du auf 'Download PDF' klicken oder wenn du zum ersten Spiel gehen willst, klicke auf 'Los gehts'.",
-            "downloadLink": "",
+            "downloadLink": "/download/chapter/1",
+            "firstGame": "/passwortsicherheit",
             "games": [
                 {
                     "title": "Passwortsicherheit",
-                    "description": "Passwortsicherheit ist ein sehr subtiles und interessantes Thema. In diesem Spiel lernst du, welche Schlupflöcher Hacker nutzen, um sich in dein Konto einzuhacken und dir so viele Daten und Geld wie möglich aus der Tasche zu ziehen. Hier erfährst du, wie du dich online schützen kannst und wie du dich mit einem gut gewählten Passwort gegen Hacker wehren kannst. Wir verraten dir auch, wie lange Hacker brauchen, um ein Passwort zu knacken und auf dein Konto zuzugreifen."
+                    "description": "Passwortsicherheit ist ein sehr subtiles und interessantes Thema. In diesem Spiel lernst du, welche Schlupflöcher Hacker nutzen, um sich in dein Konto einzuhacken und dir so viele Daten und Geld wie möglich aus der Tasche zu ziehen. Hier erfährst du, wie du dich online schützen kannst und wie du dich mit einem gut gewählten Passwort gegen Hacker wehren kannst. Wir verraten dir auch, wie lange Hacker brauchen, um ein Passwort zu knacken und auf dein Konto zuzugreifen.",
+                    "link": "/passwortsicherheit"
+                },
+                {
+                    "title": "Erkennen von Angriffen",
+                    "description": "Wir alle kennen Situationen, in denen man scheinbar auf sicheren Websites surft, aber nach einer Weile erscheinen seltsame Symbole, Bilder, Werbebanner und andere Dinge auf dem Computer. Hier zeigen wir Ihnen, wie Hacker Programme auf Ihrem Computer installieren und sich über oder dank Phishing Zugang zu Ihren Daten verschaffen.",
+                    "link": "/angriffe"
+                },
+                {
+                    "title": "Netzsegmentierung",
+                    "description": "Netzwerksegmentierung etwas sehr Seltsames und nicht sofort nachvollziehbar. Du weißt wahrscheinlich, dass Computer nach dem Prinzip eins und null funktionieren. Einige Daten werden von einem Punkt zu einem anderen gesendet und es ist sehr häufig im Internet zu lesen, dass ein Teil der Daten abgefangen wurde. Genau dieses Abfangen von Daten erfolgt über Netzwerksegmentierung, und in diesem Spiel erzählen und zeigen wir dir, wie dies geschieht und was Hacker benutzen, um deine Daten abzufangen.",
+                    "link": "/netzsegmentierung"
+                },
+                {
+                    "title": "SPS Fernzugriff",
+                    "description": "Große Unternehmen müssen einen permanenten Zugriff auf ihre Anlagen haben, daher erfolgt diese Anbindung in den meisten Fällen über SPS oder SPS Fernzugriff. Hier erklären wir dir, was eine SPS ist und wie sich Ingenieure mit ihr verbinden. Wir zeigen dir Bilder, wie eine solche SPS aussieht und wie die Verbindung zwischen mehreren SPSen im Allgemeinen funktioniert",
+                    "link": "/fernzugriff"
                 }
             ]
         }
     ]
-    
 }

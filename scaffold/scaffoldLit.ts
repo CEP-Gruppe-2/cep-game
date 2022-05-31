@@ -11,9 +11,3 @@ export class Scaffold extends LitElement {
 }
 
 customElements.define('my-scaffold', Scaffold);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'my-scaffold': Scaffold
-//   }
-// }

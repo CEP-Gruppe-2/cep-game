@@ -1,3 +1,133 @@
 :host {
-    color: aqua;
+    color: #000;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 0.5em;
+    margin: 2em 0 0 0;
+    box-sizing: border-box;
+}
+
+:host::after, :host::before{
+    box-sizing: inherit;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.module-title{
+    display: block;
+    line-height: 1em;
+    text-align: left;
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+    color: #57B894 ;
+}
+
+.bold-title{
+    font-weight: 800 !important;
+}
+
+.module-description{
+    display: block;
+    line-height: 1.25em;
+    text-align: left;
+    font-size: 1.5em;
+    margin: 1em 0 0 0;
+    padding: 0;
+    color: rgb(92, 92, 92);
+}
+
+.module-btns{
+    margin: 1em auto 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.module-btn{
+    margin: 0.75em auto 0 auto;
+    padding: 1em 1.5em;
+    display: inline;
+    background-color: #57B894;
+    color: #fff;
+    width: 100px;
+    text-align: center;
+    border: none;
+    border-radius: 1em;
+    text-decoration: none;
+    animation-duration: 1s;
+}
+
+.module-btn:hover{
+    background-color: #fff;
+    color: #57B894;
+    border:rgb(92, 92, 92) solid 1px;
+}
+
+.module-themes{
+    display: block;
+    margin: 1em 0 0 0;
+}
+
+.themes-title{
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+.themes-boxes{
+    margin: 1em 0 0 0;
+    padding: 0;
+    display: block;
+}
+
+.themes-box{
+    display: block;
+    width: 100%;
+    background-color: beige;
+    padding: 1em;
+    margin: 1em 0 1em 0;
+    border-radius: 1em;
+}
+
+.themes-box-title{
+    text-align: left;
+    display: block;
+    font-size: 1.6em;
+    font-weight: 400;
+    padding: 0;
+    margin: 0.5em 0 0 0;
+}
+
+.themes-desc{
+    text-align: left;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 0;
+    margin: 1em 0 0 0;
+    color: rgb(92, 92, 92);
+}
+
+.themes-btn{
+    margin: 1em 0 0 0;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid rgb(92, 92, 92);
+    width: 100%;
+    padding: 0.75em 0;
+    border-radius: 1em;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+
 }

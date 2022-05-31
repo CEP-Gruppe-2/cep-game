@@ -12,8 +12,3 @@ export class gameSelection extends LitElement {
 
 customElements.define('selection-page', gameSelection);
 
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'gameSelection-page': Game-selection-page
-//   }
-// }

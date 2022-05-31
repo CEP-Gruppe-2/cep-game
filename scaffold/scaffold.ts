@@ -20,9 +20,3 @@ export class Scaffold extends HTMLElement {
 }
 
 customElements.define('my-scaffold', Scaffold);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'my-scaffold': Scaffold
-//   }
-// }

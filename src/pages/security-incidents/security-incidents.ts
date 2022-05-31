@@ -89,12 +89,18 @@ export class SecurityIncidents extends LitElement {
   return: html mit img
   */
   private schreibeBild():any{
-      if(this.buttons.length==0)
-      return html`<img class="svg" srcset=${this.bild} @click=${this._handleClickBild} />`
+      if(this.buttons.length==0&&this.text!="Inhalte Folgen...")
+      return html`
+            <img class="svg" srcset=${this.bild} @click=${this._handleClickBild}/> 
+            `
       else if(this.text==""||this.text=="Frage")
-      return html`<img class="svg" srcset=${this.bild} />`
+      return html`
+            <img class="svg" srcset=${this.bild} />
+            `
       else 
-      return html`<h1>${this.text}</h1>`
+      return html`
+            <h1>${this.text}</h1>
+            `
       
   }
 
@@ -108,16 +114,16 @@ export class SecurityIncidents extends LitElement {
           </div>`
       else if(this.buttons.length==2){
           return html`<div id="zwei-buttons">
-              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
-              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
+              <my-button class="buttons button1" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
+              <my-button class="buttons button2" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
           </div>`
       }
       else if(this.buttons.length==4){
           return html`<div id="vier-buttons">
-              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
-              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
-              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[2]}</my-button>
-              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[3]}</my-button>
+              <my-button class="buttons button1" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
+              <my-button class="buttons button2" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
+              <my-button class="buttons button3" @click=${this._handleClickButton} >${this.buttons[2]}</my-button>
+              <my-button class="buttons button4" @click=${this._handleClickButton} >${this.buttons[3]}</my-button>
           </div>`
       }
       else 
@@ -153,8 +159,8 @@ export class SecurityIncidents extends LitElement {
           
 
       return html`
-      ${display}
-      ${buttons}
+            ${display}
+            ${buttons}
       `
   }
 

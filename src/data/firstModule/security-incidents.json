@@ -139,6 +139,34 @@
             ]
         },
         {
+          "hintergrund":"res/modul1/sicherheitsvorfälle/06-sicherheitsvorfälle.svg",
+        "richtigerButton": "",
+          "text":"",
+        "buttons":  [
+            {
+              "buttonText":""
+            },
+            {
+              "buttonText":""
+            },
+            {
+              "buttonText":""
+            },
+            {
+              "buttonText":""
+            }
+              
+          ],
+  
+          "falsch": [],
+          "antworten": [
+            {"hintergrund":""},
+            {"hintergrund":""},
+            {"hintergrund":""},
+            {"hintergrund":""}
+          ]
+      },
+        {
           "hintergrund":"res/modul1/sicherheitsvorfälle/07-sicherheitsvorfälle.svg",
           "richtigerButton": "",
           "text":"",
@@ -300,10 +328,10 @@
     {
       "hintergrund":"res/modul1/sicherheitsvorfälle/12-sicherheitsvorfälle.svg",
     "richtigerButton": "",
-      "text":"Platzhalter...",
+      "text":"",
     "buttons":  [
         {
-          "buttonText":"Platzhalter"
+          "buttonText":""
         },
         {
           "buttonText":""
@@ -478,34 +506,9 @@
               {"hintergrund":""}
             ]
     },{
-      "hintergrund":"res/modul1/sicherheitsvorfälle/19-sicherheitsvorfälle.svg",
+      "hintergrund":"",
       "richtigerButton":"",
-      "text":"",
-    "buttons":  [
-        {
-          "buttonText":""
-        },
-        {
-          "buttonText":""
-        },
-        {
-          "buttonText":""
-        },
-        {
-          "buttonText":""
-        }
-          
-      ],
-      "antworten": [
-              {"hintergrund":""},
-              {"hintergrund":""},
-              {"hintergrund":""},
-              {"hintergrund":""}
-            ]
-    },{
-      "hintergrund":"res/modul1/sicherheitsvorfälle/20-sicherheitsvorfälle.svg",
-      "richtigerButton":"",
-      "text":"",
+      "text":"Inhalte Folgen...",
     "buttons":  [
         {
           "buttonText":""
@@ -528,6 +531,7 @@
               {"hintergrund":""}
             ]
     }
+  
         
     
     

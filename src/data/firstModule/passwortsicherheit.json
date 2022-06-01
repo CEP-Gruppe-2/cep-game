@@ -3,37 +3,37 @@
   "einfuehrung": [
       {
           "backgroundcolor":"#68C382",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungFirst.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungFirst.svg",
           "text":"Hallo hier bin ich wieder. Gut das du mehr über Passwortsicherheit wissen willst.",
           "buttonText":""
       },
       {
           "backgroundcolor":"#68C382",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungSecond.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungSecond.svg",
           "text":"Denn sichere Passwörter sind nicht nur ein wichtiger Bestandteil um das Unternehmen vor Angreifern und Schwachstellen zu schützen, sondern sind auch ein fester und wichtiger Bestandteil des Alltags geworden.",
           "buttonText":""
       },
       {
           "backgroundcolor":"68C382",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungThird.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungThird.svg",
           "text":"Das Passwort ist oft die einzige Hürde, die Angreifer haben, um deine Persönlichen Daten zu klauen und deine Identität zu missbrauchen.",
           "buttonText":""
       },
       {
           "backgroundcolor":"68C382",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungFourth.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungFourth.svg",
           "text":"Wenn ein Angreifer zugriff auf dein Konto bekommt, kann er dir ernsthaften Finanziellen schaden zufügen.",
           "buttonText":""
       },
       {
           "backgroundcolor":"000000",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungFifth.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungFifth.svg",
           "text":"Beim erstellen eines sicheren Passworts ist es wichtig einige Regeln zu beachten. Diese lernst du im folgenden Spiel besser kennen.",
           "buttonText":""
       },
       {
           "backgroundcolor":"000000",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungSixth.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungSixth.svg",
           "text":"Wähle aus den angezeigten Passwörtern das sicherste Passwort für die unten genannten Dienste. Online-Shop, soziales Netwerk und Onlinebanking",
           "buttonText":"Starten"
       }
@@ -41,53 +41,53 @@
   ],
   "aufgabe1": [
       {
-          "frage":"res/modul1/passwortsicherheit/frageeins.svg",
+          "frage":"/res/modul1/passwortsicherheit/frageeins.svg",
           "lösung":"C",
           "text":"",
 
           "richtig": [
               {
-                   "text":"res/modul1/passwortsicherheit/frageeinsrichtigFirst.svg"   
+                   "text":"/res/modul1/passwortsicherheit/frageeinsrichtigFirst.svg"   
               }
               
           ],
           "falsch":[
               {
-                  "text":"res/modul1/passwortsicherheit/frageeinsfalschFirst.svg"   
+                  "text":"/res/modul1/passwortsicherheit/frageeinsfalschFirst.svg"   
              }
              
           ]
       
       },
       {
-          "frage":"res/modul1/passwortsicherheit/fragezwei.svg",
+          "frage":"/res/modul1/passwortsicherheit/fragezwei.svg",
           "lösung":"A",
           "text":"",
 
           "richtig": [
               {
-                   "text":"res/modul1/passwortsicherheit/fragezweirichtigFirst.svg"  
+                   "text":"/res/modul1/passwortsicherheit/fragezweirichtigFirst.svg"  
               }
           ],
           "falsch":[
              {
-              "text":"res/modul1/passwortsicherheit/fragezweifalschFirst.svg" 
+              "text":"/res/modul1/passwortsicherheit/fragezweifalschFirst.svg" 
              }
           ]
       },
       {
-          "frage":"res/modul1/passwortsicherheit/fragedrei.svg",
+          "frage":"/res/modul1/passwortsicherheit/fragedrei.svg",
           "lösung":"C",
           "text":"",
 
           "richtig": [
               {
-                   "text":"res/modul1/passwortsicherheit/fragedreirichtigFirst.svg"   
+                   "text":"/res/modul1/passwortsicherheit/fragedreirichtigFirst.svg"   
               }
           ],
           "falsch":[
               {
-                  "text":"res/modul1/passwortsicherheit/fragedreifalschFirst.svg"   
+                  "text":"/res/modul1/passwortsicherheit/fragedreifalschFirst.svg"   
              }
           ]
       }
@@ -95,26 +95,26 @@
   "einfuehrungAufgabeZwei": [
       {
           "backgroundcolor":"#68C382",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungAufgabeZweiSecond.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiSecond.svg",
           "text":"Hier nochmal die wichtigsten Punkte zusammengefast!",
           "buttonText":""
       },
       {
           "backgroundcolor":"#68C382",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungAufgabeZweiFirst.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiFirst.svg",
           "text":"So jetzt bis du an der Reihe um dein gelerntes Wissen kreativ umzusetzen. In der Folgenden aufgabe darfst du die jetzt sichere Passwörter ausdenken.",
           "buttonText":"Weiter geht´s!"
       },
       {
           "backgroundcolor":"68C382",
-          "inhalt":"res/modul1/passwortsicherheit/einfuehrungAufgabeZweiThird.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiThird.svg",
           "text":"",
           "buttonText":"Starten"
       }
   ],
   "endeAufgabeZwei": [
       {
-          "inhalt":"res/modul1/passwortsicherheit/endeAufgabeZweiFirst.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/endeAufgabeZweiFirst.svg",
           "text":"Super! Du hast das erste Spiel “Passwortsicherheit” abgeschlossen. Hierfür erhälst du von mir... Punkte. Schaue mal nach, ob du schon genug Punkte hast, um E-City wieder mit Energie zu versorgen.",
           "buttonText":"Beenden"
       }

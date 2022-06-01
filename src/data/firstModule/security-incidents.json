@@ -2,7 +2,7 @@
 
     "ablauf": [
         {
-            "hintergrund":"res/modul1/sicherheitsvorfälle/01-sicherheitsvorfälle.svg",
+            "hintergrund":"/res/modul1/sicherheitsvorfälle/01-sicherheitsvorfälle.svg",
           "richtigerButton": "",
             "text":"",
           "buttons":  [
@@ -30,7 +30,7 @@
             ]
         },
         {
-            "hintergrund":"res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
+            "hintergrund":"/res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
           "richtigerButton": "",
             "text":"",
           "buttons":  [
@@ -57,7 +57,7 @@
               {"hintergrund":""}
             ]
         },{
-            "hintergrund":"res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
+            "hintergrund":"/res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
           "richtigerButton": "",
             "text":"",
           "buttons":  [
@@ -84,7 +84,7 @@
               {"hintergrund":""}
             ]
         },{
-            "hintergrund":"res/modul1/sicherheitsvorfälle/04-sicherheitsvorfälle.svg",
+            "hintergrund":"/res/modul1/sicherheitsvorfälle/04-sicherheitsvorfälle.svg",
           "richtigerButton": "",
             "text":"",
           "buttons":  [
@@ -111,7 +111,7 @@
               {"hintergrund":""}
             ]
         },{
-            "hintergrund":"res/modul1/sicherheitsvorfälle/05-sicherheitsvorfälle.svg",
+            "hintergrund":"/res/modul1/sicherheitsvorfälle/05-sicherheitsvorfälle.svg",
           "richtigerButton": "",
             "text":"",
           "buttons":  [
@@ -139,7 +139,7 @@
             ]
         },
         {
-          "hintergrund":"res/modul1/sicherheitsvorfälle/06-sicherheitsvorfälle.svg",
+          "hintergrund":"/res/modul1/sicherheitsvorfälle/06-sicherheitsvorfälle.svg",
         "richtigerButton": "",
           "text":"",
         "buttons":  [
@@ -167,7 +167,7 @@
           ]
       },
         {
-          "hintergrund":"res/modul1/sicherheitsvorfälle/07-sicherheitsvorfälle.svg",
+          "hintergrund":"/res/modul1/sicherheitsvorfälle/07-sicherheitsvorfälle.svg",
           "richtigerButton": "",
           "text":"",
         "buttons":  [
@@ -194,7 +194,7 @@
             ]
       },
       {
-        "hintergrund":"res/modul1/sicherheitsvorfälle/08-sicherheitsvorfälle.svg",
+        "hintergrund":"/res/modul1/sicherheitsvorfälle/08-sicherheitsvorfälle.svg",
       "richtigerButton": "",
         "text":"",
       "buttons":  [
@@ -221,7 +221,7 @@
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/09-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/09-sicherheitsvorfälle.svg",
     "richtigerButton": "",
       "text":"",
     "buttons":  [
@@ -266,15 +266,15 @@
           
       ],
       "antworten": [
-              {"hintergrund":"res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortFirst.svg"},
-              {"hintergrund":"res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortSecond.svg"},
-              {"hintergrund":"res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortThird.svg"},
-              {"hintergrund":"res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortFourth.svg"}
+              {"hintergrund":"/res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortFirst.svg"},
+              {"hintergrund":"/res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortSecond.svg"},
+              {"hintergrund":"/res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortThird.svg"},
+              {"hintergrund":"/res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälleAnwtortFourth.svg"}
               
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/10-sicherheitsvorfälle.svg",
     "richtigerButton": "",
       "text":"",
     "buttons":  [
@@ -300,7 +300,7 @@
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/11-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/11-sicherheitsvorfälle.svg",
     "richtigerButton": "",
       "text":"",
     "buttons":  [
@@ -326,7 +326,7 @@
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/12-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/12-sicherheitsvorfälle.svg",
     "richtigerButton": "",
       "text":"",
     "buttons":  [
@@ -352,7 +352,7 @@
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/13-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/13-sicherheitsvorfälle.svg",
     "richtigerButton": "",
       "text":"",
     "buttons":  [
@@ -378,7 +378,7 @@
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/14-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/14-sicherheitsvorfälle.svg",
     "richtigerButton": "",
       "text":"",
     "buttons":  [
@@ -404,7 +404,7 @@
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/15-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/15-sicherheitsvorfälle.svg",
     "richtigerButton": "",
       "text":"",
     "buttons":  [
@@ -430,7 +430,7 @@
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/02-sicherheitsvorfälle.svg",
       "richtigerButton": "0",
       "text":"Frage",
     "buttons":  [
@@ -449,14 +449,14 @@
           
       ],
       "antworten": [
-              {"hintergrund":"res/modul1/sicherheitsvorfälle/16-sicherheitsvorfälleAntwortFirst.svg"},
-              {"hintergrund":"res/modul1/sicherheitsvorfälle/16-sicherheitsvorfälleAntwortSecond.svg"},
+              {"hintergrund":"/res/modul1/sicherheitsvorfälle/16-sicherheitsvorfälleAntwortFirst.svg"},
+              {"hintergrund":"/res/modul1/sicherheitsvorfälle/16-sicherheitsvorfälleAntwortSecond.svg"},
               {"hintergrund":""},
               {"hintergrund":""}
             ]
     },
     {
-      "hintergrund":"res/modul1/sicherheitsvorfälle/17-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/17-sicherheitsvorfälle.svg",
       "richtigerButton":"",
       "text":"",
     "buttons":  [
@@ -481,7 +481,7 @@
               {"hintergrund":""}
             ]
     },{
-      "hintergrund":"res/modul1/sicherheitsvorfälle/18-sicherheitsvorfälle.svg",
+      "hintergrund":"/res/modul1/sicherheitsvorfälle/18-sicherheitsvorfälle.svg",
       "richtigerButton":"",
       "text":"",
     "buttons":  [

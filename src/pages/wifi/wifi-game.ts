@@ -4,6 +4,7 @@ import { GameMixin } from '../../functions/gameMixin';
 
 import content from '../../data/wifi.json';
 
+import '../../components/button'
 
 const security: String[] = ['Open Network', 'WEP', 'WPA', 'WPA2'];
 
@@ -12,7 +13,10 @@ export class Wifi extends GameMixin(LitElement) {
 
   static styles = css`
     :host{
-      display: contents;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .device {
@@ -28,7 +32,7 @@ export class Wifi extends GameMixin(LitElement) {
       margin-right: 15px
     }
 
-    button {
+    my-button {
       margin-top: 20px;
     }
   `;
@@ -40,9 +44,9 @@ export class Wifi extends GameMixin(LitElement) {
       <div class="seperator"></div>
       ${content.networks.slice(1).map( n => html`<wifi-network .name=${n.name} security=${n.security} .channel=${n.channel} .connected=${false}></wifi-network>`)}
     </div>
-    <button @click=${this.solve}>
+    <my-button @click=${this.solve}>
       Solve
-    </button>
+    </my-button>
     `;
   }
 

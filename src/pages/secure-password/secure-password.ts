@@ -7,7 +7,6 @@ export class SecurePassword extends LitElement {
 
   static styles = unsafeCSS(styles);
 
-  private backgroundcolor:String='';
   private inhalt:String='';
   private alt:String='';
   private buttonText:String='';
@@ -30,9 +29,6 @@ export class SecurePassword extends LitElement {
   @query('input')
     _input!: HTMLInputElement;
 
-  private getButtonText():String{
-    return this.buttonText;
-  }
 
   _handleClick(e:Event):void{
     if((e.target as HTMLDivElement).textContent==='Beenden'){
@@ -124,11 +120,17 @@ export class SecurePassword extends LitElement {
 
       if(this.buttonText!=''){
         displayPosition = html`
-            <img class="text-joules" srcset=${this.inhalt}  alt=${this.alt}/>
-            <div><my-button  class="starten-button" @click="${this._handleClick}">${this.buttonText}</my-button></div>`;
+        <div class="inhalts-container">
+          <img class="inhalt" srcset=${this.inhalt}  alt=${this.alt}/>
+        </div>
+        <div class="ein-button">
+          <my-button class="button" @click="${this._handleClick}">${this.buttonText}</my-button>
+        </div>`;
       }else{
         displayPosition = html `
-            <img class="text-joules" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>`;
+        <div class="inhalts-container">
+            <img class="inhalt-roboter" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>
+        </div>`;
       }
 
 
@@ -143,9 +145,11 @@ export class SecurePassword extends LitElement {
           this.alt=passwortsicherheit.aufgabe1[this.position].text;
 
           displayPosition = html`
-            <img class="text-joules" srcset=${this.inhalt} alt=${this.alt}/>
 
-            <div class="multipleChoiceButtonsBox">
+          <div class="inhalts-container">
+            <img class="inhalt" srcset=${this.inhalt} alt=${this.alt}/>
+          </div>
+            <div id="multipleChoiceButtons-container">
                 <my-button @click="${this._handleClick}">A</my-button>
                 <my-button @click="${this._handleClick}">B</my-button>
                 <my-button @click="${this._handleClick}">C</my-button>
@@ -164,8 +168,12 @@ export class SecurePassword extends LitElement {
           }
           this.positionErklaerung++;
           displayPosition = html`
-                        <img class="aufgabenstellung" srcset=${this.inhalt} />
-                        <my-button id="weiter-button" @click="${this._handleClick}">weiter</my-button>
+            <div class="inhalts-container">
+              <img class="inhalt-lösung" srcset=${this.inhalt} />
+            </div>
+            <div class="ein-button">
+              <my-button @click="${this._handleClick}">weiter</my-button>
+            </div>
                 `;
 
           /*ab jetzt nur noch modi2 verwenden*/
@@ -224,7 +232,9 @@ export class SecurePassword extends LitElement {
 
     }
     return html`
+    <div class="main-div">
         ${displayPosition}
+    </div>
         `;
   }
   

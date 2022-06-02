@@ -27,6 +27,37 @@
                     "link": "/fernzugriff"
                 }
             ]
+        },
+        {
+            "title": "Erweiterung der Cyber-Sicherheit",
+            "description": "In diesem Modul tauchst du noch tiefer in die Cyber-Sicherheit ein, erfährst, wie sich Hacker in verschiedene Systeme einhacken, welche Software sie verwenden und erfährst, wie du selbst ein echter Hacker sein kannst.",
+            "downloadLink": "/download/chapter/2",
+            "firstGame": "/iot",
+            "games": [
+                {
+                    "title": "Internet Of Things",
+                    "description": "Wahrscheinlich hast du schon einmal gehört, dass wir von intelligenten Geräten umgeben sind, die uns bei der Lösung von Alltagsproblemen helfen oder uns bei der Analyse großer Informationsmengen unterstützen, die Menschen nicht auswerten können.\nIn diesem Spiel erzählen wir dir, wie diese Smart Devices aussehen, wo sie eingesetzt werden und wozu sie gut sind.",
+                    "link": "/iot"
+                },
+                {
+                    "title": "Hacker",
+                    "description": "Du hast davon geträumt, in die Rolle eines Hackers zu schlüpfen und zu lernen, wie es ist, sich in große Unternehmen zu hacken und ihnen so viel Schaden wie möglich zuzufügen? Dann ist das eine gute Gelegenheit für dich. Du schlüpfst in die Rolle eines Hackers und deine Aufgabe besteht darin, dich in das X-System zu hacken. Wenn du dich erfolgreich in das X-System hackst, wirst du mit einem besonderen Geschenk belohnt.",
+                    "link": "/hacker"
+                }
+            ]
+        },
+        {
+            "title": "OT-Sicherheit",
+            "description": "",
+            "downloadLink": "/download/chapter/3",
+            "firstGame": "/iot",
+            "games": [
+                {
+                    "title": "Internet Of Things",
+                    "description": "Wahrscheinlich hast du schon einmal gehört, dass wir von intelligenten Geräten umgeben sind, die uns bei der Lösung von Alltagsproblemen helfen oder uns bei der Analyse großer Informationsmengen unterstützen, die Menschen nicht auswerten können.\nIn diesem Spiel erzählen wir dir, wie diese Smart Devices aussehen, wo sie eingesetzt werden und wozu sie gut sind.",
+                    "link": "/iot"
+                }
+            ]
         }
     ]
 }

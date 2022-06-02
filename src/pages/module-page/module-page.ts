@@ -45,8 +45,8 @@ export class ModulePage extends LitElement {
 
       <div class="module-themes">
         <h3 class="themes-title">Themenübersicht</h3>
-
-        <div class="themes-boxes">
+        
+        <div class="themes-boxes" >
           ${games.module[this.chapterNumber - 1].games.map(function(val, index, arr){
             return html `
               <div class="themes-box div${index}">

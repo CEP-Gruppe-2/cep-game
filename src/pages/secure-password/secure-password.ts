@@ -123,8 +123,8 @@ export class SecurePassword extends LitElement {
         <div class="inhalts-container">
           <img class="inhalt" srcset=${this.inhalt}  alt=${this.alt}/>
         </div>
-        <div class="ein-button">
-          <my-button class="button" @click="${this._handleClick}">${this.buttonText}</my-button>
+        <div class="flexbox-buttons">
+          <my-button @click="${this._handleClick}">${this.buttonText}</my-button>
         </div>`;
       }else{
         displayPosition = html `
@@ -149,11 +149,11 @@ export class SecurePassword extends LitElement {
           <div class="inhalts-container">
             <img class="inhalt" srcset=${this.inhalt} alt=${this.alt}/>
           </div>
-            <div id="multipleChoiceButtons-container">
-                <my-button @click="${this._handleClick}">A</my-button>
-                <my-button @click="${this._handleClick}">B</my-button>
-                <my-button @click="${this._handleClick}">C</my-button>
-                <my-button @click="${this._handleClick}">D</my-button>
+            <div class="flexbox-buttons">
+                <my-button id="flex-button1" @click="${this._handleClick}">A</my-button>
+                <my-button id="flex-button2" @click="${this._handleClick}">B</my-button>
+                <my-button id="flex-button3" @click="${this._handleClick}">C</my-button>
+                <my-button id="flex-button4" @click="${this._handleClick}">D</my-button>
             </div>`;
         }
         else/*ausgabe Lösung*/
@@ -171,7 +171,7 @@ export class SecurePassword extends LitElement {
             <div class="inhalts-container">
               <img class="inhalt-lösung" srcset=${this.inhalt} />
             </div>
-            <div class="ein-button">
+            <div class="flexbox-buttons">
               <my-button @click="${this._handleClick}">weiter</my-button>
             </div>
                 `;
@@ -195,7 +195,7 @@ export class SecurePassword extends LitElement {
         /*ausgabe Aufgabenstellung*/
         if(!this.erklärung){
           displayPosition = html`
-                    <div class="passworteingabe-container">
+                    <div id="flexbox-passworteingabe">
                         <tr>
                                 <th><label>Gib hier ein Passwort an: 
                                 <div id="passwort-input"><input @input=${this._inputChanged}/></div>
@@ -205,7 +205,7 @@ export class SecurePassword extends LitElement {
                             <div id="fehlermeldung-container">${this.fehlerMeldungPasswort}</div>
                         </tr>
                         <tr>
-                            <div id="passwortÜberprüfen-button"><my-button @click=${this._handleClick} .disabled=${!this._submitEnabled}>Passwort überprüfen!</my-button></div>
+                            <div id="passwort-button"><my-button @click=${this._handleClick} .disabled=${!this._submitEnabled}>Passwort überprüfen!</my-button></div>
                             </div>
                         </tr>
                     </div>
@@ -221,8 +221,12 @@ export class SecurePassword extends LitElement {
 
 
           displayPosition = html`
-                        <img class="text-joules" srcset=${this.inhalt} alt=${this.alt}/>
+                      <div class="inhalts-container">
+                        <img class="inhalt" srcset=${this.inhalt} alt=${this.alt}/>
+                      </div> 
+                      <div class="flexbox-buttons">
                         <my-button class="starten-button" @click=${this._handleClick}>${this.buttonText}</my-button>
+                      </div>
                 `;
         }
 

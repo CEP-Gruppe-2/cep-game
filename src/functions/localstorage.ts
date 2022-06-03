@@ -10,8 +10,26 @@ const setItemLocalStorage = (name : string, value : string) => {
     localStorage.getItem(name);
 }
 
+const changePointsLocalStorage = (points : string, value : string | number) =>{
+    let valuePoints : number;
+    if(localStorage.getItem(points) != null){
+        valuePoints = parseInt(localStorage.getItem(points)!);
+        if(typeof value == "number"){
+            valuePoints += value!;
+        }else{
+            valuePoints += parseInt(value!);
+        }
+        localStorage.setItem(points, valuePoints.toString())
+    }else{
+        if(typeof value == "number"){
+            localStorage.setItem(points, value.toString())
+        }else{
+            localStorage.setItem(points, value)
+        }
+    }
+}
 
- const getItemJsonLocalStorage = (name : string) => {
+const getItemJsonLocalStorage = (name : string) => {
     let item = localStorage.getItem(name);
     if(item != null){
         return JSON.parse(item)
@@ -41,21 +59,29 @@ const getArrayWithGainedPoints = () : Array<string> => {
     return [];
 }
 
-const addPointsToLocalStorage = (name: string, value : string) : void => {
-    let jsonArray : string, arr : Array<any>;
+const  addPointsToLocalStorage = (name: string, value : string) : void => {
+    let arr : Array<any>;
     
     if(name != null && value != null){
-        jsonArray = localStorage.getItem("point")!;
-        arr = jsonArray.split(",")
-        arr.push([name, value])
-        localStorage.setItem("point", JSON.parse(JSON.stringify(arr)))   
-    }
+        if(localStorage.getItem("point") != null){
+            arr = localStorage.getItem("point")!.split(",");
+            arr.push([name, value])
+            localStorage.setItem("point", JSON.parse(JSON.stringify(arr)))
+        }else{
+            arr = [name, value]
+            localStorage.setItem("point", JSON.parse(JSON.stringify(arr)))
+        }
+    } 
 }
 
 const addPointsArrayToLocalStorage = (points : Array<any>) : void => {
     localStorage.setItem("point", JSON.parse(JSON.stringify(points)))
 }
 
+const removeAllPointsFromLocalStorage = () => {
+    localStorage.clear();
+}
+ 
 export {
     setItemJsonLocalStorage,
     setItemLocalStorage,
@@ -64,5 +90,7 @@ export {
     getAllLocalStorage,
     addPointsArrayToLocalStorage,
     addPointsToLocalStorage,
-    getArrayWithGainedPoints
+    getArrayWithGainedPoints,
+    removeAllPointsFromLocalStorage,
+    changePointsLocalStorage
 }

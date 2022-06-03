@@ -44,6 +44,11 @@ const changeCookie = (cookie : Object) => {
   Cookies.set(cookie.name, cookie.value, { expires: 7, path: '' });
 };
 
+interface Cookie{
+  name: string,
+  value: string,
+}
+
 export {
   cookieExist,
   setCookieIfNotExist,

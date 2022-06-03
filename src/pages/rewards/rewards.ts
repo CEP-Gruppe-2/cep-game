@@ -1,28 +1,27 @@
-import { unsafeCSS, html, LitElement, PropertyValueMap } from 'lit';
+import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './rewards.scss?inline';
 import rewards from '../../data/rewards/rewards.json';
 import '/src/components/button/button.ts'
-import {getArrayWithGainedPoints } from '../../functions/localstorage';
+import {addPointsToLocalStorage, changePointsLocalStorage, getArrayWithGainedPoints, setItemLocalStorage } from '../../functions/localstorage';
 
 export class Rewards extends LitElement {
 
   static styles = unsafeCSS(styles);
-
   private spielername:String='';
   private punkte:number=0;
-  private quelle:any='';
-
-  /*public aktuelleSeite:Pages=0;*/
-  /*private spielerkennung*/
 
   constructor(){
     super();
-    if(localStorage.getItem("points") !== null){
+
+    //localStorage.setItem("points", "300") punkte hinzufügen, um die Punkte auszutauschen
+
+    if(localStorage.getItem("points") != null){
       this.punkte = parseInt(localStorage.getItem("points")!);
     }else{
-      localStorage.setItem("points", "0")
+      localStorage.setItem("points", "100")
     }
-
+    
+    addPointsToLocalStorage("einleitung", "100");
 
   }
 
@@ -31,9 +30,24 @@ export class Rewards extends LitElement {
 
   }
 
-  private getECity():String{
+  private getECity() : any{
     /*if e city licht an gebe helles zurück ansonten dunkles*/
-    return rewards.cityHell;
+    let exchangePoints = localStorage.getItem("exchangePoints");
+
+    if(localStorage.getItem("exchangePoints") != null){
+      if(parseInt(exchangePoints!) > 0){
+        return html `<img id="city" srcset="${rewards.cityHell}" alt="Bild von E-City"/>`
+      }else{
+        return html ``
+      }
+    }else return html `<img id="city" srcset="${rewards.cityDunkel}" alt="Bild von E-City"/>`
+  }
+
+  private async exchangePoints(){
+    changePointsLocalStorage("exchangePoints", this.punkte)
+    setItemLocalStorage("points", "0")
+    this.punkte = parseInt(localStorage.getItem("points")!);
+    this.requestUpdate();
   }
 
   /* gibt Page 1 als HTML zurück*/
@@ -48,23 +62,22 @@ export class Rewards extends LitElement {
 
                   <div id=Punkte>
                       <h1>Gesamtanzahl deiner Punkte</h1>
-                      <p>${this.punkte} Points / Kwh</p>
+                      <p id="points">${this.punkte} Points / Kwh</p>
                   </div>
 
                   <div id="eintauschen-btn"> 
-                      <my-button>Eintauschen</my-button>
+                      <my-button @click="${this.exchangePoints}">Eintauschen</my-button>
                   </div>
               </div>
 
               <div id="info-history">
-                  <h1> Hier steht die history</h1>
+                  <h1>History erhaltenen Punkten</h1>
                   <div class="history-cards" id="cards">
                       <!-- 
                         History Card zeigt alle Punkte, die man bis jetzt erhalten hat.
                         History Card soll durch map Funktion gerendert werden 
                       -->
                       ${getArrayWithGainedPoints().map(function(val, index, arr){
-                          console.log(arr.length);
                           if(arr.length - 1 == index){
                               return html ``
                           }else{
@@ -82,16 +95,22 @@ export class Rewards extends LitElement {
               </div>
           
             <div id="img-E-City">
-                <img id="city" srcset="${this.getECity()}" alt="Bild von E-City"/>
+              ${this.getECity()}
             </div>
 
             <div id="eindrücke">
-                <h1>Eindrücke aus E-City</h1>
+                <h1>Belohnungen</h1>
                 <div>
-                    <h4>füge hier bilder von e City ein</h4>
-                    ${rewards.eindrücke.map((img, index) => 
-                        html `<img class="img-win" src="${rewards.eindrücke[index]}"/>`
-                    )}
+                    ${rewards.eindrücke.map(function(img, index,){
+                      let points : number;
+                      if(localStorage.getItem("exchangePoints") != null){
+                        points = parseInt(localStorage.getItem("exchangePoints")!);
+                        points /= 100;
+                        if(index <= points - 1){
+                          return html `<img class="img-win" src="${img}"/>` 
+                        }
+                      }
+                    })}
                 </div>
             </div>
         </div>

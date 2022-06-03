@@ -14,7 +14,7 @@ export class Notification extends LitElement {
     timeout = 1000;
 
 
-  private _closeNotification(e : Event){
+  private _closeNotification(){
     console.log('Notification wurde geschloßen');
     let event = new CustomEvent('notify', {detail: {
       message: 'Das ist Notification Komponent'
@@ -28,7 +28,7 @@ export class Notification extends LitElement {
 
   public _typeOfNotification(){
     let timer = this.timeout / 1000;
-    let countDown = setInterval(() => {
+    setInterval(() => {
 
       if (timer < 0) {
         redirectToWithParameter('/modul', '1', 'mod' );

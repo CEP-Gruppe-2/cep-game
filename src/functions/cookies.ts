@@ -1,6 +1,11 @@
 // @ts-ignore
 import Cookies from 'js-cookie';
 
+type Cook = {
+  name: string;
+  value: string;
+};
+
 const getCookie = (cookieName: String) => {
   return Cookies.get(cookieName);
 };
@@ -9,7 +14,7 @@ const cookieExist = (cookieName : String) => {
   return Cookies.get(cookieName) != undefined;
 };
 
-const setCookieIfNotExist = (setCookie : Boolean, cookieData : Object) => {
+const setCookieIfNotExist = (setCookie : Boolean, cookieData : Cook) => {
   let cookieExist = Cookies.get(cookieData.name) != undefined;
     
   if(!cookieExist && setCookie){
@@ -20,7 +25,7 @@ const setCookieIfNotExist = (setCookie : Boolean, cookieData : Object) => {
   return false;
 };
 
-const setCookieIfNotExistWithExpire = (setCookie : Boolean, cookieData : Object, expire : Number) => {
+const setCookieIfNotExistWithExpire = (setCookie : Boolean, cookieData : Cook, expire : Number) => {
   let cookieExist = Cookies.get(cookieData.name) != undefined;
 
   if(!cookieExist && setCookie){
@@ -40,14 +45,9 @@ const deleteCookieWithPath = (cookieName : String) => {
   Cookies.remove(cookieName, { path: '' });
 };
 
-const changeCookie = (cookie : Object) => {
+const changeCookie = (cookie : Cook) => {
   Cookies.set(cookie.name, cookie.value, { expires: 7, path: '' });
 };
-
-interface Cookie{
-  name: string,
-  value: string,
-}
 
 export {
   cookieExist,

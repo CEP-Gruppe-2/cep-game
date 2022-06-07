@@ -95,19 +95,25 @@
   "einfuehrungAufgabeZwei": [
       {
           "backgroundcolor":"#68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiSecond.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiFirst.svg",
           "text":"Hier nochmal die wichtigsten Punkte zusammengefast!",
           "buttonText":""
       },
       {
+        "backgroundcolor":"#68C382",
+        "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiSecond.svg",
+        "text":"Hier nochmal die wichtigsten Punkte zusammengefast!",
+        "buttonText":""
+        },
+      {
           "backgroundcolor":"#68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiFirst.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiThird.svg",
           "text":"So jetzt bis du an der Reihe um dein gelerntes Wissen kreativ umzusetzen. In der Folgenden aufgabe darfst du die jetzt sichere Passwörter ausdenken.",
           "buttonText":"Weiter geht´s!"
       },
       {
           "backgroundcolor":"68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiThird.svg",
+          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiFourth.svg",
           "text":"",
           "buttonText":"Starten"
       }

@@ -37,6 +37,38 @@
             "roboterVisible": true
         },
         {
+            "src": "/res/einleitung/05-roboter.svg",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        },
+        {
+            "src": "/res/einleitung/06-roboter.svg",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        },
+        {
+            "src": "/res/einleitung/07-roboter.svg",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        },
+        {
+            "src": "/res/einleitung/08-roboter.svg",
+            "left": true,
+            "right": false,
+            "emailVisible": false,
+            "cityVisible": false,
+            "roboterVisible": true
+        },
+        {
             "src": "",
             "left": true,
             "right": false,
@@ -53,7 +85,7 @@
             "roboterVisible": false
         },
         {
-            "src": "/res/einleitung/06-roboter.svg",
+            "src": "/res/einleitung/09-roboter.svg",
             "left": true,
             "right": false,
             "emailVisible": false,
@@ -61,7 +93,7 @@
             "roboterVisible": true
         }
     ],
-    "hackerVerfolgen": ["/res/einleitung/08-roboter.svg", "/res/einleitung/09-roboter.svg", "/res/einleitung/10-roboter.svg"],
-    "schwachstellenBeheben": ["/res/einleitung/11-roboter.svg", "/res/einleitung/12-roboter.svg", "/res/einleitung/13-roboter.svg"]
+    "hackerVerfolgen": ["/res/einleitung/10-roboter.svg", "/res/einleitung/11-roboter.svg", "/res/einleitung/12-roboter.svg", "/res/einleitung/13-roboter.svg"],
+    "schwachstellenBeheben": ["/res/einleitung/14-roboter.svg", "/res/einleitung/12-roboter.svg", "/res/einleitung/13-roboter.svg"]
 
 }

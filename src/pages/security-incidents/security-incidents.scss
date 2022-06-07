@@ -7,18 +7,36 @@
     overflow: hidden;      
 }   
 
-.main-div{}
+.main-div{
+    position: relative;
+    margin-bottom: 10px;
+    border: 4px solid black;
+}
 
-.text{}
 
-.button-container{}
+
+.flexbox-buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border: 4px solid black;
+}
 
     h1{
         text-align: center;
+        margin-top: 50px;
+        margin-bottom: 100px;
     }
   
-  
-.svg{
+    my-button {
+        margin: 10px;
+    }
+
+
+    .svg{
         z-index: 20;
         position: relative;
         display: block;
@@ -27,52 +45,33 @@
         margin: 0 auto;
     }
 
-    .buttons{
-        margin-left: 40px;
-        margin-top: 20px;
-        width: 70%;
+    @media only screen and (min-width: 650px) {
+        .svg{
+            width: 200px;
+        }
+       
+        h1{
+            font-size: 40px;
+        }
+
+        my-button{
+            font-size: 17px;
+        }
     }
+   
 
-    #ein-button{
-        text-align: center;
+    @media only screen and (min-width: 1000px)  {
+       .svg{
+            width: 500px;            
+        }
+        
+        h1{
+            font-size: 60px;
+        }
+
+        my-button{
+            font-size: 30px;
+        }
+
+        
     }
-
-   /* #zwei-buttons{ 
-        text-align: center;
-        z-index: 20;
-        position: relative;
-        display: block;
-        width: 70%;
-        height: 80%;
-        margin: 0 auto;
-    }*/
-
-    #zwei-buttons {
-        display: grid; 
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1.3fr; 
-        gap: 0px 0px; 
-        grid-template-areas: 
-          "button1 button2"; 
-      }
-
-   /* text-align: center;*/
-    #vier-buttons {  
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1.3fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "button1 button2 button3 button4";
-      }
-      
-      .button1 { grid-area: button1; }
-      
-      .button2 { grid-area: button2; }
-      
-      .button3 { grid-area: button3; }
-      
-      .button4 { grid-area: button4; }
-      
-

@@ -108,22 +108,23 @@ export class SecurityIncidents extends LitElement {
   return: leeres html oder html mit 1,2,oder 4 Buttons
   */
   private schreibeButtons(): any{
-      if(this.buttons.length==1)
-          return html`<div id="ein-button">
-              <my-button class="buttons" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
+      if(this.buttons.length==1){
+          return html`<div class="flexbox-buttons">
+              <my-button @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
           </div>`
+      }
       else if(this.buttons.length==2){
-          return html`<div id="zwei-buttons">
-              <my-button class="buttons button1" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
-              <my-button class="buttons button2" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
+          return html`<div class="flexbox-buttons">
+              <my-button @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
+              <my-button @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
           </div>`
       }
       else if(this.buttons.length==4){
-          return html`<div id="vier-buttons">
-              <my-button class="buttons button1" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
-              <my-button class="buttons button2" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
-              <my-button class="buttons button3" @click=${this._handleClickButton} >${this.buttons[2]}</my-button>
-              <my-button class="buttons button4" @click=${this._handleClickButton} >${this.buttons[3]}</my-button>
+          return html`<div class="flexbox-buttons">
+              <my-button class="vier-button" @click=${this._handleClickButton} >${this.buttons[0]}</my-button>
+              <my-button class="vier-button" @click=${this._handleClickButton} >${this.buttons[1]}</my-button>
+              <my-button class="vier-button" @click=${this._handleClickButton} >${this.buttons[2]}</my-button>
+              <my-button class="vier-button" @click=${this._handleClickButton} >${this.buttons[3]}</my-button>
           </div>`
       }
       else 
@@ -159,8 +160,10 @@ export class SecurityIncidents extends LitElement {
           
 
       return html`
+        <div class="main-div">
             ${display}
             ${buttons}
+        </div>
       `
   }
 

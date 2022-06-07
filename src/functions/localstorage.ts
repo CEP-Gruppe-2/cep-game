@@ -1,5 +1,5 @@
 const setItemLocalStorage = (name : string, value : string) => {
-    localStorage.setItem(name, value);
+    window.localStorage.setItem(name, value);
 }
 
  const setItemJsonLocalStorage = (name : string, value : Object) => {

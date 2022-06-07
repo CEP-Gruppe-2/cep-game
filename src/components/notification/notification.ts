@@ -1,7 +1,7 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './notification.scss?inline';
 import { property } from 'lit/decorators.js';
-import { redirectToWithParameter } from '../../functions/redirect';
+import { redirectTo } from '../../functions/redirect';
 
 export class Notification extends LitElement {
 
@@ -31,11 +31,10 @@ export class Notification extends LitElement {
     setInterval(() => {
 
       if (timer < 0) {
-        redirectToWithParameter('/modul', '1', 'mod' );
+        redirectTo("/chapter/1", "");
       }
 
-      console.log('ich teste mich aus');
-
+    
       timer--;
     }, 1000);
 
@@ -67,9 +66,3 @@ export class Notification extends LitElement {
 }
 
 customElements.define('notification-component', Notification);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'notification-c': Notification
-//   }
-// }

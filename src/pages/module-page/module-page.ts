@@ -12,13 +12,10 @@ export class ModulePage extends LitElement {
   constructor(){
     super();
     let x : string = window.location.pathname, arr : Array<string> = x.split("/");
-    let arrString = arr[1].toString();
-    let chapterNum = parseInt(arr[2].toString());
-    console.log(`${arrString}`, `${chapterNum}`);
-    
+    let arrString = arr[1].toString(), 
+        chapterNum = parseInt(arr[2].toString());
+        
     if(arrString != "chapter" || (chapterNum > 3 || chapterNum < 1)){
-      console.log(1235);
-      
       redirectTo("/404", "");
     }else{
       this.chapterNumber = chapterNum;

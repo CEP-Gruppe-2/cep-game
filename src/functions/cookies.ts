@@ -6,11 +6,11 @@ type Cook = {
   value: string;
 };
 
-const getCookie = (cookieName: String) => {
+const getCookie = (cookieName: string) => {
   return Cookies.get(cookieName);
 };
 
-const cookieExist = (cookieName : String) => {
+const cookieExist = (cookieName : string) => {
   return Cookies.get(cookieName) != undefined;
 };
 
@@ -25,23 +25,19 @@ const setCookieIfNotExist = (setCookie : Boolean, cookieData : Cook) => {
   return false;
 };
 
-const setCookieIfNotExistWithExpire = (setCookie : Boolean, cookieData : Cook, expire : Number) => {
+const setCookieIfNotExistWithExpire = (setCookie : Boolean, cookieData : Cook) => {
   let cookieExist = Cookies.get(cookieData.name) != undefined;
 
   if(!cookieExist && setCookie){
-    if(expire){
-      Cookies.set(cookieData.name, cookieData.value, { expires: expire, path: '' });
-    }else{
-      Cookies.set(cookieData.name, cookieData.value, { expires: 7, path: '' });
-    }
+    Cookies.set(cookieData.name, cookieData.value, { expires: 7, path: '' });
   }
 };
 
-const deleteCookieWithoutPath = (cookieName : String) => {
+const deleteCookieWithoutPath = (cookieName : string) => {
   Cookies.remove(cookieName);
 };
 
-const deleteCookieWithPath = (cookieName : String) => {
+const deleteCookieWithPath = (cookieName : string) => {
   Cookies.remove(cookieName, { path: '' });
 };
 

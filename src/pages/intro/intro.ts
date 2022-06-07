@@ -1,7 +1,7 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './intro.scss?inline';
 
-import { redirectToWithParameter } from '../../functions/redirect';
+import { redirectTo } from '../../functions/redirect';
 import introduction from '../../data/introduction.json';
 
 import  '../../components/notification';
@@ -105,8 +105,7 @@ export class Intro extends LitElement {
   }
 
   private nextChapter(){
-    console.log('Redirect');
-    redirectToWithParameter('/modul', '1', 'mod' );
+    redirectTo("chapter/1", "")
   }
 
 

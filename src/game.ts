@@ -46,7 +46,7 @@ export class Game extends LitElement {
     console.log('win: ', );
 
     if(!setCookieIfNotExist(true, {name: 'points', value: '0'})){
-      return parseInt(getCookie('points'));
+      return parseInt(getCookie('points')!);
     }
 
     return -1;

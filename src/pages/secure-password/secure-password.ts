@@ -119,6 +119,8 @@ export class SecurePassword extends LitElement {
       }
 
       if(this.buttonText!=''){
+        console.log("hall");
+        
         displayPosition = html`
         <div class="inhalts-container">
           <img class="inhalt" srcset=${this.inhalt}  alt=${this.alt}/>
@@ -128,9 +130,10 @@ export class SecurePassword extends LitElement {
         </div>`;
       }else{
         displayPosition = html `
-        <div class="inhalts-container">
-            <img class="inhalt-roboter" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>
-        </div>`;
+          <div class="inhalts-container">
+              <img class="inhalt-roboter" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>
+          </div>
+        `;
       }
 
 
@@ -195,24 +198,21 @@ export class SecurePassword extends LitElement {
         /*ausgabe Aufgabenstellung*/
         if(!this.erklärung){
           displayPosition = html`
-                    <div id="flexbox-passworteingabe">
-                        <tr>
-                                <th><label>Gib hier ein Passwort an: 
-                                <div id="passwort-input"><input @input=${this._inputChanged}/></div>
-                            </label></th>
-                        </tr>
-                        <tr>
-                            <div id="fehlermeldung-container">${this.fehlerMeldungPasswort}</div>
-                        </tr>
-                        <tr>
-                            <div id="passwort-button"><my-button @click=${this._handleClick} .disabled=${!this._submitEnabled}>Passwort überprüfen!</my-button></div>
-                            </div>
-                        </tr>
+            <div id="flexbox-passworteingabe">
+                <tr>
+                        <th><label class="password-label">Gib hier ein Passwort an: 
+                        <div id="passwort-input"><input class="password-input" @input=${this._inputChanged}/></div>
+                    </label></th>
+                </tr>
+                <tr>
+                    <div id="fehlermeldung-container">${this.fehlerMeldungPasswort}</div>
+                </tr>
+                <tr>
+                    <div id="passwort-button"><my-button @click=${this._handleClick} .disabled=${!this._submitEnabled}>Passwort überprüfen!</my-button></div>
                     </div>
-               
-                    `; /*<div>
-                    <img src="../../../res/einleitung/01-roboter.svg"/>
-                </div>*/
+                </tr>
+            </div>
+          `;
 
         }else{/*ausgabe Lösung*/
           this.inhalt=passwortsicherheit.endeAufgabeZwei[0].inhalt;
@@ -221,13 +221,13 @@ export class SecurePassword extends LitElement {
 
 
           displayPosition = html`
-                      <div class="inhalts-container">
-                        <img class="inhalt" srcset=${this.inhalt} alt=${this.alt}/>
-                      </div> 
-                      <div class="flexbox-buttons">
-                        <my-button class="starten-button" @click=${this._handleClick}>${this.buttonText}</my-button>
-                      </div>
-                `;
+            <div class="inhalts-container">
+              <img class="inhalt" srcset=${this.inhalt} alt=${this.alt}/>
+            </div> 
+            <div class="flexbox-buttons">
+              <my-button class="starten-button" @click=${this._handleClick}>${this.buttonText}</my-button>
+            </div>
+          `;
         }
 
 

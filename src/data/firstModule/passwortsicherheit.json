@@ -5,19 +5,22 @@
           "backgroundcolor":"#68C382",
           "inhalt":"/res/modul1/passwortsicherheit/einfuehrungFirst.svg",
           "text":"Hallo hier bin ich wieder. Gut das du mehr über Passwortsicherheit wissen willst.",
-          "buttonText":""
+          "buttonText":"",
+          "roboter": true
       },
       {
           "backgroundcolor":"#68C382",
           "inhalt":"/res/modul1/passwortsicherheit/einfuehrungSecond.svg",
           "text":"Denn sichere Passwörter sind nicht nur ein wichtiger Bestandteil um das Unternehmen vor Angreifern und Schwachstellen zu schützen, sondern sind auch ein fester und wichtiger Bestandteil des Alltags geworden.",
-          "buttonText":""
+          "buttonText":"",
+          "roboter": true
       },
       {
           "backgroundcolor":"68C382",
           "inhalt":"/res/modul1/passwortsicherheit/einfuehrungThird.svg",
           "text":"Das Passwort ist oft die einzige Hürde, die Angreifer haben, um deine Persönlichen Daten zu klauen und deine Identität zu missbrauchen.",
-          "buttonText":""
+          "buttonText":"",
+          "roboter": true
       },
       {
           "backgroundcolor":"68C382",
@@ -29,13 +32,16 @@
           "backgroundcolor":"000000",
           "inhalt":"/res/modul1/passwortsicherheit/einfuehrungFifth.svg",
           "text":"Beim erstellen eines sicheren Passworts ist es wichtig einige Regeln zu beachten. Diese lernst du im folgenden Spiel besser kennen.",
-          "buttonText":""
+          "buttonText":"",
+          "roboter": true
       },
       {
           "backgroundcolor":"000000",
           "inhalt":"/res/modul1/passwortsicherheit/einfuehrungSixth.svg",
           "text":"Wähle aus den angezeigten Passwörtern das sicherste Passwort für die unten genannten Dienste. Online-Shop, soziales Netwerk und Onlinebanking",
-          "buttonText":"Starten"
+          "buttonText":"Starten",
+          "roboter": false
+          
       }
 
   ],
@@ -97,19 +103,22 @@
           "backgroundcolor":"#68C382",
           "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiFirst.svg",
           "text":"Hier nochmal die wichtigsten Punkte zusammengefast!",
-          "buttonText":""
+          "buttonText":"",
+          "roboter": true
       },
       {
         "backgroundcolor":"#68C382",
         "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiSecond.svg",
         "text":"Hier nochmal die wichtigsten Punkte zusammengefast!",
-        "buttonText":""
+        "buttonText":"",
+        "roboter": true
         },
       {
           "backgroundcolor":"#68C382",
           "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiThird.svg",
           "text":"So jetzt bis du an der Reihe um dein gelerntes Wissen kreativ umzusetzen. In der Folgenden aufgabe darfst du die jetzt sichere Passwörter ausdenken.",
-          "buttonText":"Weiter geht´s!"
+          "buttonText":"",
+          "roboter": true
       },
       {
           "backgroundcolor":"68C382",
@@ -122,7 +131,8 @@
       {
           "inhalt":"/res/modul1/passwortsicherheit/endeAufgabeZweiFirst.svg",
           "text":"Super! Du hast das erste Spiel “Passwortsicherheit” abgeschlossen. Hierfür erhälst du von mir... Punkte. Schaue mal nach, ob du schon genug Punkte hast, um E-City wieder mit Energie zu versorgen.",
-          "buttonText":"Beenden"
+          "buttonText":"Beenden",
+          "roboter": true
       }
   ]
 

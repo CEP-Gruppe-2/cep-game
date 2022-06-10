@@ -2,6 +2,7 @@ import { html, LitElement, unsafeCSS} from 'lit';
 import styles from './secure-password.scss?inline';
 import { property, query, state} from 'lit/decorators.js';
 import passwortsicherheit from '../../data/firstModule/passwortsicherheit.json';
+import { redirectTo } from '../../functions/redirect';
 
 export class SecurePassword extends LitElement {
 
@@ -34,38 +35,24 @@ export class SecurePassword extends LitElement {
     _input!: HTMLInputElement;
 
 
+
+    /*wird von den buttons mit dem Text "Weiter", "starten" und "beenden" aufgerufen, hier wird übebprüft welcher button geklickt wurde und entweder die Position erhöht, das spiel beendet, oder Position auf 0 gesetzt und das Spielablauf Enum angepasst */
     _handleClick(e:Event):void{
         this.position++;
 
 
         if((e.target as HTMLDivElement).textContent==='Beenden'){
-            console.log("spiel beendet")
-            return;
+            redirectTo("chapter/1", "")
         }
-/*später nich zusammenfassen*/
         /*wenn der button text starten hat setze enum eins weiter und position=0*/
-        if((e.target as HTMLDivElement).textContent==='Starten'){
+        if((e.target as HTMLDivElement).textContent==='Starten'||this.ablaufPosition==Ablauf.Aufgabe1&&this.position==3||this.ablaufPosition==Ablauf.Aufgabe2Einführung&&(e.target as HTMLDivElement).textContent==='Starten'){
             this.position=0;
             this.ablaufPosition++;
-            console.log("button erstes else gedrückt")
             /*wenn aufgabe 1 fertig und enum eins weiter und position=0*/
-        }else if(this.ablaufPosition==Ablauf.Aufgabe1&&this.position==3){
-            this.position=0;
-            this.ablaufPosition++;
-            console.log("button zweites else gedrückt")
-        }else if(this.ablaufPosition==Ablauf.Aufgabe2Einführung&&(e.target as HTMLDivElement).textContent==='Starten'){
-            this.position=0;
-            this.ablaufPosition++;
-            console.log("Startbutton gedrückt")
         }
-
-        
-        
-
-
-
     }
 
+    /*Wird von den Multiplechoice buttons aufgerufen und wertet aus ob der angeklickte button richtig ist */
     _handleClickAufgabe1(e:Event):void{
         
         if((e.target as HTMLDivElement).textContent===this.lösung){
@@ -80,11 +67,13 @@ export class SecurePassword extends LitElement {
         this.requestUpdate();
     }
 
-    _handleClickAufgabe2(e:Event):void{
+    /*Wird vom button im letzten Spielmodi aufgerufen */
+    _handleClickAufgabe2():void{
         this._bearbeitePasswortEingabe();
     }
 
-    _bearbeitePasswortEingabe(){
+    /*übeprüft ob das angegebene Passwort den vorgaben des REGEX entsprechen */
+    private _bearbeitePasswortEingabe():void{
         /*Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character*/
         let pattern=  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-.,]).{8,}$/;
     
@@ -98,11 +87,12 @@ export class SecurePassword extends LitElement {
       }
     
     
-  _inputChanged(e: Event) {
+      /*hier wird das eingegebene Passwort erstmal gespeichert */
+    _inputChanged(e: Event) {
     this._submitEnabled = !!(e.target as HTMLInputElement).value;
-  }
+    }
 
-
+    /*liest die benötigten Daten aus der JSON datei */
     private readData():void{
         if(this.ablaufPosition==Ablauf.Einfuehrung){
             this.joulesSource=passwortsicherheit.roboterSource;
@@ -111,19 +101,12 @@ export class SecurePassword extends LitElement {
             this.roboter=passwortsicherheit.einfuehrung[this.position].roboter;
         }
         else if(this.ablaufPosition==Ablauf.Aufgabe1){
-            console.log("Aufgabe1")
             if(!this.erklärung){
                 this.text[0]=passwortsicherheit.aufgabe1[this.position].frage;
                 this.lösung=passwortsicherheit.aufgabe1[this.position].lösung;
                 this.roboter=passwortsicherheit.aufgabe1[this.position].roboter;
-                /*this.antworten[0]=passwortsicherheit.aufgabe1[this.position].antwort1;
-                this.antworten[1]=passwortsicherheit.aufgabe1[this.position].antwort2;
-                this.antworten[2]=passwortsicherheit.aufgabe1[this.position].antwort3;
-                this.antworten[3]=passwortsicherheit.aufgabe1[this.position].antwort4;
-                this.hinweis=passwortsicherheit.aufgabe1[this.position].hinweis;*/
             }else{
                 if(this.richtig){
-                    console.log("lade erklärung richtig")
                     this.text[0]=passwortsicherheit.aufgabe1[this.position].richtig[0].überschrift;
                     this.text[1]=passwortsicherheit.aufgabe1[this.position].richtig[0].text1;
                     this.text[2]=passwortsicherheit.aufgabe1[this.position].richtig[0].text2;
@@ -131,7 +114,6 @@ export class SecurePassword extends LitElement {
                     this.buttonText=passwortsicherheit.aufgabe1[this.position].richtig[0].buttonText;
                     this.roboter=passwortsicherheit.aufgabe1[this.position].richtig[0].roboter;
                 }else{
-                    console.log("lade erklärung falsch")
                     this.text[0]=passwortsicherheit.aufgabe1[this.position].falsch[0].überschrift;
                     this.text[1]=passwortsicherheit.aufgabe1[this.position].falsch[0].text1;
                     this.text[2]=passwortsicherheit.aufgabe1[this.position].falsch[0].text2;
@@ -148,7 +130,6 @@ export class SecurePassword extends LitElement {
             this.buttonText=passwortsicherheit.endeAufgabeZwei[0].buttonText;
             this.roboter=passwortsicherheit.endeAufgabeZwei[0].roboter;
         }else{
-            console.log("lade aufgabe 2 daten")
             this.überschrift=passwortsicherheit.einfuehrungAufgabeZwei[this.position].überschrift;
             this.text[0]=passwortsicherheit.einfuehrungAufgabeZwei[this.position].text1;
             this.text[1]=passwortsicherheit.einfuehrungAufgabeZwei[this.position].text2;
@@ -161,12 +142,11 @@ export class SecurePassword extends LitElement {
     }
 
 
-    /*schreibt den text in die Sprechblase*/
+    /*schreibt den text in die Sprechblase und gibt diese als HTML zurück*/
     private writeText():any{
         var text:any="";
 
         if(this.ablaufPosition==Ablauf.Einfuehrung){
-            console.log("schreibe in sprechblase einführung")
             text=html`
                 <div class="bubble1">
                     <p>${this.text[0]}</p>
@@ -175,7 +155,6 @@ export class SecurePassword extends LitElement {
                 
         }
         else if(this.ablaufPosition==Ablauf.Aufgabe1){
-            console.log("schreibe in sprechblase erklärung")
             text=html`
              <div class="bubble1">
                     <h1>${this.text[0]}</h1>
@@ -191,7 +170,6 @@ export class SecurePassword extends LitElement {
                    <p>${this.text[0]} "Punkte" ${this.text[1]}</p>
             </div>`
         }else{
-            console.log("schreibe in sprechblase aufgabe2 pos: "+this.position)
             if(this.position==0){
                 text=html`
                     <div class="bubble1">
@@ -216,29 +194,8 @@ export class SecurePassword extends LitElement {
     }
 
 
-    /*schreibt das img des roboters*/
+    /*schreibt das img des roboters und gibt dieses als HTML zurück*/
     private writeRoboter():any{
-        /*var text:any="";
-
-        if(this.ablaufPosition==Ablauf.Einfuehrung||this.ablaufPosition==Ablauf.Aufgabe1&&this.erklärung){
-            if(this.roboter){
-                text=html`
-                <div class="joules rahmen">
-                    <img src=${this.joulesSource}/>
-                </div>`
-            }else
-            return;
-
-                
-        }
-        else if(this.ablaufPosition==Ablauf.Aufgabe1){
-            aufgabe1 
-                
-        }else{
-            aufgabe2 
-                
-        }
-*/
         return html`
         <div class="joules">
             <img class="joules-img" src=${this.joulesSource}/>
@@ -246,7 +203,7 @@ export class SecurePassword extends LitElement {
     }
 
 
-    /*schreibt die Buttons*/
+    /*schreibt die Buttons und gibt diese als HTML zurück*/
     private writeButtons():any{
         var text:any="";
         if(this.ablaufPosition==Ablauf.Einfuehrung||this.ablaufPosition==Ablauf.Aufgabe2Einführung||this.ablaufPosition==Ablauf.Ende||this.erklärung){
@@ -271,7 +228,7 @@ export class SecurePassword extends LitElement {
     }
 
     
-    /*schreibt die aufgabe in dafürvorgesehene feld*/
+    /*schreibt die aufgabe in dafür vorgesehene feld und git diese als HTML zurück*/
     private writeAufgabe():any{
         var text:any="";
 
@@ -292,6 +249,7 @@ export class SecurePassword extends LitElement {
 
     }
 
+    /*gibt die aufgabe 2 als HTML zurück*/
     private ladeAufgabe2():any{
         
         return html`
@@ -315,8 +273,9 @@ export class SecurePassword extends LitElement {
       `;
     }
 
-    render() {
-        
+
+
+    render() {      
         if(this.ablaufPosition!=Ablauf.Aufgabe2){
             this.readData();
             if(this.roboter)
@@ -339,7 +298,6 @@ export class SecurePassword extends LitElement {
                     </div>
                 `
         }else{
-            console.log("eingabefeld aufgabe 2 wird geladen")
             return html`
                 <div class="main-div">
                     ${this.ladeAufgabe2()}

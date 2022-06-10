@@ -198,7 +198,7 @@ export class SecurePassword extends LitElement {
     private writeRoboter():any{
         return html`
         <div class="joules">
-            <img class="joules-img" src=${this.joulesSource}/>
+            <img class="joules-img" src=${this.joulesSource} />
         </div>`
     }
 
@@ -230,20 +230,9 @@ export class SecurePassword extends LitElement {
     
     /*schreibt die aufgabe in dafür vorgesehene feld und git diese als HTML zurück*/
     private writeAufgabe():any{
-        var text:any="";
-
-        if(this.ablaufPosition==Ablauf.Aufgabe1||this.ablaufPosition==Ablauf.Einfuehrung){
-            text=html`
-                <div id="aufgabenBild">
-                    <img src=${this.text[0]}/>
-                </div>`
-        }
-        
-            
-
         return html`
         <div id="aufgabenBild">
-            <img src=${this.text[0]}/>
+            <img src=${this.text[0]} />
         </div>`
 
 

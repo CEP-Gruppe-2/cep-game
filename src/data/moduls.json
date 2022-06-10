@@ -1,7 +1,7 @@
 {
     "module": [
         {
-            "title": "Grundlagen der Cyber-Sicherheit",
+            "title": "Grundlagen der Cyber- und IT-Sicherheit",
             "description": "In diesem Modul lernst du die grundlegenden Aspekte der Cyber-Sicherheit kennen, testest deine Geschicklichkeit und erfährst, wie du dich im Internet schützen kannst und nicht erwischt wirst. Die Themen in diesem Modul sind als Spiele gestaltet, damit du sie so einfach wie möglich durchspielen kannst und so viel Spaß wie möglich hast.\n \nWenn du an mehr Infos zu den Themen aus diesem Modul interessiert bist, kannst du auf 'Download PDF' klicken oder wenn du zum ersten Spiel gehen willst, klicke auf 'Los gehts'.",
             "downloadLink": "/download/chapter/1",
             "firstGame": "/passwortsicherheit",
@@ -20,11 +20,6 @@
                     "title": "Sicherheitsvorfälle (IT)",
                     "description": "Sicherheitsvorfälle. Wenn diese nicht richtig behandelt, oder garnicht als Bedrohung wargenommen werden kann dies zu großen Problemen führen. In diesem Spiel lernst du mehr über Sicherheitsvorfälle und was du im Fall der Fälle zu tun hast.",
                     "link": "/security-incidents"
-                },
-                {
-                    "title": "Platzhalter: SPS Fernzugriff",
-                    "description": "Große Unternehmen müssen einen permanenten Zugriff auf ihre Anlagen haben, daher erfolgt diese Anbindung in den meisten Fällen über SPS oder SPS Fernzugriff. Hier erklären wir dir, was eine SPS ist und wie sich Ingenieure mit ihr verbinden. Wir zeigen dir Bilder, wie eine solche SPS aussieht und wie die Verbindung zwischen mehreren SPSen im Allgemeinen funktioniert",
-                    "link": "/chapter/1"
                 }
             ]
         },
@@ -37,12 +32,12 @@
                 {
                     "title": "Internet Of Things",
                     "description": "Wahrscheinlich hast du schon einmal gehört, dass wir von intelligenten Geräten umgeben sind, die uns bei der Lösung von Alltagsproblemen helfen oder uns bei der Analyse großer Informationsmengen unterstützen, die Menschen nicht auswerten können.\nIn diesem Spiel erzählen wir dir, wie diese Smart Devices aussehen, wo sie eingesetzt werden und wozu sie gut sind.",
-                    "link": "/iot"
+                    "link": "/chapter/2"
                 },
                 {
                     "title": "Hacker",
                     "description": "Du hast davon geträumt, in die Rolle eines Hackers zu schlüpfen und zu lernen, wie es ist, sich in große Unternehmen zu hacken und ihnen so viel Schaden wie möglich zuzufügen? Dann ist das eine gute Gelegenheit für dich. Du schlüpfst in die Rolle eines Hackers und deine Aufgabe besteht darin, dich in das X-System zu hacken. Wenn du dich erfolgreich in das X-System hackst, wirst du mit einem besonderen Geschenk belohnt.",
-                    "link": "/hacker"
+                    "link": "/chapter/2"
                 }
             ]
         },
@@ -55,7 +50,7 @@
                 {
                     "title": "Internet Of Things",
                     "description": "Wahrscheinlich hast du schon einmal gehört, dass wir von intelligenten Geräten umgeben sind, die uns bei der Lösung von Alltagsproblemen helfen oder uns bei der Analyse großer Informationsmengen unterstützen, die Menschen nicht auswerten können.\nIn diesem Spiel erzählen wir dir, wie diese Smart Devices aussehen, wo sie eingesetzt werden und wozu sie gut sind.",
-                    "link": "/iot"
+                    "link": "chapter/3"
                 }
             ]
         }

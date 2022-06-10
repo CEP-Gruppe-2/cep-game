@@ -46,7 +46,7 @@
                 "überschrift":"Super!",
                 "text1":"Du hast direkt das sicherste Passwort ausgesucht.",
                 "text2":"Hier siehst du nochmal die wichtigsten Punkte bei der Auswahl eines sicheren Passworts:",
-                "text3":"1. Mind. 8 Zeichen  2. Mind. 1 Groß- und Kleinbuchstaben  3. Mind. 1 Sonderzeichen  4. Mind. 1 Zahl",
+                "text3":"Mind. 8 Zeichen, mind. 1 Groß- und Kleinbuchstaben, mind. 1 Sonderzeichen und mind. 1 Zahl",
                 "buttonText":"weiter",
                 "roboter": true  
               }
@@ -57,7 +57,7 @@
                 "überschrift":"Achtung!",
                 "text1":"Die richtige Lösung hier lautet C: R#§asf4*215da.",
                 "text2":"Bei der Auswahl von sicher Passwörtern musst du folgende Punkte beachten:",
-                "text3":"1. Mind. 8 Zeichen  2. Mind. 1 Groß- und Kleinbuchstaben  3. Mind. 1 Sonderzeichen  4. Mind. 1 Zahl",
+                "text3":"Mind. 8 Zeichen, mind. 1 Groß- und Kleinbuchstaben, mind. 1 Sonderzeichen und mind. 1 Zahl",
                 "buttonText":"weiter",
                 "roboter": true     
              }

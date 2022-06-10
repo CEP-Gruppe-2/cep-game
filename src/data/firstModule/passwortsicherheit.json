@@ -1,44 +1,34 @@
 {
-    
+    "roboterSource":"/res/modul1/passwortsicherheit/joules.svg",
   "einfuehrung": [
+      
       {
-          "backgroundcolor":"#68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungFirst.svg",
-          "text":"Hallo hier bin ich wieder. Gut das du mehr über Passwortsicherheit wissen willst.",
-          "buttonText":"",
+          "text":"Hallo hier bin ich wieder. Gut, dass du mehr über Passwortsicherheit wissen willst.",
+          "buttonText":"weiter",
           "roboter": true
       },
       {
-          "backgroundcolor":"#68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungSecond.svg",
-          "text":"Denn sichere Passwörter sind nicht nur ein wichtiger Bestandteil um das Unternehmen vor Angreifern und Schwachstellen zu schützen, sondern sind auch ein fester und wichtiger Bestandteil des Alltags geworden.",
-          "buttonText":"",
+          "text":"Denn sichere Passwörter sind nicht nur ein wichtiger Bestandteil, um das Unternehmen vor Angreifern und Schwachstellen zu schützen, sondern sind auch ein fester und wichtiger Bestandteil des Alltags geworden.",
+          "buttonText":"weiter",
           "roboter": true
       },
       {
-          "backgroundcolor":"68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungThird.svg",
           "text":"Das Passwort ist oft die einzige Hürde, die Angreifer haben, um deine Persönlichen Daten zu klauen und deine Identität zu missbrauchen.",
-          "buttonText":"",
+          "buttonText":"weiter",
           "roboter": true
       },
       {
-          "backgroundcolor":"68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungFourth.svg",
-          "text":"Wenn ein Angreifer zugriff auf dein Konto bekommt, kann er dir ernsthaften Finanziellen schaden zufügen.",
-          "buttonText":""
+          "text":"Wenn ein Angreifer zugriff auf eines deiner Konten bekommt, kann er dir und deinem Arbeitgeber ernsthaften finanziellen Schaden zufügen.",
+          "buttonText":"weiter",
+          "roboter": true
       },
       {
-          "backgroundcolor":"000000",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungFifth.svg",
           "text":"Beim erstellen eines sicheren Passworts ist es wichtig einige Regeln zu beachten. Diese lernst du im folgenden Spiel besser kennen.",
-          "buttonText":"",
+          "buttonText":"weiter",
           "roboter": true
       },
       {
-          "backgroundcolor":"000000",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungSixth.svg",
-          "text":"Wähle aus den angezeigten Passwörtern das sicherste Passwort für die unten genannten Dienste. Online-Shop, soziales Netwerk und Onlinebanking",
+          "text":"/res/modul1/passwortsicherheit/01-einführung.svg",
           "buttonText":"Starten",
           "roboter": false
           
@@ -47,90 +37,138 @@
   ],
   "aufgabe1": [
       {
-          "frage":"/res/modul1/passwortsicherheit/frageeins.svg",
+          "frage":"/res/modul1/passwortsicherheit/01-aufgabe1.svg",
           "lösung":"C",
-          "text":"",
+          "roboter":false,
 
           "richtig": [
               {
-                   "text":"/res/modul1/passwortsicherheit/frageeinsrichtigFirst.svg"   
+                "überschrift":"Super!",
+                "text1":"Du hast direkt das sicherste Passwort ausgesucht.",
+                "text2":"Hier siehst du nochmal die wichtigsten Punkte bei der Auswahl eines sicheren Passworts:",
+                "text3":"1. Mind. 8 Zeichen  2. Mind. 1 Groß- und Kleinbuchstaben  3. Mind. 1 Sonderzeichen  4. Mind. 1 Zahl",
+                "buttonText":"weiter",
+                "roboter": true  
               }
               
           ],
           "falsch":[
               {
-                  "text":"/res/modul1/passwortsicherheit/frageeinsfalschFirst.svg"   
+                "überschrift":"Achtung!",
+                "text1":"Die richtige Lösung hier lautet C: R#§asf4*215da.",
+                "text2":"Bei der Auswahl von sicher Passwörtern musst du folgende Punkte beachten:",
+                "text3":"1. Mind. 8 Zeichen  2. Mind. 1 Groß- und Kleinbuchstaben  3. Mind. 1 Sonderzeichen  4. Mind. 1 Zahl",
+                "buttonText":"weiter",
+                "roboter": true     
              }
              
           ]
       
       },
       {
-          "frage":"/res/modul1/passwortsicherheit/fragezwei.svg",
+          "frage":"/res/modul1/passwortsicherheit/02-aufgabe1.svg",
           "lösung":"A",
-          "text":"",
+          "roboter":false,
 
           "richtig": [
-              {
-                   "text":"/res/modul1/passwortsicherheit/fragezweirichtigFirst.svg"  
-              }
-          ],
-          "falsch":[
-             {
-              "text":"/res/modul1/passwortsicherheit/fragezweifalschFirst.svg" 
-             }
-          ]
+            {
+              "überschrift":"Super!",
+              "text1":"Deine gewälte Antwort ist richtig.",
+              "text2":"Hier noch ein weiterer Tipp von meiner Seite.",
+              "text3":"Es ist wichtig das du Passwörter verwendest, die du dir selbst nicht merken kannst. Diese solltest du dir aber nicht aufschreiben. Deshalb ist es sinnvoll einen Passwortmanager zu verwenden, der das Speichern deiner Passwörter für dich übernimmt.",
+              "buttonText":"weiter",
+              "roboter": true  
+            }
+            
+        ],
+        "falsch":[
+            {
+              "überschrift":"Achtung!",
+              "text1":"Die richtige Lösung hier lautet A:  R#v4-t2-stßrng-p@ssw0rD.",
+              "text2":"Hier noch ein weiterer Tipp von meiner Seite.",
+              "text3":"Es ist wichtig das du Passwörter verwendest, die du dir selbst nicht merken kannst. Diese solltest du dir aber nicht aufschreiben. Deshalb ist es sinnvoll einen Passwortmanager zu verwenden, der das Speichern deiner Passwörter für dich übernimmt.",
+              "buttonText":"weiter",
+              "roboter": true     
+           }
+           
+        ]
       },
       {
-          "frage":"/res/modul1/passwortsicherheit/fragedrei.svg",
+          "frage":"/res/modul1/passwortsicherheit/03-aufgabe1.svg",
           "lösung":"C",
-          "text":"",
+          "roboter":false,
 
           "richtig": [
-              {
-                   "text":"/res/modul1/passwortsicherheit/fragedreirichtigFirst.svg"   
-              }
-          ],
-          "falsch":[
-              {
-                  "text":"/res/modul1/passwortsicherheit/fragedreifalschFirst.svg"   
-             }
-          ]
+            {
+              "überschrift":"Super!",
+              "text1":"Deine Antwort ist richtig!",
+              "text2":"Hier war es wichtig, nicht das Passwort zu wählen, das du schon für deinen Intranetzugang benutzt. Da du immer unterschiedliche Passwörter verwenden solltest.",
+              "text3":"Wird ein Benutzerkonto von dir gehackt, haben die Angreifer direkt zugriff auf weitere deiner Accounts, falls du dort dasselbe Passwort verwendest.",
+              "buttonText":"weiter",
+              "roboter": true  
+            }
+            
+        ],
+        "falsch":[
+            {
+              "überschrift":"Achtung!",
+              "text1":"Die Richtige Antwort ist C:  R#§a!33sf4-*215da.",
+              "text2":"Hier war es wichtig, nicht das Passwort zu wählen, das du schon für deinen Intranetzugang benutzt. Da du immer unterschiedliche Passwörter verwenden solltest.",
+              "text3":"Wird ein Benutzerkonto von dir gehackt, haben die Angreifer direkt zugriff auf weitere deiner Accounts, falls du dort dasselbe Passwort verwendest.",
+              "buttonText":"weiter",
+              "roboter": true     
+           }
+           
+        ]
       }
   ],
   "einfuehrungAufgabeZwei": [
       {
-          "backgroundcolor":"#68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiFirst.svg",
-          "text":"Hier nochmal die wichtigsten Punkte zusammengefast!",
-          "buttonText":"",
+          "überschrift":"",
+          "text1":"Hier nochmal die wichtigsten Punkte zusammengefast!",
+          "text2":"1. Passwortmanager verwenden",
+          "text3":"2. Passwörter benutzen, die du dir nicht merken kannst",
+          "text4":"3. Viele verschiedene Passwörter verwenden",
+          "text5":"4. Beim Passwort erstellen Regeln beachten ",
+          "buttonText":"weiter",
           "roboter": true
       },
       {
-        "backgroundcolor":"#68C382",
-        "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiSecond.svg",
-        "text":"Hier nochmal die wichtigsten Punkte zusammengefast!",
-        "buttonText":"",
-        "roboter": true
+          "überschrift":"Achtung!",
+          "text1":"Die Regeln beim erstellen eines sicheren Passworts werden oft vom Arbeitgeber vorgegeben und können von unseren Vorgaben abweichen.",
+          "text2":"",
+          "text3":"",
+          "text4":"",
+          "text5":"",
+          "buttonText":"weiter",
+          "roboter": true
         },
       {
-          "backgroundcolor":"#68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiThird.svg",
-          "text":"So jetzt bis du an der Reihe um dein gelerntes Wissen kreativ umzusetzen. In der Folgenden aufgabe darfst du die jetzt sichere Passwörter ausdenken.",
-          "buttonText":"",
-          "roboter": true
+        "überschrift":"",
+        "text1":"So jetzt bis du an der Reihe, dein gelerntes Wissen kreativ umzusetzen. In der folgenden Aufgabe darfst du dir jetzt sichere Passwörter ausdenken.",
+        "text2":"",
+        "text3":"",
+        "text4":"",
+        "text5":"",
+        "buttonText":"weiter",
+        "roboter": true
       },
       {
-          "backgroundcolor":"68C382",
-          "inhalt":"/res/modul1/passwortsicherheit/einfuehrungAufgabeZweiFourth.svg",
-          "text":"",
-          "buttonText":"Starten"
+        "überschrift":"",
+        "text1":"/res/modul1/passwortsicherheit/01-aufgabe2.svg",
+        "text2":"",
+        "text3":"",
+        "text4":"",
+        "text5":"",
+        "buttonText":"Starten",
+        "roboter": false
       }
   ],
   "endeAufgabeZwei": [
       {
-          "inhalt":"/res/modul1/passwortsicherheit/endeAufgabeZweiFirst.svg",
-          "text":"Super! Du hast das erste Spiel “Passwortsicherheit” abgeschlossen. Hierfür erhälst du von mir... Punkte. Schaue mal nach, ob du schon genug Punkte hast, um E-City wieder mit Energie zu versorgen.",
+          "Überschrift":"Super!",
+          "text1":"Du hast das Spiel “Passwortsicherheit”  abgeschlossen. Hierfür erhälst du von mir ",
+          "text2":" Punkte. Schau mal nach, ob du schon genug Punkte hast, um E-City wieder mit Energie zu versorgen.",
           "buttonText":"Beenden",
           "roboter": true
       }

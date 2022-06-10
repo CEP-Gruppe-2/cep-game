@@ -1,247 +1,361 @@
-import { unsafeCSS, html, LitElement } from 'lit';
+import { html, LitElement, unsafeCSS} from 'lit';
 import styles from './secure-password.scss?inline';
-import { property, state, query } from 'lit/decorators.js';
+import { property, query, state} from 'lit/decorators.js';
 import passwortsicherheit from '../../data/firstModule/passwortsicherheit.json';
 
 export class SecurePassword extends LitElement {
 
-  static styles = unsafeCSS(styles);
+    static styles = unsafeCSS(styles);
 
-  private inhalt:String='';
-  private alt:String='';
-  private buttonText:String='';
-  private start:boolean=false;
-  private lösung:String='';
-  private richtig:boolean= false;
-  private erklärung:boolean=false;
-  private modi2:boolean=false;
-  private passwort:String='';
+    private joulesSource:string="";
+    private text:string[]=[];
+    private buttonText:string="";
+    private roboter:boolean=false;
+    private ablaufPosition:Ablauf=Ablauf.Einfuehrung;   
+    private lösung:string="";
+    private überschrift:string=""
+    private fehlerMeldungPasswort:string='';
+    private eingabe:string="";
 
-  positionErklaerung=0;
-  fehlerMeldungPasswort='';
-
-  @property({type: Number})
+    
+    @property({type: Number})
     position = 0;
 
-  @state()
+    @property({type: Boolean})
+    richtig=false;
+
+    @property({type: Boolean})
+    erklärung=false;
+
+    @state()
     _submitEnabled = false;
 
-  @query('input')
+    @query('input')
     _input!: HTMLInputElement;
 
 
-  _handleClick(e:Event):void{
-    if((e.target as HTMLDivElement).textContent==='Beenden'){
-      console.log('spiel wurde beendet!');
-      return;
+    _handleClick(e:Event):void{
+        this.position++;
+
+
+        if((e.target as HTMLDivElement).textContent==='Beenden'){
+            console.log("spiel beendet")
+            return;
+        }
+/*später nich zusammenfassen*/
+        /*wenn der button text starten hat setze enum eins weiter und position=0*/
+        if((e.target as HTMLDivElement).textContent==='Starten'){
+            this.position=0;
+            this.ablaufPosition++;
+            console.log("button erstes else gedrückt")
+            /*wenn aufgabe 1 fertig und enum eins weiter und position=0*/
+        }else if(this.ablaufPosition==Ablauf.Aufgabe1&&this.position==3){
+            this.position=0;
+            this.ablaufPosition++;
+            console.log("button zweites else gedrückt")
+        }else if(this.ablaufPosition==Ablauf.Aufgabe2Einführung&&(e.target as HTMLDivElement).textContent==='Starten'){
+            this.position=0;
+            this.ablaufPosition++;
+            console.log("Startbutton gedrückt")
+        }
+
+        
+        
+
+
 
     }
 
+    _handleClickAufgabe1(e:Event):void{
+        
+        if((e.target as HTMLDivElement).textContent===this.lösung){
+            this.richtig=true;
+            console.log("Klick war richtig")
+        }
+        else{
+            this.richtig=false;
+            console.log("Klick war falsch")
+        }
+        this.erklärung=true;
+        this.requestUpdate();
+    }
 
-    /*wenn im spielmodus mit multiple choice lösung überprüfen*/
-    spielLogikMultipleChoice: if(!this.modi2&&this.start){
-      if((e.target as HTMLDivElement).textContent==='weiter'){
-        this.erklärung=false;
-        break spielLogikMultipleChoice;
-      }
-
-
-      if((e.target as HTMLDivElement).textContent===this.lösung){
-        this.richtig=true;
-      }else{
-        this.richtig=false;
-      }
-      this.erklärung=true;
-    }else if(this.start){
-      if((e.target as HTMLDivElement).textContent==='Passwort überprüfen!'){
+    _handleClickAufgabe2(e:Event):void{
         this._bearbeitePasswortEingabe();
-        return;
+    }
+
+    _bearbeitePasswortEingabe(){
+        /*Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character*/
+        let pattern=  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-.,]).{8,}$/;
+    
+        this.eingabe=this._input.value;
+        this._input.value = '';
+        this._submitEnabled = false;
+        if(!this.eingabe.match(pattern))
+          this.fehlerMeldungPasswort='Das Passwort: '+this.eingabe+' ist zu unsicher.';
+        else
+          this.ablaufPosition++;
       }
-    }
-
-    if((e.target as HTMLDivElement).textContent==='Starten'){
-      this.position=-1;
-      this.start=true;
-    }
-
-    /*wenn aufgabe falsch oder richtig gemacht wurde erklärung durchgehen und Eklärungsposition hochzählen, ansonsten normale position weitermachen*/
-    if(!this.erklärung){
-      this.position++;
-      if(this.positionErklaerung>0){
-        this.positionErklaerung=0;
-      }
-    }
-    this.requestUpdate();
-  }
-
-
+    
+    
   _inputChanged(e: Event) {
     this._submitEnabled = !!(e.target as HTMLInputElement).value;
   }
 
 
-  _bearbeitePasswortEingabe(){
-    /*Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character*/
-    let pattern=  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-.,]).{8,}$/;
-
-    this.passwort=this._input.value;
-    this._input.value = '';
-    this._submitEnabled = false;
-    if(!this.passwort.match(pattern))
-      this.fehlerMeldungPasswort='Das Passwort: \n'+this.passwort+' ist zu unsicher.';
-    else
-      this.erklärung=true;
-  }
-
-
-
-
-
-  render() {
-
-    let displayPosition;
-
-    /*einführung aus Json holen*/
-    if(!this.start){
-      if(!this.modi2&&this.position<=passwortsicherheit.einfuehrung.length){
-        /*modi 1 einfuehrung*/
-        /*this.backgroundcolor= passwortsicherheit.einfuehrung[this.position].backgroundcolor;*/
-        this.inhalt=passwortsicherheit.einfuehrung[this.position].inhalt;
-        this.alt=passwortsicherheit.einfuehrung[this.position].text;
-        this.buttonText=passwortsicherheit.einfuehrung[this.position].buttonText;
-
-      }else if(this.modi2&&this.position<=passwortsicherheit.einfuehrungAufgabeZwei.length){
-        /*modi 2 einführung*/
-        this.inhalt=passwortsicherheit.einfuehrungAufgabeZwei[this.position].inhalt;
-        this.alt=passwortsicherheit.einfuehrungAufgabeZwei[this.position].text;
-        this.buttonText=passwortsicherheit.einfuehrungAufgabeZwei[this.position].buttonText;
-
-      }
-
-      if(this.buttonText!=''){
-        console.log("hall");
-        
-        displayPosition = html`
-        <div class="inhalts-container">
-          <img class="inhalt" srcset=${this.inhalt}  alt=${this.alt}/>
-        </div>
-        <div class="flexbox-buttons">
-          <my-button @click="${this._handleClick}">${this.buttonText}</my-button>
-        </div>`;
-      }else{
-        displayPosition = html `
-          <div class="inhalts-container">
-              <img class="inhalt-roboter" srcset=${this.inhalt} @click="${this._handleClick}" alt=${this.alt}/>
-          </div>
-        `;
-      }
-
-
-    }else{/*nach start geht es hier weiter*/
-
-      /*ausgabe modi1 aufgabe und lösung*/
-      if(!this.modi2){
-        if(!this.erklärung){
-          /* ausgabe aufgabenstellung*/
-          this.inhalt=passwortsicherheit.aufgabe1[this.position].frage;
-          this.lösung=passwortsicherheit.aufgabe1[this.position].lösung;
-          this.alt=passwortsicherheit.aufgabe1[this.position].text;
-
-          displayPosition = html`
-
-          <div class="inhalts-container">
-            <img class="inhalt" srcset=${this.inhalt} alt=${this.alt}/>
-          </div>
-            <div class="flexbox-buttons">
-                <my-button id="flex-button1" @click="${this._handleClick}">A</my-button>
-                <my-button id="flex-button2" @click="${this._handleClick}">B</my-button>
-                <my-button id="flex-button3" @click="${this._handleClick}">C</my-button>
-                <my-button id="flex-button4" @click="${this._handleClick}">D</my-button>
-            </div>`;
+    private readData():void{
+        if(this.ablaufPosition==Ablauf.Einfuehrung){
+            this.joulesSource=passwortsicherheit.roboterSource;
+            this.text[0]=passwortsicherheit.einfuehrung[this.position].text;
+            this.buttonText=passwortsicherheit.einfuehrung[this.position].buttonText;
+            this.roboter=passwortsicherheit.einfuehrung[this.position].roboter;
         }
-        else/*ausgabe Lösung*/
-        {
-
-          if(this.richtig &&this.positionErklaerung<=passwortsicherheit.aufgabe1[this.position].richtig.length)
-            this.inhalt=passwortsicherheit.aufgabe1[this.position].richtig[this.positionErklaerung].text;
-          else if(this.positionErklaerung<=passwortsicherheit.aufgabe1[this.position].falsch.length)
-            this.inhalt=passwortsicherheit.aufgabe1[this.position].falsch[this.positionErklaerung].text;
-          else{
-            this.erklärung=false;
-          }
-          this.positionErklaerung++;
-          displayPosition = html`
-            <div class="inhalts-container">
-              <img class="inhalt-lösung" srcset=${this.inhalt} />
-            </div>
-            <div class="flexbox-buttons">
-              <my-button @click="${this._handleClick}">weiter</my-button>
-            </div>
-                `;
-
-          /*ab jetzt nur noch modi2 verwenden*/
-          if(this.position===passwortsicherheit.aufgabe1.length-1){
-            this.modi2=true;
-            this.start=false;
-            this.erklärung=false;
-            this.position=-1;
-            this.positionErklaerung=0;
-          }
-
-
+        else if(this.ablaufPosition==Ablauf.Aufgabe1){
+            console.log("Aufgabe1")
+            if(!this.erklärung){
+                this.text[0]=passwortsicherheit.aufgabe1[this.position].frage;
+                this.lösung=passwortsicherheit.aufgabe1[this.position].lösung;
+                this.roboter=passwortsicherheit.aufgabe1[this.position].roboter;
+                /*this.antworten[0]=passwortsicherheit.aufgabe1[this.position].antwort1;
+                this.antworten[1]=passwortsicherheit.aufgabe1[this.position].antwort2;
+                this.antworten[2]=passwortsicherheit.aufgabe1[this.position].antwort3;
+                this.antworten[3]=passwortsicherheit.aufgabe1[this.position].antwort4;
+                this.hinweis=passwortsicherheit.aufgabe1[this.position].hinweis;*/
+            }else{
+                if(this.richtig){
+                    console.log("lade erklärung richtig")
+                    this.text[0]=passwortsicherheit.aufgabe1[this.position].richtig[0].überschrift;
+                    this.text[1]=passwortsicherheit.aufgabe1[this.position].richtig[0].text1;
+                    this.text[2]=passwortsicherheit.aufgabe1[this.position].richtig[0].text2;
+                    this.text[3]=passwortsicherheit.aufgabe1[this.position].richtig[0].text3;
+                    this.buttonText=passwortsicherheit.aufgabe1[this.position].richtig[0].buttonText;
+                    this.roboter=passwortsicherheit.aufgabe1[this.position].richtig[0].roboter;
+                }else{
+                    console.log("lade erklärung falsch")
+                    this.text[0]=passwortsicherheit.aufgabe1[this.position].falsch[0].überschrift;
+                    this.text[1]=passwortsicherheit.aufgabe1[this.position].falsch[0].text1;
+                    this.text[2]=passwortsicherheit.aufgabe1[this.position].falsch[0].text2;
+                    this.text[3]=passwortsicherheit.aufgabe1[this.position].falsch[0].text3;
+                    this.buttonText=passwortsicherheit.aufgabe1[this.position].falsch[0].buttonText;
+                    this.roboter=passwortsicherheit.aufgabe1[this.position].falsch[0].roboter;
+                }
+                this.richtig=false;
+            }
+        }else if(this.ablaufPosition==Ablauf.Ende){
+            this.überschrift=passwortsicherheit.endeAufgabeZwei[0].Überschrift;
+            this.text[0]=passwortsicherheit.endeAufgabeZwei[0].text1;
+            this.text[1]=passwortsicherheit.endeAufgabeZwei[0].text2;
+            this.buttonText=passwortsicherheit.endeAufgabeZwei[0].buttonText;
+            this.roboter=passwortsicherheit.endeAufgabeZwei[0].roboter;
+        }else{
+            console.log("lade aufgabe 2 daten")
+            this.überschrift=passwortsicherheit.einfuehrungAufgabeZwei[this.position].überschrift;
+            this.text[0]=passwortsicherheit.einfuehrungAufgabeZwei[this.position].text1;
+            this.text[1]=passwortsicherheit.einfuehrungAufgabeZwei[this.position].text2;
+            this.text[2]=passwortsicherheit.einfuehrungAufgabeZwei[this.position].text3;
+            this.text[3]=passwortsicherheit.einfuehrungAufgabeZwei[this.position].text4;
+            this.text[4]=passwortsicherheit.einfuehrungAufgabeZwei[this.position].text5;
+            this.buttonText=passwortsicherheit.einfuehrungAufgabeZwei[this.position].buttonText
+            this.roboter=passwortsicherheit.einfuehrungAufgabeZwei[this.position].roboter;
         }
+    }
 
 
+    /*schreibt den text in die Sprechblase*/
+    private writeText():any{
+        var text:any="";
 
-      }else{ /*hier wird die aufgabe für modi2 ausgegeben*/
-
-        /*ausgabe Aufgabenstellung*/
-        if(!this.erklärung){
-          displayPosition = html`
-            <div id="flexbox-passworteingabe">
-                <tr>
-                        <th><label class="password-label">Gib hier ein Passwort an: 
-                        <div id="passwort-input"><input class="password-input" @input=${this._inputChanged}/></div>
-                    </label></th>
-                </tr>
-                <tr>
-                    <div id="fehlermeldung-container">${this.fehlerMeldungPasswort}</div>
-                </tr>
-                <tr>
-                    <div id="passwort-button"><my-button @click=${this._handleClick} .disabled=${!this._submitEnabled}>Passwort überprüfen!</my-button></div>
+        if(this.ablaufPosition==Ablauf.Einfuehrung){
+            console.log("schreibe in sprechblase einführung")
+            text=html`
+                <div class="bubble1">
+                    <p>${this.text[0]}</p>
+                </div>
+                `
+                
+        }
+        else if(this.ablaufPosition==Ablauf.Aufgabe1){
+            console.log("schreibe in sprechblase erklärung")
+            text=html`
+             <div class="bubble1">
+                    <h1>${this.text[0]}</h1>
+                    <p>${this.text[1]}</p>
+                    <p>${this.text[2]}</p>
+                    <p>${this.text[3]}</p>
+             </div>
+            `;
+        }else if(this.ablaufPosition==Ablauf.Ende){
+            text=html`
+            <div class="bubble1">
+                   <h1>${this.überschrift}</h1>
+                   <p>${this.text[0]} "Punkte" ${this.text[1]}</p>
+            </div>`
+        }else{
+            console.log("schreibe in sprechblase aufgabe2 pos: "+this.position)
+            if(this.position==0){
+                text=html`
+                    <div class="bubble1">
+                       <p>${this.text[0]}</p>
+                       <p>${this.text[1]}</p>
+                       <p>${this.text[2]}</p>
+                       <p>${this.text[3]}</p>
+                       <p>${this.text[4]}</p>
                     </div>
-                </tr>
-            </div>
-          `;
+               `;
+            }else{
+                text=html`
+                    <div class="bubble1">
+                        <h1>${this.überschrift}</h1>
+                       <p>${this.text[0]}</p>
+                    </div>
+               `;
+            }
+                    
+        }
+        return html`${text}`
+    }
 
-        }else{/*ausgabe Lösung*/
-          this.inhalt=passwortsicherheit.endeAufgabeZwei[0].inhalt;
-          this.buttonText=passwortsicherheit.endeAufgabeZwei[0].buttonText;
-          this.alt=passwortsicherheit.endeAufgabeZwei[0].text;
+
+    /*schreibt das img des roboters*/
+    private writeRoboter():any{
+        /*var text:any="";
+
+        if(this.ablaufPosition==Ablauf.Einfuehrung||this.ablaufPosition==Ablauf.Aufgabe1&&this.erklärung){
+            if(this.roboter){
+                text=html`
+                <div class="joules rahmen">
+                    <img src=${this.joulesSource}/>
+                </div>`
+            }else
+            return;
+
+                
+        }
+        else if(this.ablaufPosition==Ablauf.Aufgabe1){
+            aufgabe1 
+                
+        }else{
+            aufgabe2 
+                
+        }
+*/
+        return html`
+        <div class="joules">
+            <img class="joules-img" src=${this.joulesSource}/>
+        </div>`
+    }
 
 
-          displayPosition = html`
-            <div class="inhalts-container">
-              <img class="inhalt" srcset=${this.inhalt} alt=${this.alt}/>
-            </div> 
-            <div class="flexbox-buttons">
-              <my-button class="starten-button" @click=${this._handleClick}>${this.buttonText}</my-button>
-            </div>
-          `;
+    /*schreibt die Buttons*/
+    private writeButtons():any{
+        var text:any="";
+        if(this.ablaufPosition==Ablauf.Einfuehrung||this.ablaufPosition==Ablauf.Aufgabe2Einführung||this.ablaufPosition==Ablauf.Ende||this.erklärung){
+            text=html`
+                <div class="button">
+                    <my-button @click="${this._handleClick}">${this.buttonText}</my-button>
+                </div>`
+            this.erklärung=false;
+        }
+        else if(this.ablaufPosition==Ablauf.Aufgabe1){
+            text=html`
+                <div class="flexbox-buttons">
+                    <my-button  @click="${this._handleClickAufgabe1}">A</my-button>
+                    <my-button class="flex-button" @click="${this._handleClickAufgabe1}">B</my-button>
+                    <my-button class="flex-button" @click="${this._handleClickAufgabe1}">C</my-button>
+                    <my-button class="flex-button" @click="${this._handleClickAufgabe1}">D</my-button>
+                </div>`;
+            
         }
 
+        return html`${text}`
+    }
 
+    
+    /*schreibt die aufgabe in dafürvorgesehene feld*/
+    private writeAufgabe():any{
+        var text:any="";
 
-      }
+        if(this.ablaufPosition==Ablauf.Aufgabe1||this.ablaufPosition==Ablauf.Einfuehrung){
+            text=html`
+                <div id="aufgabenBild">
+                    <img src=${this.text[0]}/>
+                </div>`
+        }
+        
+            
+
+        return html`
+        <div id="aufgabenBild">
+            <img src=${this.text[0]}/>
+        </div>`
+
 
     }
-    return html`
-    <div class="main-div">
-        ${displayPosition}
-    </div>
-        `;
-  }
-  
+
+    private ladeAufgabe2():any{
+        
+        return html`
+            <div id="flexbox-passworteingabe">
+                <label class="passwort-label">Gib hier ein Passwort ein: 
+                    <div class="passwort-eingabe">
+                        <input class="passwort-input" @input=${this._inputChanged}/>
+                    </div>
+                </label>
+                <div id="fehlermeldung-container">
+                        
+                    <p>${this.fehlerMeldungPasswort}</p>
+                        
+                </div>
+                <div id="passwort-button">
+                    <my-button @click=${this._handleClickAufgabe2} .disabled=${!this._submitEnabled}>
+                        Passwort überprüfen!
+                    </my-button>
+                </div>
+            </div>
+      `;
+    }
+
+    render() {
+        
+        if(this.ablaufPosition!=Ablauf.Aufgabe2){
+            this.readData();
+            if(this.roboter)
+                return html` 
+                    <div class="main-div">
+                        <div class="inhalts-container">
+                            ${this.writeText()}
+                            ${this.writeRoboter()}
+                            ${this.writeButtons()}
+                        </div>
+                    </div>
+                    `
+            else
+                return html` 
+                    <div class="main-div">
+                        <div class="aufgaben-container rahmen">
+                            ${this.writeAufgabe()}
+                            ${this.writeButtons()}
+                        </div>
+                    </div>
+                `
+        }else{
+            console.log("eingabefeld aufgabe 2 wird geladen")
+            return html`
+                <div class="main-div">
+                    ${this.ladeAufgabe2()}
+                </div>
+            `
+        }
+    }
+
+}
+enum Ablauf{
+    Einfuehrung,
+    Aufgabe1,
+    Aufgabe2Einführung,
+    Aufgabe2,
+    Ende
+    
 }
 
 customElements.define('secure-password', SecurePassword);

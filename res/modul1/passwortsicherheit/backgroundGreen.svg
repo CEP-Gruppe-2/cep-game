@@ -1,0 +1,34 @@
+<svg width="419" height="378" viewBox="0 0 419 378" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_529_2885)">
+<rect x="416.443" y="198.977" width="2.55623" height="76.5956" rx="1.27811" fill="#C4C4C4"/>
+<rect y="133.688" width="2.996" height="23.3177" rx="1.27982" fill="#C4C4C4"/>
+<rect y="181.877" width="2.996" height="48.1899" rx="1.27982" fill="#C4C4C4"/>
+<rect y="245.613" width="2.996" height="48.1899" rx="1.27982" fill="#C4C4C4"/>
+<rect x="1.99805" width="414.446" height="663" rx="65" fill="url(#paint0_linear_529_2885)"/>
+<rect x="7.99023" y="4.66406" width="402.462" height="653.673" rx="60" fill="black"/>
+<rect x="28" y="24" width="363" height="623" rx="42" fill="#68C382"/>
+<g style="mix-blend-mode:multiply">
+<rect x="280.018" width="7.98933" height="4.66354" fill="#C0C0C0"/>
+</g>
+<rect x="130.826" y="6.21875" width="66.9106" height="5.4408" rx="2.7204" fill="#171718"/>
+<g style="mix-blend-mode:multiply">
+<rect x="411.047" y="66.0664" width="5.992" height="6.21805" fill="#C0C0C0"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<rect x="1.99805" y="66.0664" width="5.992" height="6.21805" fill="#C0C0C0"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M131.83 15.5449H127.83V15.5449C129.95 15.5451 131.669 17.264 131.669 19.3844C131.669 19.4382 131.668 19.4917 131.666 19.5449H131.83V15.5449Z" fill="black"/>
+<path d="M131.83 15.5449H285.83V27.7077C285.83 38.6635 276.949 47.5449 265.993 47.5449H151.667C140.711 47.5449 131.83 38.6635 131.83 27.7077V15.5449Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M285.83 15.5449H289.83V15.5449C289.83 15.5449 289.83 15.5449 289.83 15.5449C287.627 15.5449 285.839 17.3342 285.83 19.5449V15.5449Z" fill="black"/>
+<ellipse cx="151.798" cy="24.095" rx="7.98933" ry="6.21805" fill="#171718"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_529_2885" x1="209.221" y1="0" x2="209.221" y2="663" gradientUnits="userSpaceOnUse">
+<stop stop-color="#527190"/>
+<stop offset="1" stop-color="#2B4A69"/>
+</linearGradient>
+<clipPath id="clip0_529_2885">
+<rect width="419" height="378" fill="white"/>
+</clipPath>
+</defs>
+</svg>

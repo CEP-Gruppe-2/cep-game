@@ -34,8 +34,9 @@ export class SecurityIncidents extends LitElement {
       this.requestUpdate;
   }
 
-  /* wird bei klick auf button aufgerufen
-      e:Event wir benötigt um zu erfahren welcher button gedrückt wird*/
+    /* wird bei klick auf button aufgerufen
+      e:Event wir benötigt um zu erfahren welcher button gedrückt wird
+    */
     _handleClickButton(e:Event):void{
         if(!this.erklärung1){
             this.buttons.length=0;

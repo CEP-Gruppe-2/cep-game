@@ -1,4 +1,4 @@
-export const redirectTo = (redirectUrl : String, connectionType : String) => {
+export const redirectTo = (redirectUrl : String, _connectionType : String) => {
   /*
         if (location.protocol !== "https:"){
             location.replace(window.location.href.replace("http:", "https:"));

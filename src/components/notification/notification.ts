@@ -50,7 +50,7 @@ export class Notification extends LitElement {
               `}
           </div>
           <!-- Close Icon -->
-          <img class="close-icon" src="res/icons/close.svg" @click=${(e : Event) => this._closeNotification(e)} alt="">
+          <img class="close-icon" src="res/icons/close.svg" @click=${this._closeNotification} alt="">
         </div>
       </div>
     `;

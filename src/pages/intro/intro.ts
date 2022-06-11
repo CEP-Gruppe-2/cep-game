@@ -61,10 +61,10 @@ export class Intro extends LitElement {
 
       if( this.pos < this.continuation.length - 1 ) {
         return html`
-          <img class="roboter-img" @click="${this.continue}" src="${this.continuation[this.pos]}" alt=""/>
+          <img class="roboter-img" @click="${this.continue}" srcset="${this.continuation[this.pos]}" alt=""/>
         `;
       } else {
-        let notification: String = 'error';
+        let notification: string = 'error';
         if(!localStorage.getItem('points')){
 
           console.log('der Nutzer hat die Einleitung erfolgreich abgeschlossen. Wir können den Nutzer zum ersten Kapitel weiterleiten wir können ihm Punkte addieren');

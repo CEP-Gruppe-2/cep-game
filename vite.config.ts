@@ -8,7 +8,7 @@ export default defineConfig({
   base: './',
   build: {
     lib: {
-      entry: './src/game.ts',
+      entry: 'index.html',
       formats: ['es']
     }
   },

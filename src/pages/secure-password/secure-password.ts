@@ -232,7 +232,7 @@ export class SecurePassword extends LitElement {
     private writeAufgabe():any{
         return html`
         <div id="aufgabenBild">
-            <img src=${this.text[0]} />
+            <img class="aufgabenText" src=${this.text[0]} />
         </div>`
 
 
@@ -243,10 +243,10 @@ export class SecurePassword extends LitElement {
         
         return html`
             <div id="flexbox-passworteingabe">
-                <label class="passwort-label">Gib hier ein Passwort ein: 
-                    <div class="passwort-eingabe">
+                <p class="passwort-label">Gib hier ein Passwort ein:</p> 
+                    
                         <input class="passwort-input" @input=${this._inputChanged}/>
-                    </div>
+                    
                 </label>
                 <div id="fehlermeldung-container">
                         

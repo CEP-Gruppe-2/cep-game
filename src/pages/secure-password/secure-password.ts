@@ -3,6 +3,7 @@ import styles from './secure-password.scss?inline';
 import { property, query, state} from 'lit/decorators.js';
 import passwortsicherheit from '../../data/firstModule/passwortsicherheit.json';
 import { redirectTo } from '../../functions/redirect';
+import { addPointsToLocalStorage } from '../../functions/localstorage';
 
 export class SecurePassword extends LitElement {
 
@@ -43,6 +44,8 @@ export class SecurePassword extends LitElement {
 
 
         if((e.target as HTMLDivElement).textContent==='Beenden'){
+           addPointsToLocalStorage("Passwortsicherheit", this.punkte+"");
+            this.punkte+=Number(localStorage.getItem('points'));
             localStorage.setItem('points', this.punkte+"");
             redirectTo("chapter/1", "")
         }

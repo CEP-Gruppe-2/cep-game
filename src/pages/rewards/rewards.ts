@@ -68,7 +68,7 @@ export class Rewards extends LitElement {
               </div>
 
               <div id="info-history">
-                  <h1>History erhaltenen Punkten</h1>
+                  <h1>Historie deiner Punkte</h1>
                   <div class="history-cards" id="cards">
                       <!-- 
                         History Card zeigt alle Punkte, die man bis jetzt erhalten hat.

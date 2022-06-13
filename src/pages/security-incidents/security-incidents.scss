@@ -4,12 +4,13 @@
     height: 100vh;
     background-color: #68C382;  
     position: relative;    
-    overflow: hidden;      
+    overflow: hidden; 
+    font-size: 16px;     
 }   
 
 .main-div{
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 0.625em;
 }
 
 
@@ -20,30 +21,72 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 0em;
 }
 
     h1{
         text-align: center;
-        margin-top: 50px;
-        margin-bottom: 100px;
+        margin-top: 3.125em;
+        margin-bottom: 5em;
     }
   
     my-button {
-        margin: 10px;
+        margin: 0.5em;
     }
 
 
-    .svg{
-        
+    .svg{  
         z-index: 20;
         position: relative;
         display: block;
-        width: 70%;
-        height: 80%;
+        width: 28em;
         margin: 1em auto;
+        margin-bottom: 0.2em;
     }
 
+    @media only screen and (min-width: 200px) {
+        .main-div{
+            font-size: 13px;
+        }
+     }
+    
+    @media only screen and (min-width: 540px) {
+       .main-div{
+           font-size: 15px;
+       }
+    }
+    
+    @media only screen and (min-width: 650px) {
+        .main-div{
+            font-size: 17px;
+        }
+     }
+    
+    
+    @media only screen and (min-width: 850px) {
+        .main-div{
+            font-size: 20px;
+        }
+    }
+    
+    @media only screen and (min-width: 900px) {
+        .main-div{
+            font-size: 22px;
+        }
+    }
+    
+    @media only screen and (min-width: 1400px) {
+        .main-div{
+            font-size: 30px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .svg{
+            width: 30em;
+        }
+    }
+/*
     @media only screen and (min-width: 650px) {
         .svg{
             width: 200px;
@@ -73,4 +116,4 @@
         }
 
         
-    }
+    }*/

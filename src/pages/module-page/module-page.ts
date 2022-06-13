@@ -1,7 +1,7 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import { redirectTo } from '../../functions/redirect';
 import styles from './module-page.scss?inline';
-import  games  from '../../data/moduls.json'
+import  games  from '../../data/moduls.json';
 
 export class ModulePage extends LitElement {
 
@@ -11,12 +11,12 @@ export class ModulePage extends LitElement {
 
   constructor(){
     super();
-    let x : string = window.location.pathname, arr : Array<string> = x.split("/");
+    let x : string = window.location.pathname, arr : Array<string> = x.split('/');
     let arrString = arr[1].toString(), 
-        chapterNum = parseInt(arr[2].toString());
+      chapterNum = parseInt(arr[2].toString());
         
-    if(arrString != "chapter" || (chapterNum > 3 || chapterNum < 1)){
-      redirectTo("/404", "");
+    if(arrString != 'chapter' || (chapterNum > 3 || chapterNum < 1)){
+      redirectTo('/404', '');
     }else{
       this.chapterNumber = chapterNum;
     }
@@ -45,14 +45,13 @@ export class ModulePage extends LitElement {
         
         <div class="themes-boxes" >
           ${games.module[this.chapterNumber - 1].games.map(function(val, index, arr){
-            return html `
+            return html`
               <div class="themes-box div${index}">
                 <h3 class="themes-box-title">${arr[index].title}</h3>
                 <p class="themes-desc">${arr[index].description}</p>
                 <a class="themes-btn" href="${arr[index].link}">zum Spiel</a>
                 ${console.log(`${arr[index].link}`, `${arr[index].description}`, `${arr[index].title}`)}
-              </div>
-            `
+              </div>`;
           })}
         </div> 
       </div>

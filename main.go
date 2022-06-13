@@ -1,14 +1,21 @@
 package main
 
-import "fmt"
-import "net/http"
-import "log"
+import (
+	"fmt"
+	"html/template"
+	"log"
+	"net/http"
+)
 
-func main(){
+func main() {
 	// Serve static files from the frontend/dist directory.
-	fs := http.FileServer(http.Dir("dist"))
-	http.Handle("/", fs)
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("dist/assets/"))))
 	http.Handle("/res/", http.StripPrefix("/res/", http.FileServer(http.Dir("res/"))))
+
+	tmpl := template.Must(template.ParseFiles("dist/index.html"))
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		tmpl.Execute(w, nil)
+	})
 
 	// Start the server.
 	fmt.Println("Server listening on port 3000")

@@ -55,10 +55,10 @@ export class Onboarding extends LitElement {
                     </p>
 
                     <div class="face-images-container">
-                        <img class="face-img" src="src/icons/faceFirst.svg" />
-                        <img class="face-img" src="src/icons/faceSecond.svg"  />
-                        <img class="face-img" src="src/icons/faceThird.svg"  />
-                        <img class="face-img" src="src/icons/faceFourth.svg"  />
+                        <img class="face-img" src="res/icons/faceFirst.svg" />
+                        <img class="face-img" src="res/icons/faceSecond.svg"  />
+                        <img class="face-img" src="res/icons/faceThird.svg"  />
+                        <img class="face-img" src="res/icons/faceFourth.svg"  />
                     </div>
                 </div>
 

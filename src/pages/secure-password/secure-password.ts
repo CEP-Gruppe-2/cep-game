@@ -8,6 +8,7 @@ export class SecurePassword extends LitElement {
 
     static styles = unsafeCSS(styles);
 
+    private punkte:number=0;
     private joulesSource:string="";
     private text:string[]=[];
     private buttonText:string="";
@@ -42,6 +43,7 @@ export class SecurePassword extends LitElement {
 
 
         if((e.target as HTMLDivElement).textContent==='Beenden'){
+            localStorage.setItem('points', this.punkte+"");
             redirectTo("chapter/1", "")
         }
         /*wenn der button text starten hat setze enum eins weiter und position=0*/
@@ -57,10 +59,12 @@ export class SecurePassword extends LitElement {
         
         if((e.target as HTMLDivElement).textContent===this.lösung){
             this.richtig=true;
+            this.punkte+=100;
             console.log("Klick war richtig")
         }
         else{
             this.richtig=false;
+            this.punkte+=50;
             console.log("Klick war falsch")
         }
         this.erklärung=true;
@@ -81,9 +85,11 @@ export class SecurePassword extends LitElement {
         this._input.value = '';
         this._submitEnabled = false;
         if(!this.eingabe.match(pattern))
-          this.fehlerMeldungPasswort='Das Passwort: '+this.eingabe+' ist zu unsicher.';
-        else
-          this.ablaufPosition++;
+            this.fehlerMeldungPasswort='Das Passwort: '+this.eingabe+' ist zu unsicher.';
+        else{
+            this.punkte+=200;
+            this.ablaufPosition++;
+        }
       }
     
     
@@ -167,7 +173,7 @@ export class SecurePassword extends LitElement {
             text=html`
             <div class="bubble1">
                    <h1>${this.überschrift}</h1>
-                   <p>${this.text[0]} "Punkte" ${this.text[1]}</p>
+                   <p>${this.text[0]} ${this.punkte} ${this.text[1]}</p>
             </div>`
         }else{
             if(this.position==0){

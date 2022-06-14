@@ -28,11 +28,6 @@ export class SecurityIncidents extends LitElement {
 
   /*wird bei klick auf bild aufgerufen und zählt position hoch*/
   _handleClickBild():void{
-      console.log("Klick")
-      
-      
-      
-      
       this.position++;
       this.requestUpdate;
   }
@@ -60,9 +55,7 @@ export class SecurityIncidents extends LitElement {
             if(this.buttons[i]==(e.target as HTMLDivElement).textContent){
                 this.auswahl=i;
                 if(this.auswahl==this.richtigerButton)
-                    this.punkte+=100;
-                console.log("treffer: "+i)
-                console.log("punkte: "+this.punkte)
+                    this.punkte+=50;
                 break schleife;
             }
 

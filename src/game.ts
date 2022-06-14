@@ -88,7 +88,7 @@ export class Game extends LitElement {
     return html`
       <pop-up ?componentvisible=${false}></pop-up>
       <header id="header">
-        <a href="#startseite" class="header-brand no-decoration font-black">
+        <a href="/" class="header-brand no-decoration font-black">
           SafeWise
         </a>
 

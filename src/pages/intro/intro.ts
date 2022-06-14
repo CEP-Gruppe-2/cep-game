@@ -6,7 +6,7 @@ import introduction from '../../data/introduction.json';
 
 import  '../../components/notification';
 import { state } from 'lit/decorators.js';
-import { addPointsToLocalStorage } from '../../functions/localstorage';
+import { addPointsToLocalStorage, itemExistInLocalstorage } from '../../functions/localstorage';
 
 export class Intro extends LitElement {
 
@@ -66,21 +66,19 @@ export class Intro extends LitElement {
         `;
       } else {
         let notification: string = 'error';
-        if(!localStorage.getItem('points')){
-
-          console.log('der Nutzer hat die Einleitung erfolgreich abgeschlossen. Wir können den Nutzer zum ersten Kapitel weiterleiten wir können ihm Punkte addieren');
+        
+        
+        if(!itemExistInLocalstorage("Einführung")){
           notification = 'success';
+          console.log('der Nutzer hat die Einleitung erfolgreich abgeschlossen. Wir können den Nutzer zum ersten Kapitel weiterleiten wir können ihm Punkte addieren');
 
           if(!this.hacker){
-            localStorage.setItem('points', '100');
             addPointsToLocalStorage("Einführung", "100");
           }
-          else
-            localStorage.setItem('points', '0');
         }
 
         return html`
-            <notification-component notification="${notification}" @notify=${(e : Event) => this.nextChapter(e)}></notification-component>
+            <notification-component notification="${notification}"}></notification-component>
             <img class="roboter-img" ${this.hacker? html`@click="${this.continue}"`:''} src="${this.continuation[this.pos]}" alt=""/>
         `;
       }
@@ -106,11 +104,6 @@ export class Intro extends LitElement {
       this.pos++;
     }
   }
-
-  private nextChapter(){
-    redirectTo("chapter/1", "")
-  }
-
 
   render() {
     return html`

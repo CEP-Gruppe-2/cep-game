@@ -15,10 +15,10 @@ export class Rewards extends LitElement {
 
     //localStorage.setItem("points", "300") punkte hinzufügen, um die Punkte auszutauschen
 
-    if(localStorage.getItem("point") != null){
+    if(localStorage.getItem("points") != null){
       this.punkte = parseInt(localStorage.getItem("points")!);
     }else{
-      localStorage.setItem("point", "100")
+      localStorage.setItem("points", "0")
     }
   }
 

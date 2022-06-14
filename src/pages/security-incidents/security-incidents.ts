@@ -3,6 +3,8 @@ import styles from './security-incidents.scss?inline';
 import {property} from 'lit/decorators.js';
 import '../../components/button';
 import sicherheitsvorfaelle from '../../data/firstModule/security-incidents.json';
+import { addPointsToLocalStorage } from '../../functions/localstorage';
+import { redirectTo } from '../../functions/redirect';
 
 
 export class SecurityIncidents extends LitElement {
@@ -12,7 +14,8 @@ export class SecurityIncidents extends LitElement {
   private buttons:String[]=[];
   private antworten:String[]=[];
   private erklärung1:boolean=false;
-  private richtigerButton:string="";
+  private richtigerButton:number=-1
+  private punkte:number=0;
 
   static styles = unsafeCSS(styles);
 
@@ -38,6 +41,14 @@ export class SecurityIncidents extends LitElement {
       e:Event wir benötigt um zu erfahren welcher button gedrückt wird
     */
     _handleClickButton(e:Event):void{
+        if(this.buttons[0]=="beenden"){
+            addPointsToLocalStorage("Sicherheitsvorfälle", this.punkte+"");
+            this.punkte+=Number(localStorage.getItem('points'));
+            localStorage.setItem('points', this.punkte+"");
+            redirectTo("chapter/1", "")
+            return;
+        }
+
         if(!this.erklärung1){
             this.buttons.length=0;
             this.position++;
@@ -48,7 +59,10 @@ export class SecurityIncidents extends LitElement {
             schleife:for(var i:number=0;i < this.buttons.length;i++){
             if(this.buttons[i]==(e.target as HTMLDivElement).textContent){
                 this.auswahl=i;
-                console.log("treffer"+i)
+                if(this.auswahl==this.richtigerButton)
+                    this.punkte+=100;
+                console.log("treffer: "+i)
+                console.log("punkte: "+this.punkte)
                 break schleife;
             }
 
@@ -71,7 +85,7 @@ export class SecurityIncidents extends LitElement {
   private ladeBild():void{
         this.bild=sicherheitsvorfaelle.ablauf[this.position].hintergrund;
         this.text=sicherheitsvorfaelle.ablauf[this.position].text;
-        this.richtigerButton=sicherheitsvorfaelle.ablauf[this.position].richtigerButton;
+        this.richtigerButton=+sicherheitsvorfaelle.ablauf[this.position].richtigerButton;
       
 
   }

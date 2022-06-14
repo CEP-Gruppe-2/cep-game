@@ -18,7 +18,6 @@
           "buttonText": ""
         }
       ],
-      "falsch": [],
       "antworten": [
         {
           "hintergrund": ""
@@ -52,7 +51,6 @@
           "buttonText": ""
         }
       ],
-      "falsch": [],
       "antworten": [
         {
           "hintergrund": ""
@@ -86,7 +84,6 @@
           "buttonText": ""
         }
       ],
-      "falsch": [],
       "antworten": [
         {
           "hintergrund": ""
@@ -120,7 +117,6 @@
           "buttonText": ""
         }
       ],
-      "falsch": [],
       "antworten": [
         {
           "hintergrund": ""
@@ -154,7 +150,6 @@
           "buttonText": ""
         }
       ],
-      "falsch": [],
       "antworten": [
         {
           "hintergrund": ""
@@ -188,7 +183,6 @@
           "buttonText": ""
         }
       ],
-      "falsch": [],
       "antworten": [
         {
           "hintergrund": ""
@@ -604,6 +598,237 @@
       "hintergrund": "/res/modul1/sicherheitsvorfälle/18-sicherheitsvorfälle.svg",
       "richtigerButton": "",
       "text": "",
+      "buttons": [
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        }
+      ],
+      "antworten": [
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        }
+      ]
+    },
+    {
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/19-sicherheitsvorfälle.svg",
+      "richtigerButton": "",
+      "text": "",
+      "buttons": [
+        {
+          "buttonText": "beenden"
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        }
+      ],
+      "antworten": [
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        }
+      ]
+    },
+    {
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/20-sicherheitsvorfälle.svg",
+      "richtigerButton": "",
+      "text": "",
+      "buttons": [
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        }
+      ],
+      "antworten": [
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        }
+      ]
+    },
+    {
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/21-sicherheitsvorfälle.svg",
+      "richtigerButton": "",
+      "text": "",
+      "buttons": [
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        }
+      ],
+      "antworten": [
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        }
+      ]
+    },
+    {
+      "hintergrund": "",
+      "richtigerButton": "",
+      "text": "Inhalte Folgen...",
+      "buttons": [
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        }
+      ],
+      "antworten": [
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        }
+      ]
+    },
+    {
+      "hintergrund": "",
+      "richtigerButton": "",
+      "text": "Inhalte Folgen...",
+      "buttons": [
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        }
+      ],
+      "antworten": [
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        }
+      ]
+    },
+    {
+      "hintergrund": "",
+      "richtigerButton": "",
+      "text": "Inhalte Folgen...",
+      "buttons": [
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        }
+      ],
+      "antworten": [
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        }
+      ]
+    },
+    {
+      "hintergrund": "",
+      "richtigerButton": "",
+      "text": "Inhalte Folgen...",
       "buttons": [
         {
           "buttonText": ""

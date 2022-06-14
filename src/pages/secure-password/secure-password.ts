@@ -63,12 +63,10 @@ export class SecurePassword extends LitElement {
         if((e.target as HTMLDivElement).textContent===this.lösung){
             this.richtig=true;
             this.punkte+=100;
-            console.log("Klick war richtig")
         }
         else{
             this.richtig=false;
-            this.punkte+=50;
-            console.log("Klick war falsch")
+            this.punkte+=20;
         }
         this.erklärung=true;
         this.requestUpdate();

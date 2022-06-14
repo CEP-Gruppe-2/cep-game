@@ -6,6 +6,7 @@ import introduction from '../../data/introduction.json';
 
 import  '../../components/notification';
 import { state } from 'lit/decorators.js';
+import { addPointsToLocalStorage } from '../../functions/localstorage';
 
 export class Intro extends LitElement {
 
@@ -70,8 +71,10 @@ export class Intro extends LitElement {
           console.log('der Nutzer hat die Einleitung erfolgreich abgeschlossen. Wir können den Nutzer zum ersten Kapitel weiterleiten wir können ihm Punkte addieren');
           notification = 'success';
 
-          if(!this.hacker)
+          if(!this.hacker){
             localStorage.setItem('points', '100');
+            addPointsToLocalStorage("Einführung", "100");
+          }
           else
             localStorage.setItem('points', '0');
         }

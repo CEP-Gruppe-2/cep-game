@@ -88,13 +88,14 @@ export class Game extends LitElement {
 
         <ul class="header-items">
           <li class="header-item">
-            <a href="#module" class="header-btn no-decoration font-black">
+            <a href="/" class="header-btn no-decoration font-black">
               Module
             </a>
           </li>
           <li class="header-item">
             <a href="#profil" class="header-btn no-decoration  font-black">
-              Profile
+              Energie ${returnTotalPoints()}
+              <img class="mobile-img" src="res/icons/energie.svg"/>
             </a>
           </li>
         </ul>

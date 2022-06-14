@@ -2,7 +2,7 @@ import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './rewards.scss?inline';
 import rewards from '../../data/rewards/rewards.json';
 import '/src/components/button/button.ts'
-import {addPointsToLocalStorage, changePointsLocalStorage, getArrayWithGainedPoints, setItemLocalStorage } from '../../functions/localstorage';
+import {changePointsLocalStorage, getArrayWithGainedPoints, returnTotalPoints, setItemLocalStorage } from '../../functions/localstorage';
 
 export class Rewards extends LitElement {
 
@@ -13,13 +13,8 @@ export class Rewards extends LitElement {
   constructor(){
     super();
 
-    //localStorage.setItem("points", "300") punkte hinzufügen, um die Punkte auszutauschen
-
-    if(localStorage.getItem("points") != null){
-      this.punkte = parseInt(localStorage.getItem("points")!);
-    }else{
-      localStorage.setItem("points", "0")
-    }
+    this.punkte = returnTotalPoints();
+    
   }
 
   /*lädt die spielerdaten*/

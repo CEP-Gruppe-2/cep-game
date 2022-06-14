@@ -59,6 +59,30 @@ const getArrayWithGainedPoints = () : Array<string> => {
     return [];
 }
 
+const returnTotalPoints = () : number => {
+    let len : number = getArrayWithGainedPoints().length,
+        points = 0;
+    if(len == 0){
+        return len;
+    }else{
+        
+        for(let i = 0; i < len; i++){
+            if(i % 2 != 0){
+                points += parseInt(getArrayWithGainedPoints()[i])
+            }
+        }
+        if(localStorage.getItem("exchangePoints") != null){
+            points -= parseInt(localStorage.getItem("exchangePoints")!);
+        }
+
+        return points;
+    }
+}
+
+const itemExistInLocalstorage = (title : string, debug? : Boolean) : Boolean => {
+    return getArrayWithGainedPoints().indexOf(title) > -1;
+}
+
 const  addPointsToLocalStorage = (name: string, value : string) : void => {
     let arr : Array<any>;
     
@@ -92,5 +116,7 @@ export {
     addPointsToLocalStorage,
     getArrayWithGainedPoints,
     removeAllPointsFromLocalStorage,
-    changePointsLocalStorage
+    changePointsLocalStorage,
+    itemExistInLocalstorage,
+    returnTotalPoints
 }

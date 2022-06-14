@@ -28,11 +28,6 @@ export class SecurityIncidents extends LitElement {
 
   /*wird bei klick auf bild aufgerufen und zählt position hoch*/
   _handleClickBild():void{
-      console.log("Klick")
-      
-      
-      
-      
       this.position++;
       this.requestUpdate;
   }
@@ -55,27 +50,22 @@ export class SecurityIncidents extends LitElement {
          }
         else
         {
-            console.log("Schleife")
             schleife:for(var i:number=0;i < this.buttons.length;i++){
             if(this.buttons[i]==(e.target as HTMLDivElement).textContent){
                 this.auswahl=i;
                 if(this.auswahl==this.richtigerButton)
-                    this.punkte+=100;
-                console.log("treffer: "+i)
-                console.log("punkte: "+this.punkte)
+                    this.punkte+=50;
                 break schleife;
             }
 
-        }
-        console.log("Schleife verlassen")
-        
+        }     
       }
       
       this.requestUpdate;
     }
 
+    /*lädt die erklärung*/ 
     private ladeErklärungsDurchlauf():void{
-        console.log("Lade erklärung")
         this.bild=sicherheitsvorfaelle.ablauf[this.position].antworten[this.auswahl].hintergrund;
         this.text="";
     }
@@ -149,12 +139,10 @@ export class SecurityIncidents extends LitElement {
 
 
   render() {
-      console.log("render")
       if(!this.erklärung1){
           this.ladeButtons();
           this.ladeBild();
       } else {
-        console.log("render in erklärung wird geladen")
           this.ladeErklärungsDurchlauf();
           this.erklärung1=false;
           this.buttons=[];
@@ -164,12 +152,10 @@ export class SecurityIncidents extends LitElement {
 
 
           if(this.text=="Sicherheitsvorfall: was ist das?"||this.text=="Frage"){
-              console.log("Erklärung1=true")
               this.erklärung1=true;
           }
             
           
-          console.log("Bilds:" +this.bild)
           let display=this.schreibeBild();
           let buttons=this.schreibeButtons();
           

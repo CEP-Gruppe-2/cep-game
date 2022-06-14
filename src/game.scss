@@ -15,6 +15,17 @@ header{
   z-index: 700;
 }
 
+.header-btn{
+  display: block;
+  font-weight: 600;
+  font-size: 1.75em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  color: #000;
+}
+
 .header-brand{
   text-align: left;
   font-weight: 500;
@@ -49,6 +60,15 @@ header ul li:last-child {
 
 .header-items{
   display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-items{
+    display: block;
+  }
+  .header-icons{
+    display: none;
+  }
 }
 
 .display-block{

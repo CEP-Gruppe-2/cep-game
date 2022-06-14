@@ -12,10 +12,9 @@ import './pages/secure-password';
 import './pages/security-incidents';
 import './pages/module-page'
 
-import { getCookie, setCookieIfNotExist } from './functions/cookies';
-
 // @ts-ignore
 import {URLPattern} from 'urlpattern-polyfill';
+import { returnTotalPoints } from './functions/localstorage';
 // @ts-ignore
 if (!window.URLPattern) {
   // @ts-ignore
@@ -41,21 +40,8 @@ export class Game extends LitElement {
 
   private menuSelected: Boolean = false;
 
-
-  private points() : Number{
-    console.log('win: ', );
-
-    if(!setCookieIfNotExist(true, {name: 'points', value: '0'})){
-      return parseInt(getCookie('points')!);
-    }
-
-    return -1;
-  }
-
-
-
   show_Close_Menu(){
-
+    console.log(1234);
     const menuIconCss = document.getElementById('menu');
     const closeIconCss = document.getElementById('close');
 
@@ -82,7 +68,15 @@ export class Game extends LitElement {
     }
   }
 
-  async handleMenuCloseClicked(){ this.menuSelected = !this.menuSelected; }
+  async handleMenuCloseClicked(){ 
+    this.menuSelected = !this.menuSelected;
+    this.render() 
+  }
+
+  async closeMobile(){ 
+    this.menuSelected = false;
+    this.render()
+  }
 
   render() {
     return html`
@@ -111,16 +105,12 @@ export class Game extends LitElement {
       </header>
 
       <div class="mobile-nav" id="mobile-nav">
-        <a href="#module" class="mobile-btn ">
+        <a href="/" class="mobile-btn" @click="${this.closeMobile}">
           Module
         </a>
 
-        <a href="#profil" class="mobile-btn">
-          Profil
-        </a>
-
-        <a href="#profil" class="mobile-btn">
-          Energie ${this.points()}
+        <a href="/rewards" class="mobile-btn" @click="${this.closeMobile}">
+          Energie ${returnTotalPoints()}
           <img class="mobile-img" src="res/icons/energie.svg"/>
         </a>
       </div>

@@ -629,14 +629,14 @@
     },
     {
       "hintergrund": "/res/modul1/sicherheitsvorfälle/19-sicherheitsvorfälle.svg",
-      "richtigerButton": "",
-      "text": "",
+      "richtigerButton": "0",
+      "text": "Frage",
       "buttons": [
         {
-          "buttonText": "beenden"
+          "buttonText": "Antworten: “Nein, lass uns ihn einfach seinem Besitzer zurück geben.”"
         },
         {
-          "buttonText": ""
+          "buttonText": "Antworten: “Okay, jetzt bin ich auch neugierig.”"
         },
         {
           "buttonText": ""
@@ -647,10 +647,10 @@
       ],
       "antworten": [
         {
-          "hintergrund": ""
+          "hintergrund": "/res/modul1/sicherheitsvorfälle/19-sicherheitsvorfälleFirst.svg"
         },
         {
-          "hintergrund": ""
+          "hintergrund": "/res/modul1/sicherheitsvorfälle/19-sicherheitsvorfälleSecond.svg"
         },
         {
           "hintergrund": ""
@@ -727,9 +727,42 @@
       ]
     },
     {
-      "hintergrund": "",
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/22-sicherheitsvorfälle.svg",
+      "richtigerButton": "1",
+      "text": "Frage",
+      "buttons": [
+        {
+          "buttonText": "Genau, ab in den Müll oder Fundgrube."
+        },
+        {
+          "buttonText": "Trotzdem melden!"
+        },
+        {
+          "buttonText": ""
+        },
+        {
+          "buttonText": ""
+        }
+      ],
+      "antworten": [
+        {
+          "hintergrund": "/res/modul1/sicherheitsvorfälle/22-sicherheitsvorfälleFirst.svg"
+        },
+        {
+          "hintergrund": "/res/modul1/sicherheitsvorfälle/22-sicherheitsvorfälleSecond.svg"
+        },
+        {
+          "hintergrund": ""
+        },
+        {
+          "hintergrund": ""
+        }
+      ]
+    },
+    {
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/23-sicherheitsvorfälle.svg",
       "richtigerButton": "",
-      "text": "Inhalte Folgen...",
+      "text": "",
       "buttons": [
         {
           "buttonText": ""
@@ -760,9 +793,9 @@
       ]
     },
     {
-      "hintergrund": "",
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/24-sicherheitsvorfälle.svg",
       "richtigerButton": "",
-      "text": "Inhalte Folgen...",
+      "text": "",
       "buttons": [
         {
           "buttonText": ""
@@ -793,9 +826,9 @@
       ]
     },
     {
-      "hintergrund": "",
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/25-sicherheitsvorfälle.svg",
       "richtigerButton": "",
-      "text": "Inhalte Folgen...",
+      "text": "",
       "buttons": [
         {
           "buttonText": ""
@@ -826,9 +859,9 @@
       ]
     },
     {
-      "hintergrund": "",
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/26-sicherheitsvorfälle.svg",
       "richtigerButton": "",
-      "text": "Inhalte Folgen...",
+      "text": "",
       "buttons": [
         {
           "buttonText": ""
@@ -859,12 +892,12 @@
       ]
     },
     {
-      "hintergrund": "",
+      "hintergrund": "/res/modul1/sicherheitsvorfälle/27-sicherheitsvorfälle.svg",
       "richtigerButton": "",
-      "text": "Inhalte Folgen...",
+      "text": "",
       "buttons": [
         {
-          "buttonText": ""
+          "buttonText": "beenden"
         },
         {
           "buttonText": ""

@@ -1,43 +1,58 @@
 {
+    "uncompleted": "/res/icons/lock-closed.svg",
+    "completed": "/res/icons/lock-opened.svg",
     "module": [
+
         {
             "title": "Grundlagen der Cyber- und IT-Sicherheit",
             "description": "In diesem Modul lernst du die grundlegenden Aspekte der Cyber-Sicherheit kennen, testest deine Geschicklichkeit und erfährst, wie du dich im Internet schützen kannst und nicht erwischt wirst. Die Themen in diesem Modul sind als Spiele gestaltet, damit du sie so einfach wie möglich durchspielen kannst und so viel Spaß wie möglich hast.\n \nWenn du an mehr Infos zu den Themen aus diesem Modul interessiert bist, kannst du auf 'Download PDF' klicken oder wenn du zum ersten Spiel gehen willst, klicke auf 'Los gehts'.",
             "downloadLink": "/download/chapter/1",
-            "firstGame": "/passwortsicherheit",
+            "firstGame": "/remote",
             "games": [
+                {
+                    "title": "Fernzugriff (SPS)",
+                    "description": "",
+                    "link": "/remote",
+                    "completed": false
+                },
+                {
+                    "title": "Netzwerksegmentierung",
+                    "description": "",
+                    "link": "/segmentation",
+                    "completed": false
+                },
                 {
                     "title": "Passwortsicherheit",
                     "description": "Passwortsicherheit ist ein sehr subtiles und interessantes Thema. In diesem Spiel lernst du, warum sichere Passwörter wichtig sind und was du alles beim Umgang deiner Passwörter beachten musst.",
-                    "link": "/secure-password"
-                },
-                {
-                    "title": "Sicheres-WiFi",
-                    "description": "Sicheres-WiFi, ein Thema das uns nicht nur im Arbeitsalltag, sondern auch im Privaten stark betrifft und unbedingt beachtet werden sollte. In diesem Spiel lernst du welche gefahren sich hinter unsicheren und dubiosen Netzwerken verstecken können und was du bei der auswahl deines WiFi-Netzwerkes beachten musst, um dich vor Gefahren zu schützen.",
-                    "link": "/wifi"
+                    "link": "/secure-password",
+                    "completed": true
                 },
                 {
                     "title": "Sicherheitsvorfälle (IT)",
                     "description": "Sicherheitsvorfälle. Wenn diese nicht richtig behandelt, oder garnicht als Bedrohung wargenommen werden kann dies zu großen Problemen führen. In diesem Spiel lernst du mehr über Sicherheitsvorfälle und was du im Fall der Fälle zu tun hast.",
-                    "link": "/security-incidents"
+                    "link": "/security-incidents",
+                    "completed": true
                 }
             ]
         },
         {
             "title": "Erweiterung der Cyber-Sicherheit",
-            "description": "In diesem Modul tauchst du noch tiefer in die Cyber-Sicherheit ein, erfährst, wie sich Hacker in verschiedene Systeme einhacken, welche Software sie verwenden und erfährst, wie du selbst ein echter Hacker sein kannst.",
+            "description": "In diesem Modul tauchst du noch tiefer in die Cyber-Sicherheit ein, erfährst, wie sich Hacker in verschiedene Systeme einhacken, welche Software sie verwenden und erfährst, wie du selbst ein echter Hacker sein kannst. \nDu kannst nicht nur die Erfahrung machen, dass du ein Hacker bist, sondern auch, dass deine Daten gestohlen und von Hackern benutzt werden, um sich für dich auszugeben und deinen Namen und Nachnamen für ihre eigenen Interessen und illegalen Zwecke zu verwenden.",
             "downloadLink": "/download/chapter/2",
-            "firstGame": "/iot",
+            "firstGame": "/hacker",
             "games": [
-                {
-                    "title": "Internet Of Things",
-                    "description": "Wahrscheinlich hast du schon einmal gehört, dass wir von intelligenten Geräten umgeben sind, die uns bei der Lösung von Alltagsproblemen helfen oder uns bei der Analyse großer Informationsmengen unterstützen, die Menschen nicht auswerten können.\nIn diesem Spiel erzählen wir dir, wie diese Smart Devices aussehen, wo sie eingesetzt werden und wozu sie gut sind.",
-                    "link": "/chapter/2"
-                },
                 {
                     "title": "Hacker",
                     "description": "Du hast davon geträumt, in die Rolle eines Hackers zu schlüpfen und zu lernen, wie es ist, sich in große Unternehmen zu hacken und ihnen so viel Schaden wie möglich zuzufügen? Dann ist das eine gute Gelegenheit für dich. Du schlüpfst in die Rolle eines Hackers und deine Aufgabe besteht darin, dich in das X-System zu hacken. Wenn du dich erfolgreich in das X-System hackst, wirst du mit einem besonderen Geschenk belohnt.",
-                    "link": "/chapter/2"
+                    "link": "/hacker",
+                    "completed": false
+                    
+                },
+                {
+                    "title": "Internet Of Things",
+                    "description": "Wahrscheinlich hast du schon einmal gehört, dass wir von intelligenten Geräten umgeben sind, die uns bei der Lösung von Alltagsproblemen helfen oder uns bei der Analyse großer Informationsmengen unterstützen, die Menschen nicht auswerten können.\nIn diesem Spiel erzählen wir dir, wie diese Smart Devices aussehen, wo sie eingesetzt werden und wozu sie gut sind.",
+                    "link": "/iot",
+                    "completed": false
                 }
             ]
         },
@@ -45,12 +60,25 @@
             "title": "OT-Sicherheit",
             "description": "",
             "downloadLink": "/download/chapter/3",
-            "firstGame": "/iot",
+            "firstGame": "/phishing",
             "games": [
                 {
-                    "title": "Internet Of Things",
-                    "description": "Wahrscheinlich hast du schon einmal gehört, dass wir von intelligenten Geräten umgeben sind, die uns bei der Lösung von Alltagsproblemen helfen oder uns bei der Analyse großer Informationsmengen unterstützen, die Menschen nicht auswerten können.\nIn diesem Spiel erzählen wir dir, wie diese Smart Devices aussehen, wo sie eingesetzt werden und wozu sie gut sind.",
-                    "link": "chapter/3"
+                    "title": "Phishing",
+                    "description": "",
+                    "link": "/phishing",
+                    "completed": false
+                },
+                {
+                    "title": "Sicheres-WiFi",
+                    "description": "Sicheres-WiFi, ein Thema das uns nicht nur im Arbeitsalltag, sondern auch im Privaten stark betrifft und unbedingt beachtet werden sollte. In diesem Spiel lernst du welche gefahren sich hinter unsicheren und dubiosen Netzwerken verstecken können und was du bei der auswahl deines WiFi-Netzwerkes beachten musst, um dich vor Gefahren zu schützen.",
+                    "link": "/wifi",
+                    "completed": true
+                },
+                {
+                    "title": "Umgang mit mobilen Datenträgern und externer Hardware",
+                    "description": "",
+                    "link": "/datacarriers",
+                    "completed": false
                 }
             ]
         }

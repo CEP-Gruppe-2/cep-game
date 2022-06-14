@@ -196,3 +196,11 @@
         margin-top: 1em;
     }
 }
+
+.themes-box-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+}

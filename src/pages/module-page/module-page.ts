@@ -23,6 +23,12 @@ export class ModulePage extends LitElement {
 
   }
 
+  private disableButton(e : Event, completed : boolean) : void {
+    if(!completed){
+      e.preventDefault();
+    }
+  }
+
   render() {
     return html`
       <div class="module-info">
@@ -44,12 +50,30 @@ export class ModulePage extends LitElement {
         <h3 class="themes-title">Themenübersicht</h3>
         
         <div class="themes-boxes" >
-          ${games.module[this.chapterNumber - 1].games.map(function(val, index, arr){
+          ${games.module[this.chapterNumber - 1].games.map((val, index, arr) =>{
             return html`
               <div class="themes-box div${index}">
-                <h3 class="themes-box-title">${arr[index].title}</h3>
+                <div class="themes-box-card">
+                  <h3 class="themes-box-title">${arr[index].title}</h3>
+                  ${ val.completed ?
+                    html `
+                      <img class="key-img" src="${games.completed}" />
+                    ` :
+                    html `
+                      <img class="key-img" src="${games.uncompleted}" />
+                    `
+                  }
+                </div>
                 <p class="themes-desc">${arr[index].description}</p>
-                <a class="themes-btn" href="${arr[index].link}">zum Spiel</a>
+                ${
+                  val.completed ?
+                  html `
+                    <a class="themes-btn" href="${arr[index].link}" @click="${(e : Event) => this.disableButton(e, val.completed)}">zum Spiel</a>
+                  ` :
+                  html `
+                    <a class="themes-btn" disabled href="${arr[index].link}" @click="${(e : Event) => this.disableButton(e, val.completed)}">zum Spiel</a>
+                  `
+                }
                 ${console.log(`${arr[index].link}`, `${arr[index].description}`, `${arr[index].title}`)}
               </div>`;
           })}

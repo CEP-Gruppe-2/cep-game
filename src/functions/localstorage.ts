@@ -79,7 +79,7 @@ const returnTotalPoints = () : number => {
     }
 }
 
-const itemExistInLocalstorage = (title : string, debug? : Boolean) : Boolean => {
+const itemExistInLocalstorage = (title : string) : Boolean => {
     return getArrayWithGainedPoints().indexOf(title) > -1;
 }
 

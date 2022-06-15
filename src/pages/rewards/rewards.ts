@@ -53,8 +53,8 @@ export class Rewards extends LitElement {
                   </div>
 
                   <div id=Punkte>
-                      <h1>Gesamtanzahl deiner Punkte</h1>
-                      <p id="points">${this.punkte} Points / Kwh</p>
+                      <h1>Gesamtanzahl deiner Energie</h1>
+                      <p id="points">${this.punkte} Gigajoule (GJ)</p>
                   </div>
 
                   <div id="eintauschen-btn"> 

@@ -7,11 +7,11 @@
             "title": "Grundlagen der Cyber- und IT-Sicherheit",
             "description": "In diesem Modul lernst du die grundlegenden Aspekte der Cyber-Sicherheit kennen, testest deine Geschicklichkeit und erfährst, wie du dich im Internet schützen kannst und nicht erwischt wirst. Die Themen in diesem Modul sind als Spiele gestaltet, damit du sie so einfach wie möglich durchspielen kannst und so viel Spaß wie möglich hast.\n \nWenn du an mehr Infos zu den Themen aus diesem Modul interessiert bist, kannst du auf 'Download PDF' klicken oder wenn du zum ersten Spiel gehen willst, klicke auf 'Los gehts'.",
             "downloadLink": "/download/chapter/1",
-            "firstGame": "/remote",
+            "firstGame": "/phishing",
             "games": [
                 {
                     "title": "Phishing",
-                    "description": "",
+                    "description": "Heutzutage spielen unsere persönlichen Daten eine sehr wichtige Rolle, denn wenn jemand Zugang zu unseren persönlichen Daten wie Name, Nachname, Adresse usw. hat, können diese Personen, die Zugang zu Ihren Daten haben, Ihre Identität ausnutzen und Ihnen auf irgendeine Weise Schaden zufügen. In diesem Spiel zeigen wir Ihnen, wie sich Cyberkriminelle Zugang zu Ihren persönlichen Daten verschaffen und welche Methoden sie dabei anwenden.",
                     "link": "/phishing",
                     "completed": false
                 },
@@ -23,7 +23,7 @@
                 },
                 {
                     "title": "Umgang mit mobilen Datenträgern und externer Hardware",
-                    "description": "",
+                    "description": "Ist Ihnen schon einmal ein USB-Stick aufgefallen, der unauffällig auf der Straße lag? Wenn ja, ist es wichtig zu wissen, dass auf solchen USB-Sticks Viren gespeichert sein können, die nach einiger Zeit ihre Aktivität beginnen und sich in ganze Systeme einhacken können. Wir verraten Ihnen, was passieren kann und welche Folgen es haben kann, wenn Sie Ihren USB-Stick nicht vorher auf Viren überprüfen und sich davor schützen.",
                     "link": "/datacarriers",
                     "completed": false
                 }
@@ -33,17 +33,17 @@
             "title": "Erweiterung der Cyber-Sicherheit",
             "description": "In diesem Modul tauchst du noch tiefer in die Cyber-Sicherheit ein, erfährst, wie sich Hacker in verschiedene Systeme einhacken, welche Software sie verwenden und erfährst, wie du selbst ein echter Hacker sein kannst. \nDu kannst nicht nur die Erfahrung machen, dass du ein Hacker bist, sondern auch, dass deine Daten gestohlen und von Hackern benutzt werden, um sich für dich auszugeben und deinen Namen und Nachnamen für ihre eigenen Interessen und illegalen Zwecke zu verwenden.",
             "downloadLink": "/download/chapter/2",
-            "firstGame": "/hacker",
+            "firstGame": "/remote",
             "games": [
                 {
                     "title": "Fernzugriff (SPS)",
-                    "description": "",
+                    "description": "Viele Unternehmen arbeiten mit einem Netzwerksystem, das über VPN verbunden ist. Alle Daten, die in Datenbanken gespeichert sind, sind nur über dieses System zugänglich. Um zu verstehen, wie solche Systeme funktionieren, erklären wir Ihnen zunächst, was sie sind, wie sie funktionieren und wie sich Mitarbeiter von ihrem Schreibtisch aus und/oder sogar über ihren Computer zu Hause mit dem System verbinden, und warum dieses System eine wichtige Rolle bei unserer Arbeit spielt und warum es sicher geschützt werden muss.",
                     "link": "/remote",
                     "completed": false
                 },
                 {
                     "title": "Netzwerksegmentierung",
-                    "description": "",
+                    "description": "Netzwerksegmentierung ist ein Netzwerksicherheitsverfahren, bei dem ein Netzwerk in kleinere, separate Subnetzwerke unterteilt wird. In diesem Spiel erklären und zeigen wir Ihnen, warum Netzwerksegmentierung wichtig ist und wie sie das Netzwerk in großen und kleinen Unternehmen schützt. Außerdem erfahren Sie, was die Vorteile der Netzwerksegmentierung sind.",
                     "link": "/segmentation",
                     "completed": false
                 },
@@ -63,9 +63,9 @@
         },
         {
             "title": "OT-Sicherheit",
-            "description": "",
+            "description": "In diesem Modul besteht Ihre Aufgabe darin, das zuvor erworbene Wissen anzuwenden und mit diesem Wissen in die Rolle eines Hackers zu schlüpfen, der sich in das E-Werk einhackt, sich Zugang zu dessen System verschafft und so viel Schaden anrichtet, wie es nur möglich ist. Dann werden wir Ihnen verraten, was das 'Internet of Things' und Industrie 4.0 sind.",
             "downloadLink": "/download/chapter/3",
-            "firstGame": "/phishing",
+            "firstGame": "/hacker",
             "games": [
                 {
                     "title": "Hacker",

@@ -1,5 +1,5 @@
 [
-    {"title": "Einleitung", "description": "Beschreibung", "color": "#F0B3D8", "link": "introduction", "cardImageName": "/res/card/einleitung-icon.svg"},
+    {"title": "Einleitung", "description": "Einführung in das Projekt", "color": "#F0B3D8", "link": "introduction", "cardImageName": "/res/card/einleitung-icon.svg"},
     {"title": "Modul 1", "description": "Grundlagen der Cyber- und IT-Sicherheit", "color": "#D0EA5A", "link": "chapter", "cardImageName": "/res/card/icon-kapitel-01.svg"},
     {"title": "Modul 2", "description": "Erweiterung der Cyber-Sicherheit", "color": "#FEBB00", "link": "bsi", "cardImageName": "/res/card/icon-kapitel-02.svg"},
     {"title": "Modul 3", "description": "OT-Sicherheit", "color": "#dbbfb1", "link": "phishing2", "cardImageName": "/res/card/icon-kapitel-03.svg"}

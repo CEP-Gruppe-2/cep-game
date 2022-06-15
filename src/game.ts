@@ -95,7 +95,7 @@ export class Game extends LitElement {
           <li class="header-item">
             <a href="/rewards" class="header-btn no-decoration font-black">
               Energie ${returnTotalPoints()}
-              <img class="mobile-img" src="res/icons/energie.svg"/>
+              <img class="mobile-img" src="/res/icons/energie.svg"/>
             </a>
           </li>
         </ul>
@@ -112,7 +112,7 @@ export class Game extends LitElement {
 
         <a href="/rewards" class="mobile-btn" @click="${this.closeMobile}">
           Energie ${returnTotalPoints()}
-          <img class="mobile-img" src="res/icons/energie.svg"/>
+          <img class="mobile-img" src="/res/icons/energie.svg"/>
         </a>
       </div>
       ${this._router.outlet()}

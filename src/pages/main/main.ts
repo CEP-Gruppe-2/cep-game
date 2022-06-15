@@ -15,19 +15,14 @@ export class Main extends LitElement {
   private showPopup : Boolean = false;
   private cardLink: string = '';
 
-
-  _wup(e : any){
-    console.log(e.detail);
-    console.log(e);
-  }
-
   private _showPopup(e : Event): void{
 
-    console.log();
     // @ts-ignore
     this.cardLink = e.detail;
+    console.log("points", localStorage.getItem('points'));
+    
 
-    if(localStorage.getItem('points')){
+    if(localStorage.getItem('points') == null){
       redirectTo(this.cardLink, '');
     } else {
       this.showPopup = true;
@@ -40,9 +35,8 @@ export class Main extends LitElement {
   }
 
   render() {
-    console.log(cards);
     return html`
-			${this.showPopup? html`<module-popup @custom="${this._wup}" popupNextPageLink="${this.cardLink}" @close-component="${this._closeComponent}"></module-popup>` : ''}
+			${this.showPopup? html`<module-popup popupNextPageLink="${this.cardLink}" @close-component="${this._closeComponent}"></module-popup>` : ''}
 			<h2 class="page-header">Module</h2>
 			<div class="flex-card">
 				${cards.map((card: any, index: number) => html`
@@ -61,9 +55,3 @@ export class Main extends LitElement {
 }
 
 customElements.define('main-page', Main);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'main-page': Main
-//   }
-// }

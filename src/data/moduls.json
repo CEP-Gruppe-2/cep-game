@@ -10,6 +10,32 @@
             "firstGame": "/remote",
             "games": [
                 {
+                    "title": "Phishing",
+                    "description": "",
+                    "link": "/phishing",
+                    "completed": false
+                },
+                {
+                    "title": "Sicheres-WiFi",
+                    "description": "Sicheres-WiFi, ein Thema das uns nicht nur im Arbeitsalltag, sondern auch im Privaten stark betrifft und unbedingt beachtet werden sollte. In diesem Spiel lernst du welche gefahren sich hinter unsicheren und dubiosen Netzwerken verstecken können und was du bei der auswahl deines WiFi-Netzwerkes beachten musst, um dich vor Gefahren zu schützen.",
+                    "link": "/wifi",
+                    "completed": true
+                },
+                {
+                    "title": "Umgang mit mobilen Datenträgern und externer Hardware",
+                    "description": "",
+                    "link": "/datacarriers",
+                    "completed": false
+                }
+            ]
+        },
+        {
+            "title": "Erweiterung der Cyber-Sicherheit",
+            "description": "In diesem Modul tauchst du noch tiefer in die Cyber-Sicherheit ein, erfährst, wie sich Hacker in verschiedene Systeme einhacken, welche Software sie verwenden und erfährst, wie du selbst ein echter Hacker sein kannst. \nDu kannst nicht nur die Erfahrung machen, dass du ein Hacker bist, sondern auch, dass deine Daten gestohlen und von Hackern benutzt werden, um sich für dich auszugeben und deinen Namen und Nachnamen für ihre eigenen Interessen und illegalen Zwecke zu verwenden.",
+            "downloadLink": "/download/chapter/2",
+            "firstGame": "/hacker",
+            "games": [
+                {
                     "title": "Fernzugriff (SPS)",
                     "description": "",
                     "link": "/remote",
@@ -36,10 +62,10 @@
             ]
         },
         {
-            "title": "Erweiterung der Cyber-Sicherheit",
-            "description": "In diesem Modul tauchst du noch tiefer in die Cyber-Sicherheit ein, erfährst, wie sich Hacker in verschiedene Systeme einhacken, welche Software sie verwenden und erfährst, wie du selbst ein echter Hacker sein kannst. \nDu kannst nicht nur die Erfahrung machen, dass du ein Hacker bist, sondern auch, dass deine Daten gestohlen und von Hackern benutzt werden, um sich für dich auszugeben und deinen Namen und Nachnamen für ihre eigenen Interessen und illegalen Zwecke zu verwenden.",
-            "downloadLink": "/download/chapter/2",
-            "firstGame": "/hacker",
+            "title": "OT-Sicherheit",
+            "description": "",
+            "downloadLink": "/download/chapter/3",
+            "firstGame": "/phishing",
             "games": [
                 {
                     "title": "Hacker",
@@ -52,32 +78,6 @@
                     "title": "Internet Of Things",
                     "description": "Wahrscheinlich hast du schon einmal gehört, dass wir von intelligenten Geräten umgeben sind, die uns bei der Lösung von Alltagsproblemen helfen oder uns bei der Analyse großer Informationsmengen unterstützen, die Menschen nicht auswerten können.\nIn diesem Spiel erzählen wir dir, wie diese Smart Devices aussehen, wo sie eingesetzt werden und wozu sie gut sind.",
                     "link": "/iot",
-                    "completed": false
-                }
-            ]
-        },
-        {
-            "title": "OT-Sicherheit",
-            "description": "",
-            "downloadLink": "/download/chapter/3",
-            "firstGame": "/phishing",
-            "games": [
-                {
-                    "title": "Phishing",
-                    "description": "",
-                    "link": "/phishing",
-                    "completed": false
-                },
-                {
-                    "title": "Sicheres-WiFi",
-                    "description": "Sicheres-WiFi, ein Thema das uns nicht nur im Arbeitsalltag, sondern auch im Privaten stark betrifft und unbedingt beachtet werden sollte. In diesem Spiel lernst du welche gefahren sich hinter unsicheren und dubiosen Netzwerken verstecken können und was du bei der auswahl deines WiFi-Netzwerkes beachten musst, um dich vor Gefahren zu schützen.",
-                    "link": "/wifi",
-                    "completed": true
-                },
-                {
-                    "title": "Umgang mit mobilen Datenträgern und externer Hardware",
-                    "description": "",
-                    "link": "/datacarriers",
                     "completed": false
                 }
             ]

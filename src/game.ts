@@ -38,6 +38,7 @@ export class Game extends LitElement {
     {path: '/*', render: () => html`<h1>404 - Not found</h1>`},
   ]);
 
+
   private menuSelected: Boolean = false;
 
   show_Close_Menu(){
@@ -81,41 +82,43 @@ export class Game extends LitElement {
   render() {
     return html`
       <pop-up ?componentvisible=${false}></pop-up>
-      <header id="header">
-        <a href="/" class="header-brand no-decoration font-black">
-          SafeWise
-        </a>
+      <div class="main-container">
+        <header id="header">
+          <a href="/" class="header-brand no-decoration font-black">
+            SafeWise
+          </a>
 
-        <ul class="header-items">
-          <li class="header-item">
-            <a href="/" class="header-btn no-decoration font-black">
-              Module
-            </a>
-          </li>
-          <li class="header-item">
-            <a href="/rewards" class="header-btn no-decoration font-black">
-              Energie ${returnTotalPoints()}
-              <img class="mobile-img" src="/res/icons/energie.svg"/>
-            </a>
-          </li>
-        </ul>
+          <ul class="header-items">
+            <li class="header-item">
+              <a href="/" class="header-btn no-decoration font-black">
+                Module
+              </a>
+            </li>
+            <li class="header-item">
+              <a href="/rewards" class="header-btn no-decoration font-black">
+                Energie ${returnTotalPoints()}
+                <img class="mobile-img" src="/res/icons/energie.svg"/>
+              </a>
+            </li>
+          </ul>
 
-        <div class="header-icons">
-          ${this.show_Close_Menu()}
+          <div class="header-icons">
+            ${this.show_Close_Menu()}
+          </div>
+        </header>
+
+        <div class="mobile-nav" id="mobile-nav">
+          <a href="/" class="mobile-btn" @click="${this.closeMobile}">
+            Module
+          </a>
+
+          <a href="/rewards" class="mobile-btn" @click="${this.closeMobile}">
+            Energie ${returnTotalPoints()}
+            <img class="mobile-img" src="/res/icons/energie.svg"/>
+          </a>
         </div>
-      </header>
-
-      <div class="mobile-nav" id="mobile-nav">
-        <a href="/" class="mobile-btn" @click="${this.closeMobile}">
-          Module
-        </a>
-
-        <a href="/rewards" class="mobile-btn" @click="${this.closeMobile}">
-          Energie ${returnTotalPoints()}
-          <img class="mobile-img" src="/res/icons/energie.svg"/>
-        </a>
+        ${this._router.outlet()}
       </div>
-      ${this._router.outlet()}
     `;
   }
 

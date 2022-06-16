@@ -19,7 +19,7 @@
                     "title": "Sicheres-WiFi",
                     "description": "Sicheres-WiFi, ein Thema das uns nicht nur im Arbeitsalltag, sondern auch im Privaten stark betrifft und unbedingt beachtet werden sollte. In diesem Spiel lernst du welche gefahren sich hinter unsicheren und dubiosen Netzwerken verstecken können und was du bei der auswahl deines WiFi-Netzwerkes beachten musst, um dich vor Gefahren zu schützen.",
                     "link": "/wifi",
-                    "completed": true
+                    "completed": false
                 },
                 {
                     "title": "Umgang mit mobilen Datenträgern und externer Hardware",

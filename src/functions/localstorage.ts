@@ -105,7 +105,51 @@ const addPointsArrayToLocalStorage = (points : Array<any>) : void => {
 const removeAllPointsFromLocalStorage = () => {
     localStorage.clear();
 }
- 
+
+const returnLastTimeExchangePoints = ()  => {
+    let ls = localStorage.getItem("lastExchange");
+    let dateTime = Date.now(); // in seconds
+    if (ls != null) {
+        return parseInt(ls);
+    }else{
+        localStorage.setItem("lastExchange", dateTime.toString());
+        return dateTime;
+    }
+}
+
+const exchangePointsAndSetLastNextExchang = (points  : number) : void => {
+    let milliseconds = 60000;
+    let time = points * milliseconds;
+    time = Date.now() + time;
+
+    localStorage.setItem("lastExchange", time.toString());
+}
+
+const getLastTimeExchangeMinutes = () => {
+    let now = Date.now();
+    return Math.round((((returnLastTimeExchangePoints() - now) % 86400000) % 3600000) / 60000);
+}
+
+const getLastTimeExchangeDays = () => {
+    let now = Date.now();
+    return Math.floor((returnLastTimeExchangePoints() - now) / 86400000);
+}
+
+const getLastTimeExchangeHours = () => {
+    let now = Date.now();
+    return Math.floor(((returnLastTimeExchangePoints() - now) % 86400000) / 3600000);
+}
+
+const isLastExchangePermitted = () => {
+    if(getLastTimeExchangeMinutes() < 0) return false
+    else return true;
+}
+
+const isLastExchangePermittedDebug = (debug : true) => {
+    if(debug) console.log("Wurde die Dauer des letzten Eintauschen überschritten?:", getLastTimeExchangeMinutes() < 0, "exchange in Minutes", getLastTimeExchangeMinutes());
+    return isLastExchangePermitted();
+}
+
 export {
     setItemJsonLocalStorage,
     setItemLocalStorage,
@@ -118,5 +162,11 @@ export {
     removeAllPointsFromLocalStorage,
     changePointsLocalStorage,
     itemExistInLocalstorage,
-    returnTotalPoints
+    returnTotalPoints, 
+    getLastTimeExchangeDays,
+    getLastTimeExchangeHours,
+    getLastTimeExchangeMinutes,
+    isLastExchangePermitted,
+    isLastExchangePermittedDebug,
+    exchangePointsAndSetLastNextExchang
 }

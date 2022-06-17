@@ -4,7 +4,6 @@ import styles from './game.scss';
 import './main.scss';
 
 import './pages/main';
-import './components/popup';
 import './pages/intro';
 import './pages/rewards';
 import './pages/wifi';

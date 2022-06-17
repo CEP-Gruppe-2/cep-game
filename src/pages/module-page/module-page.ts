@@ -41,7 +41,7 @@ export class ModulePage extends LitElement {
         </div>
 
         <div class="module-btns">
-          <a class="module-btn" href="${games.module[this.chapterNumber - 1].downloadLink}">Download PDF</a>
+          <a class="module-btn" href="${games.module[this.chapterNumber - 1].downloadLink}" download>Download PDF</a>
           <a class="module-btn" href="${games.module[this.chapterNumber - 1].firstGame}">Los geht's</a>
         </div>
       </div>

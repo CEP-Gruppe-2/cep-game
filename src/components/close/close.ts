@@ -1,12 +1,23 @@
 import styles from './close.scss?inline';
 
+/**
+ * @module Close
+ * @class
+ * @exports
+ * @public
+ */
 export class Close extends HTMLElement {
 
 
-  connectedCallback() {
+  /**
+   * Life Cycle Function from Lit ELements
+   * @returns {void}
+   */
+  connectedCallback() : void{
 
     this.attachShadow({mode: 'open'});
 
+    //create close Icon
     this.shadowRoot!.innerHTML = /*html*/`
       
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,8 +34,3 @@ export class Close extends HTMLElement {
 
 customElements.define('close-component', Close);
 
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'close-component': Close
-//   }
-// }

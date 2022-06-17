@@ -2,30 +2,62 @@ import { unsafeCSS, html, LitElement } from 'lit';
 import {property} from 'lit/decorators.js';
 import styles from './module-card.scss?inline';
 
-
+/**
+ * @module ModuleCard
+ * @class
+ * @exports
+ * @public
+ */
 export class ModuleCard extends LitElement {
 
+  /**
+   * @cssprop
+   */
   static styles = unsafeCSS(styles);
 
+  /**
+   * @property {string} - Title of the Card
+   */
   @property()
-    cardTitle = '';
+  cardTitle : string = '';
 
+  /**
+   * @property {string} - Description of the Card
+  */
   @property()
-    cardDescription = '';
+  cardDescription = '';
 
-  @property({type: Number})
-    cardPosition = 0;
-
+  /**
+   * @property {number} - Position of the Card
+  */
   @property()
-    cardColor = '';
+  cardPosition : number = 0;
 
+  /**
+   * @property {number} - Color of the Card
+  */
   @property()
-    cardLink = '';
+  cardColor = '';
 
+  /**
+   * @property {number} - Link to the Page
+  */
   @property()
-    cardImageName = '';
+  cardLink = '';
 
-  private getChapter(e : Event) {
+  /**
+   * @property {number} - Link of Card Image
+  */
+  @property()
+  cardImageName = '';
+
+  /**
+   * Get next Chapter and Redirect to next Chapter
+   * @private
+   * @param e {Event} - Information about the Element
+   * @returns {void} - 
+   */
+  private getChapter(e : Event): void {
     e.preventDefault();
     if(this.cardTitle == 'Einleitung'){
       this.dispatchEvent(new CustomEvent('einleitung-btn-clicked', {detail: this.cardLink}));
@@ -57,9 +89,3 @@ export class ModuleCard extends LitElement {
 }
 
 customElements.define('module-card', ModuleCard);
-
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     'module-card': ModuleCard
-//   }
-// }

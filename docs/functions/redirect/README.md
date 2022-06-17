@@ -30,7 +30,7 @@ Redirect to the URL and set connection Type -> HTTP | HTTPS
 
 #### Defined in
 
-[redirect.ts:7](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/redirect.ts#L7)
+[redirect.ts:7](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/redirect.ts#L7)
 
 ___
 
@@ -54,4 +54,4 @@ Redirect to some Page
 
 #### Defined in
 
-[redirect.ts:24](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/redirect.ts#L24)
+[redirect.ts:24](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/redirect.ts#L24)

@@ -30,7 +30,7 @@ Save points into Cookie
 
 #### Defined in
 
-[points.ts:8](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/points.ts#L8)
+[points.ts:8](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/points.ts#L8)
 
 ___
 
@@ -46,7 +46,7 @@ Return points from Cookies
 
 #### Defined in
 
-[points.ts:27](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/points.ts#L27)
+[points.ts:27](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/points.ts#L27)
 
 ___
 
@@ -68,4 +68,4 @@ Remove points from Cookies
 
 #### Defined in
 
-[points.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/points.ts#L18)
+[points.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/points.ts#L18)

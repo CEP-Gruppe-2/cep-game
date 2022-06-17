@@ -34,7 +34,7 @@ Change the Value of old Cookie to the new Value
 
 #### Defined in
 
-[cookies.ts:85](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/cookies.ts#L85)
+[cookies.ts:85](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/cookies.ts#L85)
 
 ___
 
@@ -58,7 +58,7 @@ Return true if Cookie with following Name exist or false
 
 #### Defined in
 
-[cookies.ts:27](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/cookies.ts#L27)
+[cookies.ts:27](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/cookies.ts#L27)
 
 ___
 
@@ -80,7 +80,7 @@ Delete Cookie by the Name with Url Path
 
 #### Defined in
 
-[cookies.ts:76](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/cookies.ts#L76)
+[cookies.ts:76](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/cookies.ts#L76)
 
 ___
 
@@ -102,7 +102,7 @@ Delete Cookie by the Name without Url Path
 
 #### Defined in
 
-[cookies.ts:67](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/cookies.ts#L67)
+[cookies.ts:67](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/cookies.ts#L67)
 
 ___
 
@@ -124,7 +124,7 @@ Return Cookie Value by Cookie Name
 
 #### Defined in
 
-[cookies.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/cookies.ts#L18)
+[cookies.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/cookies.ts#L18)
 
 ___
 
@@ -147,7 +147,7 @@ Save Cookie if it not exist and return true if cookie should be set or false if 
 
 #### Defined in
 
-[cookies.ts:37](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/cookies.ts#L37)
+[cookies.ts:37](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/cookies.ts#L37)
 
 ___
 
@@ -170,4 +170,4 @@ Save Cookie if not Exist and add Expiration time
 
 #### Defined in
 
-[cookies.ts:54](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/cookies.ts#L54)
+[cookies.ts:54](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/cookies.ts#L54)

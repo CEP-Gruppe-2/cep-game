@@ -6,7 +6,7 @@
         {
             "title": "Grundlagen der Cyber- und IT-Sicherheit",
             "description": "Im ersten Modul lernst du die grundlegenden Aspekte der Cyber-Sicherheit kennen. Du lernst mehr über die Punkte Sicherheitsvorfälle in der IT, Passwortsicherheit, Sicheres-WiFi, Umgang mit mobilen Datenträgern und externer Hardware und Phsihing. Also alles Punkte die vom Menschen und seinem Verhalten abhängig sind und bei nicht berücksichtigung zu Problemen führen, die sogar existenzbedrohend sein können. Deshalb wirst du in den folgenden Spielen für diese Themen sensibilisiert und aufgeklärt um in Zukunft auf Angriffe vorbereitet zu sein und zu wissen wie du dich im Fall der Fälle zu verhalten hast. \n \nWenn du an mehr Infos zu den Themen aus diesem Modul interessiert bist, kannst du auf 'Download PDF' klicken oder wenn du zum ersten Spiel gehen willst, klicke auf 'Los gehts'.",
-            "downloadLink": "/download/chapter/1",
+            "downloadLink": "/res/pdf/Modul 1 Grundlagen der Cyber- und IT-Sicherheit.pdf",
             "firstGame": "/secure-password",
             "games": [
                 {
@@ -45,7 +45,7 @@
         {
             "title": "Erweiterung der Cyber-Sicherheit",
             "description": "Im zweiten Modul lernst du ein wenig über das sichere verwenden und einrichten von Netzwerken. Du behandelst die Themen Fernzugriff und Netzwerksegmentierung. Wenn du an mehr Infos zu den Themen aus diesem Modul interessiert bist, kannst du auf 'Download PDF' klicken oder wenn du zum ersten Spiel gehen willst, klicke auf 'Los gehts'.",
-            "downloadLink": "/download/chapter/2",
+            "downloadLink": "/res/pdf/Modul 2 Erweiterung der Cyber-Sicherheit.pdf",
             "firstGame": "/chapter/2",
             "games": [
                 {
@@ -66,7 +66,7 @@
         {
             "title": "OT-Sicherheit",
             "description": "In diesem Modul besteht deine Aufgabe darin, das zuvor erworbene Wissen anzuwenden und mit diesem Wissen in die Rolle eines Hackers zu schlüpfen, der sich in das E-Werk einhackt, sich Zugang zu dessen System verschafft und so viel Schaden anrichtet, wie es nur möglich ist. Dann werden wir dir verraten, was das 'Internet of Things' und Industrie 4.0 sind. Wenn du an mehr Infos zu den Themen aus diesem Modul interessiert bist, kannst du auf 'Download PDF' klicken oder wenn du zum ersten Spiel gehen willst, klicke auf 'Los gehts'.",
-            "downloadLink": "/download/chapter/3",
+            "downloadLink": "/res/pdf/Modul 3 OT-Security.pdf",
             "firstGame": "/chapter/3",
             "games": [
                 {

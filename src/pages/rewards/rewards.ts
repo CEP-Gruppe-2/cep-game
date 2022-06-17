@@ -5,6 +5,8 @@ import '/src/components/button/button.ts'
 import {changePointsLocalStorage, exchangePointsAndSetLastNextExchang, getArrayWithGainedPoints, isLastExchangePermittedDebug, returnTotalPoints, setItemLocalStorage } from '../../functions/localstorage';
 
 /**
+ * My custom event emitter
+ * @noInheritDoc
  * @class Rewards
  * @module Rewards
  * @public

@@ -26,6 +26,7 @@
         "lit": "^2.0.2",
         "rollup-plugin-postcss-lit": "^2.0.0",
         "sass": "^1.52.1",
+        "typedoc": "^0.22.17",
         "urlpattern-polyfill": "^4.0.3"
     },
     "devDependencies": {
@@ -47,6 +48,7 @@
         "eslint-plugin-promise": "^6.0.0",
         "jest": "^28.1.0",
         "jest-environment-jsdom": "^28.1.1",
+        "jsdoc": "^3.6.10",
         "mocha": "^10.0.0",
         "svelte": "^3.43.1",
         "ts-jest": "^28.0.4",

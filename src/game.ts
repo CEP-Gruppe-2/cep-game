@@ -81,7 +81,6 @@ export class Game extends LitElement {
 
   render() {
     return html`
-      <pop-up ?componentvisible=${false}></pop-up>
       <div class="main-container">
         <header id="header">
           <a href="/" class="header-brand no-decoration font-black">

@@ -1,9 +1,6 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './intro.scss?inline';
-
-import { redirectTo } from '../../functions/redirect';
 import introduction from '../../data/introduction.json';
-
 import  '../../components/notification';
 import { state } from 'lit/decorators.js';
 import { addPointsToLocalStorage, itemExistInLocalstorage } from '../../functions/localstorage';

@@ -12,7 +12,6 @@ export class SecurityIncidents extends LitElement {
   private bild:string="";
   private text:string="";
   private buttons:String[]=[];
-  private antworten:String[]=[];
   private erklärung1:boolean=false;
   private richtigerButton:number=-1
   private punkte:number=0;
@@ -146,7 +145,6 @@ export class SecurityIncidents extends LitElement {
           this.ladeErklärungsDurchlauf();
           this.erklärung1=false;
           this.buttons=[];
-          this.antworten=[];
           this.auswahl=-1;
       }
 

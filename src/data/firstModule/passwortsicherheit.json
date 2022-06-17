@@ -18,7 +18,7 @@
           "roboter": true
       },
       {
-          "text":"Wenn ein Angreifer zugriff auf eines deiner Konten bekommt, kann er dir und deinem Arbeitgeber ernsthaften finanziellen Schaden zufügen.",
+          "text":"Wenn ein Angreifer Zugriff auf eines deiner Konten bekommt, kann er dir und deinem Arbeitgeber ernsthaften finanziellen Schaden zufügen.",
           "buttonText":"weiter",
           "roboter": true
       },
@@ -168,7 +168,7 @@
       {
           "Überschrift":"Super!",
           "text1":"Du hast das Spiel “Passwortsicherheit”  abgeschlossen. Hierfür erhälst du von mir ",
-          "text2":" Punkte. Schau mal nach, ob du schon genug Punkte hast, um E-City wieder mit Energie zu versorgen.",
+          "text2":" Gigajoule. Schau mal nach, ob du schon genug Energie hast, um E-City wieder zum Leuchten zu bringen.",
           "buttonText":"Beenden",
           "roboter": true
       }

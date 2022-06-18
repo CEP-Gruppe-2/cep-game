@@ -1,6 +1,10 @@
 import {fakeLocalStorage} from '../../src/functions/fakeLocalstorage'
 import {getLastTimeExchangeMinutes, exchangePointsAndSetLastNextExchang} from './timeFunctions'
 
+/**
+ * @author b.kotikov
+ */
+
 describe('Zeitunterschied in Minuten', () => {
 
     /*

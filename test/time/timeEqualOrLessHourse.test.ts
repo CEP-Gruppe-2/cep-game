@@ -1,6 +1,10 @@
 import {fakeLocalStorage} from '../../src/functions/fakeLocalstorage'
 import {returnLastTimeExchangePoints, exchangePointsAndSetLastNextExchang} from './timeFunctions'
 
+/**
+ * @author b.kotikov
+ */
+
 describe('Zeiterfassung in Minuten', () => {
 
     /*

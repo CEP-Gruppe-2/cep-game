@@ -1,6 +1,12 @@
 import {fakeLocalStorage} from '../../src/functions/fakeLocalstorage'
 import {getLastTimeExchangeMinutes, exchangePointsAndSetLastNextExchang} from './timeFunctions'
 
+/**
+ * @author b.kotikov
+ */
+
+const punkte = 20;
+
 describe('Zeitunterschied in Minuten', () => {
 
     /*
@@ -24,7 +30,7 @@ describe('Zeitunterschied in Minuten', () => {
             um weitere 10 Minuten erweitert. Danach wird die Zeiten in der LocalStorage abgespeichert
         */
 
-        exchangePointsAndSetLastNextExchang(20);
+        exchangePointsAndSetLastNextExchang(punkte);
         const lastTime = getLastTimeExchangeMinutes()
         
         /*

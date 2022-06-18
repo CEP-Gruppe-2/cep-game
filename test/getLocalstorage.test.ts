@@ -1,6 +1,10 @@
 import {getItemLocalStorage, setItemLocalStorage } from '../src/functions/localstorage';
 import {fakeLocalStorage} from '../src/functions/fakeLocalstorage'
 
+/**
+ * @author b.kotikov
+ */
+
 describe('Localstorage', () => {
 
     /*

@@ -1,6 +1,10 @@
 import {getCookie } from '../src/functions/cookies'
 import Cookies from 'js-cookie';
 
+/**
+ * @author b.kotikov
+ */
+
 jest.mock('js-cookie')
 
 describe('Funktionalität: Cookies', () => {

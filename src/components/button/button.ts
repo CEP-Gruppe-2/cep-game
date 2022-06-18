@@ -1,10 +1,11 @@
 import styles from './button.scss?inline';
 
 /**
- * @module Button
+ * Button Component
  * @class
  * @exports
  * @public
+ * @extends HTMLElement
  */
 export class Button extends HTMLElement {
 
@@ -25,7 +26,6 @@ export class Button extends HTMLElement {
       </style>
     `;
   }
-
 }
 
 customElements.define('my-button', Button);

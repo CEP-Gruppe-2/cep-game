@@ -2,6 +2,10 @@
 
 # Class: Close
 
+Close Component
+
+**`exports`**
+
 ## Hierarchy
 
 - `HTMLElement`
@@ -46,4 +50,4 @@ Life Cycle Function from Lit ELements
 
 #### Defined in
 
-[src/components/close/close.ts:16](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/close/close.ts#L16)
+[src/components/close/close.ts:17](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/close/close.ts#L17)

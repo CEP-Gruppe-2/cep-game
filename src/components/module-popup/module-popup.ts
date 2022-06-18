@@ -4,10 +4,11 @@ import {property} from 'lit/decorators.js';
 import '../close';
 
 /**
- * @module ModulePopup
+ * ModulePopup Component
  * @class
  * @exports
  * @public
+ * @extends LitElement
  */
 export class ModulePopup extends LitElement {
 

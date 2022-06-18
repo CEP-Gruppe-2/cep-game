@@ -2,6 +2,10 @@
 
 # Class: ModuleCard
 
+ModuleCard Component
+
+**`exports`**
+
 ## Hierarchy
 
 - `LitElement`
@@ -53,7 +57,7 @@ node_modules/@lit/reactive-element/reactive-element.d.ts:487
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:40](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L40)
+[src/components/module-card/module-card.ts:41](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L41)
 
 ___
 
@@ -65,7 +69,7 @@ ___
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:28](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L28)
+[src/components/module-card/module-card.ts:29](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L29)
 
 ___
 
@@ -77,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:52](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L52)
+[src/components/module-card/module-card.ts:53](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L53)
 
 ___
 
@@ -89,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:46](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L46)
+[src/components/module-card/module-card.ts:47](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L47)
 
 ___
 
@@ -101,7 +105,7 @@ ___
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:34](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L34)
+[src/components/module-card/module-card.ts:35](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L35)
 
 ___
 
@@ -113,7 +117,7 @@ ___
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:22](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L22)
+[src/components/module-card/module-card.ts:23](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L23)
 
 ___
 
@@ -129,7 +133,7 @@ LitElement.styles
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:16](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L16)
+[src/components/module-card/module-card.ts:17](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L17)
 
 ## Methods
 
@@ -153,7 +157,7 @@ Get next Chapter and Redirect to next Chapter
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:60](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L60)
+[src/components/module-card/module-card.ts:61](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L61)
 
 ___
 
@@ -171,4 +175,4 @@ LitElement.render
 
 #### Defined in
 
-[src/components/module-card/module-card.ts:71](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-card/module-card.ts#L71)
+[src/components/module-card/module-card.ts:72](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-card/module-card.ts#L72)

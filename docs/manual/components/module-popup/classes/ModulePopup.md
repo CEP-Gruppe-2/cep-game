@@ -2,6 +2,10 @@
 
 # Class: ModulePopup
 
+ModulePopup Component
+
+**`exports`**
+
 ## Hierarchy
 
 - `LitElement`
@@ -51,7 +55,7 @@ node_modules/@lit/reactive-element/reactive-element.d.ts:487
 
 #### Defined in
 
-[src/components/module-popup/module-popup.ts:30](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-popup/module-popup.ts#L30)
+[src/components/module-popup/module-popup.ts:31](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-popup/module-popup.ts#L31)
 
 ___
 
@@ -63,7 +67,7 @@ ___
 
 #### Defined in
 
-[src/components/module-popup/module-popup.ts:21](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-popup/module-popup.ts#L21)
+[src/components/module-popup/module-popup.ts:22](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-popup/module-popup.ts#L22)
 
 ___
 
@@ -75,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/components/module-popup/module-popup.ts:27](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-popup/module-popup.ts#L27)
+[src/components/module-popup/module-popup.ts:28](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-popup/module-popup.ts#L28)
 
 ___
 
@@ -87,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/components/module-popup/module-popup.ts:24](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-popup/module-popup.ts#L24)
+[src/components/module-popup/module-popup.ts:25](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-popup/module-popup.ts#L25)
 
 ___
 
@@ -105,7 +109,7 @@ LitElement.styles
 
 #### Defined in
 
-[src/components/module-popup/module-popup.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-popup/module-popup.ts#L18)
+[src/components/module-popup/module-popup.ts:19](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-popup/module-popup.ts#L19)
 
 ## Methods
 
@@ -125,7 +129,7 @@ LitElement.styles
 
 #### Defined in
 
-[src/components/module-popup/module-popup.ts:33](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-popup/module-popup.ts#L33)
+[src/components/module-popup/module-popup.ts:34](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-popup/module-popup.ts#L34)
 
 ___
 
@@ -143,4 +147,4 @@ LitElement.render
 
 #### Defined in
 
-[src/components/module-popup/module-popup.ts:37](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/module-popup/module-popup.ts#L37)
+[src/components/module-popup/module-popup.ts:38](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/module-popup/module-popup.ts#L38)

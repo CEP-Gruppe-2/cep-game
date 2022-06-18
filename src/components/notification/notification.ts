@@ -4,10 +4,11 @@ import { property } from 'lit/decorators.js';
 import { redirectTo } from '../../functions/redirect';
 
 /**
- * @module Notification
+ * Notification Component
  * @class
  * @exports
  * @public
+ * @extends LitElement
  */
 export class Notification extends LitElement {
 
@@ -36,16 +37,16 @@ export class Notification extends LitElement {
    * @returns {any}
    */
   public _typeOfNotification() : any {
-    let timer = this.timeout / 1000;
-    setInterval(() => {
+    let timer = this.timeout / 1000; // devide by 1000 to get seconds
+    setInterval(() => { // set timer
 
-      if (timer < 0) {
-        redirectTo("/chapter/1", "");
+      if (timer < 0) { // is seconds 0 
+        redirectTo("/chapter/1", ""); // then redirect to following page
       }
 
     
-      timer--;
-    }, 1000);
+      timer--; // count down
+    }, 1000); // count down each second , one by one
 
     return html`
       <div class="notification-error notification-container">

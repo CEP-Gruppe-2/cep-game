@@ -2,6 +2,10 @@
 
 # Class: Button
 
+Button Component
+
+**`exports`**
+
 ## Hierarchy
 
 - `HTMLElement`
@@ -46,4 +50,4 @@ Life Cycle Function from Lit Element
 
 #### Defined in
 
-[src/components/button/button.ts:15](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/button/button.ts#L15)
+[src/components/button/button.ts:16](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/button/button.ts#L16)

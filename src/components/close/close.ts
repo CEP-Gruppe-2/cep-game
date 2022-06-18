@@ -1,10 +1,11 @@
 import styles from './close.scss?inline';
 
 /**
- * @module Close
+ * Close Component
  * @class
  * @exports
  * @public
+ * @extends HTMLElement
  */
 export class Close extends HTMLElement {
 

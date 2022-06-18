@@ -2,6 +2,10 @@
 
 # Class: Notification
 
+Notification Component
+
+**`exports`**
+
 ## Hierarchy
 
 - `LitElement`
@@ -50,7 +54,7 @@ node_modules/@lit/reactive-element/reactive-element.d.ts:487
 
 #### Defined in
 
-[src/components/notification/notification.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/notification/notification.ts#L18)
+[src/components/notification/notification.ts:19](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/notification/notification.ts#L19)
 
 ___
 
@@ -62,7 +66,7 @@ ___
 
 #### Defined in
 
-[src/components/notification/notification.ts:21](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/notification/notification.ts#L21)
+[src/components/notification/notification.ts:22](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/notification/notification.ts#L22)
 
 ___
 
@@ -78,7 +82,7 @@ LitElement.styles
 
 #### Defined in
 
-[src/components/notification/notification.ts:15](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/notification/notification.ts#L15)
+[src/components/notification/notification.ts:16](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/notification/notification.ts#L16)
 
 ## Methods
 
@@ -94,7 +98,7 @@ Close Notification and create new Event
 
 #### Defined in
 
-[src/components/notification/notification.ts:29](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/notification/notification.ts#L29)
+[src/components/notification/notification.ts:30](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/notification/notification.ts#L30)
 
 ___
 
@@ -110,7 +114,7 @@ Get Type of the Notification - error or success and return HTML
 
 #### Defined in
 
-[src/components/notification/notification.ts:38](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/notification/notification.ts#L38)
+[src/components/notification/notification.ts:39](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/notification/notification.ts#L39)
 
 ___
 
@@ -128,4 +132,4 @@ LitElement.render
 
 #### Defined in
 
-[src/components/notification/notification.ts:69](https://github.com/CEP-Gruppe-2/cep-game/blob/67020bd/src/components/notification/notification.ts#L69)
+[src/components/notification/notification.ts:70](https://github.com/CEP-Gruppe-2/cep-game/blob/ed86311/src/components/notification/notification.ts#L70)

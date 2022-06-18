@@ -3,10 +3,11 @@ import {property} from 'lit/decorators.js';
 import styles from './module-card.scss?inline';
 
 /**
- * @module ModuleCard
+ * ModuleCard Component
  * @class
  * @exports
  * @public
+ * @extends LitElement 
  */
 export class ModuleCard extends LitElement {
 
@@ -58,13 +59,13 @@ export class ModuleCard extends LitElement {
    * @returns {void} - 
    */
   private getChapter(e : Event): void {
-    e.preventDefault();
-    if(this.cardTitle == 'Einleitung'){
-      this.dispatchEvent(new CustomEvent('einleitung-btn-clicked', {detail: this.cardLink}));
+    e.preventDefault(); // prevent rederecting by clicking
+    if(this.cardTitle == 'Einleitung'){ // is clicked Card Title = Einleitung?
+      this.dispatchEvent(new CustomEvent('einleitung-btn-clicked', {detail: this.cardLink})); // create Event und dispatch event
     }else{
       //let kapitel = this.cardTitle.replace(/[^a-zA-Z]/g, '');
-      let kapitelNumber = this.cardTitle.replace(/[^0-9]/g, '');
-      location.href = '/chapter/' + kapitelNumber;
+      let kapitelNumber = this.cardTitle.replace(/[^0-9]/g, ''); // regex, title should contain only numbers
+      location.href = '/chapter/' + kapitelNumber; // add to url number of chapter and redirect to the url
     }
   }
 

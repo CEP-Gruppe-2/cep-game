@@ -45,7 +45,7 @@ Save Points into Localstorage
 
 #### Defined in
 
-[localstorage.ts:166](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L166)
+[localstorage.ts:166](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L166)
 
 ___
 
@@ -68,7 +68,7 @@ Adds points that the Used reiceved in the Games
 
 #### Defined in
 
-[localstorage.ts:145](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L145)
+[localstorage.ts:145](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L145)
 
 ___
 
@@ -91,7 +91,7 @@ Overrides the old Points with the new Points
 
 #### Defined in
 
-[localstorage.ts:41](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L41)
+[localstorage.ts:41](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L41)
 
 ___
 
@@ -113,7 +113,7 @@ Exchange Points and set new Time
 
 #### Defined in
 
-[localstorage.ts:199](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L199)
+[localstorage.ts:199](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L199)
 
 ___
 
@@ -129,7 +129,7 @@ Return String Object or Array of type string with all Keys and Values inside Loc
 
 #### Defined in
 
-[localstorage.ts:78](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L78)
+[localstorage.ts:78](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L78)
 
 ___
 
@@ -145,7 +145,7 @@ Returns Array with all Points that the use get from all the Games
 
 #### Defined in
 
-[localstorage.ts:96](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L96)
+[localstorage.ts:96](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L96)
 
 ___
 
@@ -167,7 +167,7 @@ Return parsed JSON-Array from Localstorage
 
 #### Defined in
 
-[localstorage.ts:67](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L67)
+[localstorage.ts:67](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L67)
 
 ___
 
@@ -189,7 +189,7 @@ Returns the Value of the Key
 
 #### Defined in
 
-[localstorage.ts:27](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L27)
+[localstorage.ts:27](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L27)
 
 ___
 
@@ -207,7 +207,7 @@ Difference between last Exchange in Days
 
 #### Defined in
 
-[localstorage.ts:221](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L221)
+[localstorage.ts:221](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L221)
 
 ___
 
@@ -225,7 +225,7 @@ Difference between last Exchange in Hours
 
 #### Defined in
 
-[localstorage.ts:231](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L231)
+[localstorage.ts:231](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L231)
 
 ___
 
@@ -243,7 +243,7 @@ Difference between last Exchange in Minutes
 
 #### Defined in
 
-[localstorage.ts:211](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L211)
+[localstorage.ts:211](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L211)
 
 ___
 
@@ -261,7 +261,7 @@ Is the last Exchange exceeded or not
 
 #### Defined in
 
-[localstorage.ts:241](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L241)
+[localstorage.ts:241](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L241)
 
 ___
 
@@ -285,7 +285,7 @@ Is the last Exchange exceeded or not, with debuging option
 
 #### Defined in
 
-[localstorage.ts:250](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L250)
+[localstorage.ts:250](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L250)
 
 ___
 
@@ -309,7 +309,7 @@ Return position of title or key
 
 #### Defined in
 
-[localstorage.ts:134](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L134)
+[localstorage.ts:134](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L134)
 
 ___
 
@@ -325,7 +325,7 @@ Clear Localstorage
 
 #### Defined in
 
-[localstorage.ts:175](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L175)
+[localstorage.ts:175](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L175)
 
 ___
 
@@ -341,7 +341,7 @@ Sum all the Points or substract points and return the total
 
 #### Defined in
 
-[localstorage.ts:109](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L109)
+[localstorage.ts:109](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L109)
 
 ___
 
@@ -364,7 +364,7 @@ Set Key and Array with multiple Values into Localstorage
 
 #### Defined in
 
-[localstorage.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L18)
+[localstorage.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L18)
 
 ___
 
@@ -387,4 +387,4 @@ Set Key and Value into Localstorage
 
 #### Defined in
 
-[localstorage.ts:7](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/localstorage.ts#L7)
+[localstorage.ts:7](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/localstorage.ts#L7)

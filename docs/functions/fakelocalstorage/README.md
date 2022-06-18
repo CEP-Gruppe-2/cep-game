@@ -27,4 +27,4 @@ Imitate Localstorage
 
 #### Defined in
 
-[fakeLocalstorage.ts:5](https://github.com/CEP-Gruppe-2/cep-game/blob/6270a8b/src/functions/fakeLocalstorage.ts#L5)
+[fakeLocalstorage.ts:5](https://github.com/CEP-Gruppe-2/cep-game/blob/8accf3e/src/functions/fakeLocalstorage.ts#L5)

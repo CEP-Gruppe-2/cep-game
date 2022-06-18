@@ -5,16 +5,27 @@ import '/src/components/button/button.ts'
 import {changePointsLocalStorage, exchangePointsAndSetLastNextExchang, getArrayWithGainedPoints, isLastExchangePermittedDebug, returnTotalPoints, setItemLocalStorage } from '../../functions/localstorage';
 
 /**
- * @param punkte {number} - points
+ * My custom event emitter
+ * @noInheritDoc
+ * @class Rewards
+ * @module Rewards
+ * @public
  */
 export class Rewards extends LitElement {
 
+  /** @cssprops */
   static styles = unsafeCSS(styles) // imported css styles
+
+  /**
+   * @property {number} - Totalpoints 
+   * @private
+   * */
   private punkte : number= returnTotalPoints(); // points from Localstorage
 
   
   /**
    * Return Img City, when points Exchanged is city light or dark
+   * @private
    * @returns {any} - return img of the city
    */
   private city() : any{
@@ -37,7 +48,13 @@ export class Rewards extends LitElement {
     }else return html `<img class="city-img" srcset="${rewards.cityDunkel}" alt="Bild von E-City"/>`
   }
 
-  private async exchangePoints(){
+  /**
+   * Exchange points and set last Exchange
+   * @private
+   * @async
+   * @returns {Promise<void>}
+   */
+  private async exchangePoints() : Promise<void>{
     //points is 0 or smaller than 0
     if(this.punkte == 0 || this.punkte < 0){
       // exchange not possible, display error in the console

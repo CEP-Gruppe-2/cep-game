@@ -57,9 +57,11 @@ node_modules/@lit/reactive-element/reactive-element.d.ts:487
 
 • **auswahl**: `number` = `-1`
 
+**`state`** - number for the choice of the button
+
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:26](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L26)
+src/pages/security-incidents/security-incidents.ts:28
 
 ___
 
@@ -69,7 +71,7 @@ ___
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:12](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L12)
+src/pages/security-incidents/security-incidents.ts:12
 
 ___
 
@@ -79,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:14](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L14)
+src/pages/security-incidents/security-incidents.ts:14
 
 ___
 
@@ -89,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:15](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L15)
+src/pages/security-incidents/security-incidents.ts:15
 
 ___
 
@@ -97,9 +99,11 @@ ___
 
 • **position**: `number` = `0`
 
+**`state`** - counter for the postion in the game
+
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:24](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L24)
+src/pages/security-incidents/security-incidents.ts:24
 
 ___
 
@@ -109,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:17](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L17)
+src/pages/security-incidents/security-incidents.ts:17
 
 ___
 
@@ -119,7 +123,7 @@ ___
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:16](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L16)
+src/pages/security-incidents/security-incidents.ts:16
 
 ___
 
@@ -129,7 +133,7 @@ ___
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:13](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L13)
+src/pages/security-incidents/security-incidents.ts:13
 
 ___
 
@@ -143,7 +147,7 @@ LitElement.styles
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:19](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L19)
+src/pages/security-incidents/security-incidents.ts:19
 
 ## Methods
 
@@ -159,7 +163,7 @@ Is called by the click on the image and counts up the position.
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:33](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L33)
+src/pages/security-incidents/security-incidents.ts:35
 
 ___
 
@@ -181,7 +185,7 @@ Is called by the click on the buttons and checked if the game is finished, count
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:45](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L45)
+src/pages/security-incidents/security-incidents.ts:47
 
 ___
 
@@ -197,7 +201,7 @@ Is loading the path to the image out of the JSON.
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:88](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L88)
+src/pages/security-incidents/security-incidents.ts:90
 
 ___
 
@@ -213,7 +217,7 @@ Is loading button texts from JSON and stores them in the "buttons" array if the 
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:100](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L100)
+src/pages/security-incidents/security-incidents.ts:102
 
 ___
 
@@ -229,7 +233,7 @@ Is loading the Explanation out of the JSON.
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:78](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L78)
+src/pages/security-incidents/security-incidents.ts:80
 
 ___
 
@@ -247,7 +251,7 @@ LitElement.render
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:158](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L158)
+src/pages/security-incidents/security-incidents.ts:160
 
 ___
 
@@ -263,7 +267,7 @@ Is writing an image for the content and returns it as HTML.
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:113](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L113)
+src/pages/security-incidents/security-incidents.ts:115
 
 ___
 
@@ -279,4 +283,4 @@ If buttons are needed, create buttons as html, returns empty html or html with 1
 
 #### Defined in
 
-[src/pages/security-incidents/security-incidents.ts:132](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/security-incidents/security-incidents.ts#L132)
+src/pages/security-incidents/security-incidents.ts:134

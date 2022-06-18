@@ -1,3 +1,7 @@
+/**
+ * @author b.kotikov
+ */
+
 
 /**
  * Redirect to the URL and set connection Type -> HTTP | HTTPS

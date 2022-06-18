@@ -1,5 +1,9 @@
 
 /**
+ * @author b.kotikov
+ */
+
+/**
  * Imitate Localstorage
  */
 export const fakeLocalStorage = (function () {

@@ -2,6 +2,10 @@
 import Cookies from 'js-cookie';
 
 /**
+ * @author b.kotikov
+ */
+
+/**
  * @type {Cook}
  */
 type Cook = {

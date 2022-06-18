@@ -1,4 +1,7 @@
 import { changeCookie, getCookie } from './cookies';
+/**
+ * @author b.kotikov
+ */
 
 /**
  * Save points into Cookie

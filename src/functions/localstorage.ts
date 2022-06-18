@@ -1,4 +1,9 @@
 /**
+ * @author b.kotikov
+ */
+
+
+/**
  * Set Key and Value into Localstorage
  * @param name {string} - Key of Localstorage
  * @param value {string} - Value of Localstorage

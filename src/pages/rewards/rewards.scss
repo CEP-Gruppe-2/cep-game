@@ -79,6 +79,7 @@
     border-bottom:1px dotted #666;
     text-align:left;
     cursor:pointer;
+    animation-duration: 1s;
 }
 
 .tooltip:focus + .right, .tooltip:visited .right, .tooltip:target .right{
@@ -91,7 +92,7 @@
     height: 200px;
     top:50%;
     left:100%;
-    margin-left:20px;
+    margin-left:0;
     transform:translate(0, -50%);
     padding:10px 20px;
     color:#444444;
@@ -109,7 +110,7 @@
 
 @media (max-width: 580px){
     .tooltip .right {
-        top:60px;
+        top:43px;
         left:50%;
         transform:translate(-50%, 0);
     }

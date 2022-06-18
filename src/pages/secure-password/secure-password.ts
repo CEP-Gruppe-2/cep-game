@@ -5,10 +5,12 @@ import passwortsicherheit from '../../data/firstModule/passwortsicherheit.json';
 import { redirectTo } from '../../functions/redirect';
 import { addPointsToLocalStorage } from '../../functions/localstorage';
 
+
 export class SecurePassword extends LitElement {
 
     static styles = unsafeCSS(styles);
 
+    
     private punkte:number=0;
     private joulesSource:string="";
     private text:string[]=[];
@@ -20,19 +22,23 @@ export class SecurePassword extends LitElement {
     private fehlerMeldungPasswort:string='';
     private eingabe:string="";
 
-    
+    /** @state -  counter for the postion in the game*/
     @state()
     position = 0;
 
+    /** @state - boolean to save if the choice of the player was right */
     @state()
     richtig=false;
 
+    /** @state -  boolean to check if the erklärung should be loaded*/
     @state()
     erklärung=false;
 
+    /** @state - boolean to check if the input is filled with text */
     @state()
     _submitEnabled = false;
 
+    /** @query - input text */
     @query('input')
     _input!: HTMLInputElement;
 
@@ -328,6 +334,7 @@ export class SecurePassword extends LitElement {
 
 /**
  * Enum to save in which section of the game we are.
+ * @enum
  */
 enum Ablauf{
     Einfuehrung,

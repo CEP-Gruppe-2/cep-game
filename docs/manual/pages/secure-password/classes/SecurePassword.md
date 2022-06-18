@@ -67,9 +67,11 @@ node_modules/@lit/reactive-element/reactive-element.d.ts:487
 
 • **\_input**: `HTMLInputElement`
 
+**`query`** - input text
+
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:37](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L37)
+src/pages/secure-password/secure-password.ts:43
 
 ___
 
@@ -77,9 +79,11 @@ ___
 
 • **\_submitEnabled**: `boolean` = `false`
 
+**`state`** - boolean to check if the input is filled with text
+
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:34](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L34)
+src/pages/secure-password/secure-password.ts:39
 
 ___
 
@@ -89,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:17](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L17)
+src/pages/secure-password/secure-password.ts:19
 
 ___
 
@@ -99,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:15](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L15)
+src/pages/secure-password/secure-password.ts:17
 
 ___
 
@@ -109,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:21](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L21)
+src/pages/secure-password/secure-password.ts:23
 
 ___
 
@@ -117,9 +121,11 @@ ___
 
 • **erklärung**: `boolean` = `false`
 
+**`state`** -  boolean to check if the erklärung should be loaded
+
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:31](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L31)
+src/pages/secure-password/secure-password.ts:35
 
 ___
 
@@ -129,7 +135,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:20](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L20)
+src/pages/secure-password/secure-password.ts:22
 
 ___
 
@@ -139,7 +145,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:13](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L13)
+src/pages/secure-password/secure-password.ts:15
 
 ___
 
@@ -149,7 +155,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:18](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L18)
+src/pages/secure-password/secure-password.ts:20
 
 ___
 
@@ -157,9 +163,11 @@ ___
 
 • **position**: `number` = `0`
 
+**`state`** -  counter for the postion in the game
+
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:25](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L25)
+src/pages/secure-password/secure-password.ts:27
 
 ___
 
@@ -169,7 +177,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:12](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L12)
+src/pages/secure-password/secure-password.ts:14
 
 ___
 
@@ -177,9 +185,11 @@ ___
 
 • **richtig**: `boolean` = `false`
 
+**`state`** - boolean to save if the choice of the player was right
+
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:28](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L28)
+src/pages/secure-password/secure-password.ts:31
 
 ___
 
@@ -189,7 +199,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:16](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L16)
+src/pages/secure-password/secure-password.ts:18
 
 ___
 
@@ -199,7 +209,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:14](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L14)
+src/pages/secure-password/secure-password.ts:16
 
 ___
 
@@ -209,7 +219,7 @@ ___
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:19](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L19)
+src/pages/secure-password/secure-password.ts:21
 
 ___
 
@@ -223,7 +233,7 @@ LitElement.styles
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:10](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L10)
+src/pages/secure-password/secure-password.ts:11
 
 ## Methods
 
@@ -239,7 +249,7 @@ Is called by the button in the last gamemodi, the last gamemode is ablaufPositio
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:84](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L84)
+src/pages/secure-password/secure-password.ts:90
 
 ___
 
@@ -261,7 +271,7 @@ Is called by buttons with the text "Weiter", "starten" and "beenden", Here it is
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:44](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L44)
+src/pages/secure-password/secure-password.ts:50
 
 ___
 
@@ -283,7 +293,7 @@ Is called by the multiple choice buttons and evaluates whether the clicked butto
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:66](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L66)
+src/pages/secure-password/secure-password.ts:72
 
 ___
 
@@ -305,7 +315,7 @@ Saves the passwort input, after the press on the button in gamemode: Ablauf.Aufg
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:105](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L105)
+src/pages/secure-password/secure-password.ts:111
 
 ___
 
@@ -321,7 +331,7 @@ Returns task 2 (ablaufPosition==Aublauf.Aufgabe2) as HTML.
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:271](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L271)
+src/pages/secure-password/secure-password.ts:277
 
 ___
 
@@ -337,7 +347,7 @@ Reads the required data from the JSON file.
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:113](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L113)
+src/pages/secure-password/secure-password.ts:119
 
 ___
 
@@ -355,7 +365,7 @@ LitElement.render
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:296](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L296)
+src/pages/secure-password/secure-password.ts:302
 
 ___
 
@@ -371,7 +381,7 @@ Writes the task as img and returns it as HTML.
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:258](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L258)
+src/pages/secure-password/secure-password.ts:264
 
 ___
 
@@ -387,7 +397,7 @@ Writes the buttons and returns it as HTML.
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:231](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L231)
+src/pages/secure-password/secure-password.ts:237
 
 ___
 
@@ -403,7 +413,7 @@ Writes the img of the robot and returns it as HTML.
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:220](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L220)
+src/pages/secure-password/secure-password.ts:226
 
 ___
 
@@ -419,4 +429,4 @@ Writes the text into the speech bubble and returns it as HTML.
 
 #### Defined in
 
-[src/pages/secure-password/secure-password.ts:166](https://github.com/CEP-Gruppe-2/cep-game/blob/9a26290/src/pages/secure-password/secure-password.ts#L166)
+src/pages/secure-password/secure-password.ts:172

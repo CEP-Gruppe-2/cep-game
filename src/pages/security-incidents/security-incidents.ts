@@ -19,9 +19,11 @@ export class SecurityIncidents extends LitElement {
   static styles = unsafeCSS(styles);
 
 
-  
+  /** @state - counter for the postion in the game */
   @state()
   position = 0;
+
+  /** @state - number for the choice of the button */
   @state()
   auswahl = -1;
 

@@ -22,7 +22,7 @@ function getLastTimeExchangeMinutes  ()  {
     return Math.round((((returnLastTimeExchangePoints() - now) % 86400000) % 3600000) / 60000);
 }
 
-// @ts-ignore
+
 function getLastTimeExchangeDays ()  {
     let now = Date.now();
     return Math.floor((returnLastTimeExchangePoints() - now) / 86400000);

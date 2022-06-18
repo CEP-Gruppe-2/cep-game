@@ -1,6 +1,6 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './security-incidents.scss?inline';
-import {property} from 'lit/decorators.js';
+import {state} from 'lit/decorators.js';
 import '../../components/button';
 import sicherheitsvorfaelle from '../../data/firstModule/security-incidents.json';
 import { addPointsToLocalStorage } from '../../functions/localstorage';
@@ -20,11 +20,13 @@ export class SecurityIncidents extends LitElement {
 
 
   
-  @property({type: Number})
+  @state()
   position = 0;
-  @property({type: Number})
+  @state()
   auswahl = -1;
 
+  
+  
   /*wird bei klick auf bild aufgerufen und zählt position hoch*/
   _handleClickBild():void{
       this.position++;

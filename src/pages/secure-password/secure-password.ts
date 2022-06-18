@@ -1,6 +1,6 @@
 import { html, LitElement, unsafeCSS} from 'lit';
 import styles from './secure-password.scss?inline';
-import { property, query, state} from 'lit/decorators.js';
+import { query, state} from 'lit/decorators.js';
 import passwortsicherheit from '../../data/firstModule/passwortsicherheit.json';
 import { redirectTo } from '../../functions/redirect';
 import { addPointsToLocalStorage } from '../../functions/localstorage';

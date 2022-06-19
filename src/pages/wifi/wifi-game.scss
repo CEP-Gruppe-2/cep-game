@@ -1,0 +1,122 @@
+:host{
+  display: block;
+  width: 100%;
+  height: 105vh;
+  background-color: #68C382;
+  position: relative;
+  overflow: hidden;
+  margin:0;
+  padding:0;
+
+}
+
+.wifi {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-div{
+  margin: 2em 0.5em 0.5em;
+}
+
+.device {
+  width: 500px;
+  border: solid black;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.seperator {
+  border-top-width: 1px;
+  border-top-style: solid;
+  margin-left: 15px;
+  margin-right: 15px
+}
+
+my-button {
+  margin-top: 20px;
+}
+
+// Story
+.story {
+  font-size: 30px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.3fr 0.7fr;
+  gap: 0 0;
+  grid-template-areas:
+      "bubble1 bubble1 img"
+      "button button button";
+
+  /*
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;*/
+  margin: 0.5em;
+}
+
+.bubble1 {
+  grid-area: bubble1;
+
+  position: relative;
+  border-radius: 40px;
+  background: #ffffff;
+  border: 4px solid #000000;
+  margin: 2.5em 2.5em 4em;
+}
+
+.bubble1:after, .bubble1:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.bubble1:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #ffffff;
+  border-width: 0.75em;
+  margin-top: -0.75em;
+}
+
+.bubble1:before {
+  border-color: rgba(0, 0, 0, 0);
+  border-left-color: #000000;
+  border-width: 0.9em;
+  margin-top: -0.9em;
+}
+
+.button{
+  grid-area: button;
+  display:flex;
+  align-self: center;
+  justify-content: center;
+  padding-bottom: 7.5em;
+}
+
+p{
+  font-size:1em;
+  margin: 1em;
+}
+
+.joules-img{
+  margin-top:5em;
+}
+
+img{
+  grid-area: img;
+  width: 14em;
+}
+
+my-button{
+  font-size: 0.75em;
+}

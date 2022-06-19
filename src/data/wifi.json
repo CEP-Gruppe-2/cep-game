@@ -1,4 +1,17 @@
 {
+    "intro": [{
+            "text": "Hallo hier bin ich wieder. Gut, dass du mehr über sicheres Wifi wissen willst.",
+            "buttonText": "Weiter"
+        },
+        {
+            "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+            "buttonText": "Weiter"
+        },
+        {
+            "text": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+            "buttonText": "Starten"
+        }
+    ],
     "networks": [{
             "name": "McMonalds Wifi",
             "security": 0,
@@ -30,5 +43,4 @@
             "dubious": false
         }
     ]
-
 }

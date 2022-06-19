@@ -21,16 +21,16 @@ Das sieht ungefähr so [aus](https://de.wikipedia.org/wiki/Automatisierungspyram
 
 3. erste Möglichkeit:
 
-	*	Sie laden den Zip-Ordner herunter
-	*	packen diesen aus
-	*	starten ein IDE
-	*	öffnen den Ordner im IDE
+	*	laden Sie den Zip-Ordner herunter
+	*	packen Sie diesen aus
+	*	starten Sie eine IDE
+	*	öffnen Sie den Ordner in der IDE 
 
 ![](https://i.ibb.co/SmWgXmg/Bildschirmfoto-2022-06-02-um-15-45-39.png)
 
 4. zweite Möglichkeit: 
-	* Sie öffnen ihren IDE
-	* öffnen in ihrem IDE Terminal
+	* Sie öffnen ihre IDE
+	* öffnen in dieser ihr Terminal
 	* im Terminal geben Sie folgende Befehle ein (s. unten):
 ![](https://i.ibb.co/sFj0qSD/Bildschirmfoto-2022-06-02-um-15-51-19.png)
 
@@ -38,7 +38,7 @@ Das sieht ungefähr so [aus](https://de.wikipedia.org/wiki/Automatisierungspyram
 `cd <ordner, das gerade erstellt wurde>`
 
 5. Depedencies / Packages installieren, die für die Arbeit des Projekt nötig sind:
-	* `npm run i`
+	* `npm i`
 6. Das Projekt ist ausführbar
 	*	ausführen: `npm run dev`, im Terminal wird es angezeigt, dass das Projekt gerade ausgeführt wird und die Webseite ist unter dem Link `localhost:3000/` verfügbar
 7. Projekt kompilieren

@@ -1,5 +1,5 @@
 import {fakeLocalStorage} from '../../src/functions/fakeLocalstorage'
-import { setItemLocalStorage } from './lsfunctions';
+import { getArrayWithGainedPoints } from './lsfunctions';
 
 /**
  * @author b.kotikov
@@ -20,12 +20,12 @@ describe('Speichern Key und Value in Localstorage', () => {
         Ruft die "setItemLocalStorage" Methode auf und 
         setzt Name und Value in der Localstorage
     */
-    it('Setzt den Key und Value in der Localstorage ab', () => {
+    it('Die Länge des Arrays muss 0 sein, da dieser leer ist', () => {
 
-        // ruft die Methode ... auf und speichert Key und Value in LS ab
-        setItemLocalStorage('they-key', 'fake-value');
+        //fügt Punkte zur LS hinzu
+        //addPointsToLocalStorage("Einleitung", "300");
 
         //vergleicht die beiden werte
-        expect(window.localStorage.getItem('they-key')).toEqual('fake-value');
+        expect(getArrayWithGainedPoints().length).toBe(0)
     });
 });

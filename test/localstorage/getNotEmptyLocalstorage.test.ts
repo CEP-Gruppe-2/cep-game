@@ -1,5 +1,5 @@
 import {fakeLocalStorage} from '../../src/functions/fakeLocalstorage'
-import { setItemLocalStorage } from './lsfunctions';
+import { getItemLocalStorage, setItemLocalStorage } from './lsfunctions';
 
 /**
  * @author b.kotikov
@@ -20,12 +20,12 @@ describe('Speichern Key und Value in Localstorage', () => {
         Ruft die "setItemLocalStorage" Methode auf und 
         setzt Name und Value in der Localstorage
     */
-    it('Setzt den Key und Value in der Localstorage ab', () => {
+    it('Localstorage muss nicht leer sein', () => {
 
         // ruft die Methode ... auf und speichert Key und Value in LS ab
         setItemLocalStorage('they-key', 'fake-value');
 
         //vergleicht die beiden werte
-        expect(window.localStorage.getItem('they-key')).toEqual('fake-value');
+        expect(getItemLocalStorage("they-key")).not.toEqual(null);
     });
 });

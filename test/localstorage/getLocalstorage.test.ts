@@ -1,11 +1,11 @@
-import {getItemLocalStorage, setItemLocalStorage } from '../../src/functions/localstorage';
 import {fakeLocalStorage} from '../../src/functions/fakeLocalstorage'
+import { getItemLocalStorage, setItemLocalStorage } from './lsfunctions';
 
 /**
  * @author b.kotikov
  */
 
-describe('Localstorage', () => {
+describe('Speichern Key und Value in Localstorage und Abrufen des Values', () => {
 
     /*
         Es generiert ein "fake" Localstorage
@@ -17,16 +17,15 @@ describe('Localstorage', () => {
     });
 
     /*
-        Ruft die "getItemLocalStorage" Methode auf und 
-        holt aus der Localstorage den Value, das unter dem Namen "the-key" zur 
-        Verfügung stehen soll
+        Ruft die "setItemLocalStorage" Methode auf und 
+        setzt Name und Value in der Localstorage
     */
-    it('saves the key to the storage', () => {
-        setItemLocalStorage('they-key', 'fake-value');
-        console.log(getItemLocalStorage('they-key'));
-        
-        window.localStorage.setItem('the-key', 'fake-value')
+    it('Setzt den Key und Value in der Localstorage ab und gibt den Value zurück', () => {
 
-        expect(window.localStorage.getItem('the-key')).toEqual('fake-value');
+        // ruft die Methode ... auf und speichert Key und Value in LS ab
+        setItemLocalStorage('they-key', 'fake-value');
+
+        //vergleicht die beiden werte
+        expect(getItemLocalStorage("they-key")).toEqual('fake-value');
     });
 });

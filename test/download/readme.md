@@ -3,10 +3,10 @@
 - [UNIT TEST SEKTION](#unit-test-section)
   - [UNIT TEST CASES](#unit-test-cases)
     - [Download der Fotocollage](#download-der-fotocollage)
-      - [Testfall 1](#testfall-id-1)
-      - [Testfall 2](#testfall-id-2)
+      - [Testfall 1](#testfall-1)
+      - [Testfall 2](#testfall-2)
     - [Download der PDF's](#download-der-fotocollage)
-      - [Testfall 1](#testfall-id-1)
+      - [Testfall 1](#testfall-1)
 
 ## UNIT TEST SECTION
 

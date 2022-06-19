@@ -5,7 +5,7 @@ import litcss from 'rollup-plugin-postcss-lit';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/',
   build: {
     lib: {
       entry: 'index.html',
@@ -22,7 +22,7 @@ export default defineConfig({
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
-},
+      },
     }
   },
   plugins: [

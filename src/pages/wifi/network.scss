@@ -1,0 +1,28 @@
+:host{
+  width: 100%;
+  display: flex;
+}
+
+.info {
+  margin: 15px;
+  width: 100%;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top {
+  display: flex;
+}
+
+h4, h6 {
+  margin: 20px;
+}
+
+input {
+  margin: auto 15px;
+}

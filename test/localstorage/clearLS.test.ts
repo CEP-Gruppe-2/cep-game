@@ -17,8 +17,9 @@ describe('Abfragen des gesamt Energie bzw. Punkte', () => {
     });
 
     /*
-        Ruft die "setItemLocalStorage" Methode auf und 
-        setzt Name und Value in der Localstorage
+        Ruft die "addPointsToLocalStorage" Methode auf und 
+        setzt Name und Value im Localstorage,überpürft ob die gestzetn Punkte stimmen , löscht alle Punkte wieder
+        und checkt ob die punkte gelöscht wurden
     */
     it('Hier wird es abgefragt, wie viel Punkte im Array drin sind', () => {
 

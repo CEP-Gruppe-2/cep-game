@@ -17,8 +17,7 @@ describe('Speichern Key und Value in Localstorage', () => {
     });
 
     /*
-        Ruft die "setItemLocalStorage" Methode auf und 
-        setzt Name und Value in der Localstorage
+        Ruft die "getArrayWithGainedPoints" Methode auf und überprüft array die länge 0 hat
     */
     it('Die Länge des Arrays muss 0 sein, da dieser leer ist', () => {
 

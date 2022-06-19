@@ -1,61 +1,99 @@
-import { html, css, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { GameMixin } from '../../functions/gameMixin';
+import { html, unsafeCSS, LitElement } from 'lit';
+import { customElement, state, property } from 'lit/decorators.js';
 
 import content from '../../data/wifi.json';
 
-import '../../components/button'
+import '../../components/button';
+import { redirectTo } from '../../functions/redirect';
+import { addPointsToLocalStorage } from '../../functions/localstorage';
+
+import wifiStyles from './wifi-game.scss';
+import networkStyles from './network.scss';
 
 const security: String[] = ['Open Network', 'WEP', 'WPA', 'WPA2'];
 
 @customElement('wifi-game')
-export class Wifi extends GameMixin(LitElement) {
+export class Wifi extends LitElement {
 
-  static styles = css`
-    :host{
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-    }
+  @state()
+    position = 0;
+  @state()
+    section = 0;
 
-    .device {
-      width: 500px;
-      border: solid black;
-      border-radius: 20px;
-    }
+  points: number = 0;
 
-    .seperator {
-      border-top-width: 1px;
-      border-top-style: solid;
-      margin-left: 15px;
-      margin-right: 15px
-    }
+  static styles = unsafeCSS(wifiStyles);
+  
+  _handleClick(e: Event): void {
+    this.position++;
 
-    my-button {
-      margin-top: 20px;
+
+    if((e.target as HTMLDivElement).textContent==='Beenden'){
+      redirectTo('chapter/1', '');
     }
-  `;
+    /*wenn der button text starten hat setze enum eins weiter und position=0*/
+    if((e.target as HTMLDivElement).textContent==='Starten'){
+      this.section=1;
+    }
+  }
+
+  renderGame() {
+    const first = content.networks[0];
+    return html`
+      <div class="wifi">
+        <div class="device">
+          <wifi-network .name=${first.name} security=${first.security} .channel=${first.channel}></wifi-network>
+          <div class="seperator"></div>
+          ${content.networks.slice(1).map( n => html`<wifi-network .name=${n.name} security=${n.security} .channel=${n.channel} .connected=${false}></wifi-network>`)}
+        </div>
+        <my-button @click=${this.solve}>
+          Solve
+        </my-button>
+      </div>
+    `;
+  }
 
   render() {
-    const first = content.networks[0];
-    return html`<div class="device">
-      <wifi-network .name=${first.name} security=${first.security} .channel=${first.channel}></wifi-network>
-      <div class="seperator"></div>
-      ${content.networks.slice(1).map( n => html`<wifi-network .name=${n.name} security=${n.security} .channel=${n.channel} .connected=${false}></wifi-network>`)}
-    </div>
-    <my-button @click=${this.solve}>
-      Solve
-    </my-button>
-    `;
+    if(this.section == 0){
+      return html`
+        <div class="main-div">
+          <div class="story">
+            <div class="bubble1">
+              <p>${content.intro[this.position].text}</p>
+            </div>
+            <div class="joules">
+              <img class="joules-img" src="/res/modul1/passwortsicherheit/joules.svg" />
+            </div>
+            <div class="button">
+                <my-button @click="${this._handleClick}">${content.intro[this.position].buttonText}</my-button>
+            </div>
+          </div>
+        </div>`;
+    } else if(this.section == 2 ) {
+      return html`
+        <div class="main-div">
+          <div class="story">
+            <div class="bubble1">
+              <p>Gratuliere! Du hast ${this.points} Punkte erreicht!</p>
+            </div>
+            <div class="joules">
+              <img class="joules-img" src="/res/modul1/passwortsicherheit/joules.svg" />
+            </div>
+            <div class="button">
+              <my-button @click="${this._handleClick}">Beenden</my-button>
+                </div>
+          </div>
+        </div>`;
+    }
+    
+    return this.renderGame();
+    
   }
 
   solve() {
     const device = this.shadowRoot?.querySelector('.device')!;
     const children = device.children;
-    
 
-    let points = 0;
     let skipped = 0;
     for(let i = 0; i < children.length; i++) {
       if(children.item(i)?.tagName != 'WIFI-NETWORK') {
@@ -63,12 +101,18 @@ export class Wifi extends GameMixin(LitElement) {
         continue;
       }
       if (content.networks[i-skipped].dubious == children.item(i)?.hasAttribute('checked')) {
-        points++;
+        this.points++;
+      } else {
+        this.points--;
       }
     }
+    this.points = this.points <= 0? 0: this.points*10;
 
-    alert('You got ' + String(points) + ' right!');
-    this.savePoints(7);
+    addPointsToLocalStorage('Wifi', this.points + '');
+    const points = this.points + Number(localStorage.getItem('points'));
+    localStorage.setItem('points', points + '');
+
+    this.section = 2;
   }
 
 }
@@ -91,39 +135,10 @@ export class WifiNetwork extends LitElement {
   @property({type: Boolean})
     checked: boolean = false;
 
-  static styles = css`
-    :host{
-      width: 100%;
-      display: flex;
-    }
-
-    .info {
-      margin: 15px;
-      width: 100%;
-      background-color: cornflowerblue;
-      border-radius: 10px;
-    }
-
-    .bottom {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .top {
-      display: flex;
-    }
-
-    h4, h6 {
-      margin: 20px;
-    }
-
-    input {
-      margin: auto 15px;
-    }
-  `;
-
+  static styles = unsafeCSS(networkStyles);
 
   render() {
+    
     return html`
       <div class="info">
         <div class="top">
@@ -142,4 +157,5 @@ export class WifiNetwork extends LitElement {
   _click(): void {
     this.toggleAttribute('checked');
   }
+
 }

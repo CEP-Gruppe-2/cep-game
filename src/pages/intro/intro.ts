@@ -1,9 +1,6 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './intro.scss?inline';
-
-import { redirectTo } from '../../functions/redirect';
 import introduction from '../../data/introduction.json';
-
 import  '../../components/notification';
 import { state } from 'lit/decorators.js';
 import { addPointsToLocalStorage, itemExistInLocalstorage } from '../../functions/localstorage';
@@ -43,7 +40,7 @@ export class Intro extends LitElement {
       return html`
         <div class="email-container">
           <img class="email-img" src="${introduction.emailImage}" alt=""/>
-          <button class="email-btn" @click="${this.continue}">Schließen</button>
+          <my-button class="email-btn" @click="${this.continue}">Schließen</my-button>
         </div>
       `;
     }
@@ -52,8 +49,8 @@ export class Intro extends LitElement {
       return html `
         <img class="roboter-img" src="${this.roboterArray[this.pos].src}" alt=""/>
         <div class="last-container">
-          <button class="last-btn" name="hacker" @click="${this.continue}">Hacker verfolgen</button>
-          <button class="last-btn" name="anlage" @click="${this.continue}">Anlage reparieren</button>
+          <my-button class="last-btn" name="hacker" @click="${this.continue}">Hacker verfolgen</my-button>
+          <my-button class="last-btn" name="anlage" @click="${this.continue}">Anlage reparieren</my-button>
         </div>
       `;
     }
@@ -92,12 +89,12 @@ export class Intro extends LitElement {
   private continue(e : Event){
 
     // @ts-ignore
-    if(e.target?.name == 'hacker'){
+    if((e.target as HTMLDivElement).textContent=== 'Hacker verfolgen'){
       this.continuation = introduction.hackerVerfolgen;
       this.hacker = true;
       this.pos = 0;
       // @ts-ignore
-    } else if(e.target?.name == 'anlage') {
+    } else if((e.target as HTMLDivElement).textContent=== 'Anlage reparieren') {
       this.continuation = introduction.schwachstellenBeheben;
       this.pos = 0;
     } else {

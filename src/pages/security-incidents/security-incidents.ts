@@ -1,6 +1,6 @@
 import { unsafeCSS, html, LitElement } from 'lit';
 import styles from './security-incidents.scss?inline';
-import {property} from 'lit/decorators.js';
+import {state} from 'lit/decorators.js';
 import '../../components/button';
 import sicherheitsvorfaelle from '../../data/firstModule/security-incidents.json';
 import { addPointsToLocalStorage } from '../../functions/localstorage';
@@ -12,7 +12,6 @@ export class SecurityIncidents extends LitElement {
   private bild:string="";
   private text:string="";
   private buttons:String[]=[];
-  private antworten:String[]=[];
   private erklärung1:boolean=false;
   private richtigerButton:number=-1
   private punkte:number=0;
@@ -20,20 +19,30 @@ export class SecurityIncidents extends LitElement {
   static styles = unsafeCSS(styles);
 
 
-  
-  @property({type: Number})
+  /** @state - counter for the postion in the game */
+  @state()
   position = 0;
-  @property({type: Number})
+
+  /** @state - number for the choice of the button */
+  @state()
   auswahl = -1;
 
-  /*wird bei klick auf bild aufgerufen und zählt position hoch*/
+  
+  /** 
+    *Is called by the click on the image and counts up the position.
+    * @returns {void}
+    */
   _handleClickBild():void{
       this.position++;
       this.requestUpdate;
   }
 
-    /* wird bei klick auf button aufgerufen
-      e:Event wir benötigt um zu erfahren welcher button gedrückt wird
+
+
+    /** 
+    *Is called by the click on the buttons and checked if the game is finished, counts up the position and saves Points.
+    * @param e {Event} - the Event which was klicked
+    * @returns {void}
     */
     _handleClickButton(e:Event):void{
         if(this.buttons[0]=="beenden"){
@@ -64,14 +73,20 @@ export class SecurityIncidents extends LitElement {
       this.requestUpdate;
     }
 
-    /*lädt die erklärung*/ 
+    /** 
+    *Is loading the Explanation out of the JSON.
+    * @returns {void}
+    */ 
     private ladeErklärungsDurchlauf():void{
         this.bild=sicherheitsvorfaelle.ablauf[this.position].antworten[this.auswahl].hintergrund;
         this.text="";
     }
 
 
-  /*lädt pfad zu bild aus JSON*/
+    /** 
+    *Is loading the path to the image out of the JSON.
+    * @returns {void}
+    */ 
   private ladeBild():void{
         this.bild=sicherheitsvorfaelle.ablauf[this.position].hintergrund;
         this.text=sicherheitsvorfaelle.ablauf[this.position].text;
@@ -80,7 +95,10 @@ export class SecurityIncidents extends LitElement {
 
   }
 
-  /*lädt button texte aus JSON und speichert sie ins "buttons" array wenn der Inhalt nicht leer ist*/
+    /** 
+    *Is loading button texts from JSON and stores them in the "buttons" array if the content is not empty.
+    * @returns {void}
+    */ 
   private ladeButtons():void{
       for(let i:number=0;i<4;i++){
           if(sicherheitsvorfaelle.ablauf[this.position].buttons[i].buttonText!="")
@@ -90,9 +108,10 @@ export class SecurityIncidents extends LitElement {
       }
   }
 
-  /*erstellt img als html  
-  return: html mit img
-  */
+    /** 
+    *Is writing an image for the content and returns it as HTML.
+    * @returns {any}
+    */ 
   private schreibeBild():any{
       if(this.buttons.length==0&&this.text!="Inhalte Folgen...")
       return html`
@@ -108,10 +127,10 @@ export class SecurityIncidents extends LitElement {
             `
       
   }
-
-  /*wenn buttons gebraucht werden, erstellt buttons als html 
-  return: leeres html oder html mit 1,2,oder 4 Buttons
-  */
+    /** 
+    *If buttons are needed, create buttons as html, returns empty html or html with 1,2 or 4 buttons.
+    * @returns {any}
+    */ 
   private schreibeButtons(): any{
       if(this.buttons.length==1){
           return html`<div class="flexbox-buttons">
@@ -146,7 +165,6 @@ export class SecurityIncidents extends LitElement {
           this.ladeErklärungsDurchlauf();
           this.erklärung1=false;
           this.buttons=[];
-          this.antworten=[];
           this.auswahl=-1;
       }
 

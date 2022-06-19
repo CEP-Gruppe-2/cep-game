@@ -1,17 +1,45 @@
+
+/**
+ * @author b.kotikov
+ */
+
+/**
+ * Imitate Localstorage
+ */
 export const fakeLocalStorage = (function () {
     let store : Array<any>= [];
   
     return {
-      getItem: function (key: any) {
+      /**
+       * Return value by the key
+       * @param key {any} - name of the key inside Localstorage
+       * @returns {any | null}
+       */
+      getItem: function (key: any) : any | null{
         return store[key] || null;
       },
-      setItem: function (key: any, value: any) {
+      /**
+       * Save key and value into Localstorage
+       * @param key {any} - name of the key
+       * @param value {any} - value that should be saved
+       * @returns {void}
+       */
+      setItem: function (key: any, value: any) : void {
         store[key] = value.toString();
       },
-      removeItem: function (key: any) {
+      /**
+       * Remove LocalStorage item by the key
+       * @param key {any} - name of the key
+       * @returns {void}
+       */
+      removeItem: function (key: any) : void {
         delete store[key];
       },
-      clear: function () {
+      /**
+       * Clear LocalStorage
+       * @returns {void}
+       */
+      clear: function () : void {
         store = [];
       },
     };

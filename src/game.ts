@@ -4,7 +4,6 @@ import styles from './game.scss';
 import './main.scss';
 
 import './pages/main';
-import './components/popup';
 import './pages/intro';
 import './pages/rewards';
 import './pages/wifi';
@@ -81,7 +80,6 @@ export class Game extends LitElement {
 
   render() {
     return html`
-      <pop-up ?componentvisible=${false}></pop-up>
       <div class="main-container">
         <header id="header">
           <a href="/" class="header-brand no-decoration font-black">

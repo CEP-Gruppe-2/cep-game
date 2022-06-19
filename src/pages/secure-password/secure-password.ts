@@ -1,14 +1,16 @@
 import { html, LitElement, unsafeCSS} from 'lit';
 import styles from './secure-password.scss?inline';
-import { property, query, state} from 'lit/decorators.js';
+import { query, state} from 'lit/decorators.js';
 import passwortsicherheit from '../../data/firstModule/passwortsicherheit.json';
 import { redirectTo } from '../../functions/redirect';
 import { addPointsToLocalStorage } from '../../functions/localstorage';
+
 
 export class SecurePassword extends LitElement {
 
     static styles = unsafeCSS(styles);
 
+    
     private punkte:number=0;
     private joulesSource:string="";
     private text:string[]=[];
@@ -20,25 +22,31 @@ export class SecurePassword extends LitElement {
     private fehlerMeldungPasswort:string='';
     private eingabe:string="";
 
-    
-    @property({type: Number})
+    /** @state -  counter for the postion in the game*/
+    @state()
     position = 0;
 
-    @property({type: Boolean})
+    /** @state - boolean to save if the choice of the player was right */
+    @state()
     richtig=false;
 
-    @property({type: Boolean})
+    /** @state -  boolean to check if the erklärung should be loaded*/
+    @state()
     erklärung=false;
 
+    /** @state - boolean to check if the input is filled with text */
     @state()
     _submitEnabled = false;
 
+    /** @query - input text */
     @query('input')
     _input!: HTMLInputElement;
 
-
-
-    /*wird von den buttons mit dem Text "Weiter", "starten" und "beenden" aufgerufen, hier wird übebprüft welcher button geklickt wurde und entweder die Position erhöht, das spiel beendet, oder Position auf 0 gesetzt und das Spielablauf Enum angepasst */
+    /**
+    * Is called by buttons with the text "Weiter", "starten" and "beenden", Here it is checked which button was clicked and either the position is increased, the game ends, or the position is set to 0 and the game flow enum is adjusted. 
+    * @param e {Event} - the Event which was klicked
+    * @returns {void}
+    */
     _handleClick(e:Event):void{
         this.position++;
 
@@ -49,15 +57,18 @@ export class SecurePassword extends LitElement {
             localStorage.setItem('points', this.punkte+"");
             redirectTo("chapter/1", "")
         }
-        /*wenn der button text starten hat setze enum eins weiter und position=0*/
+        
         if((e.target as HTMLDivElement).textContent==='Starten'||this.ablaufPosition==Ablauf.Aufgabe1&&this.position==3||this.ablaufPosition==Ablauf.Aufgabe2Einführung&&(e.target as HTMLDivElement).textContent==='Starten'){
             this.position=0;
             this.ablaufPosition++;
-            /*wenn aufgabe 1 fertig und enum eins weiter und position=0*/
         }
     }
-
-    /*Wird von den Multiplechoice buttons aufgerufen und wertet aus ob der angeklickte button richtig ist */
+    
+    /** 
+    *Is called by the multiple choice buttons and evaluates whether the clicked button is correct.
+    * @param e {Event} - the Event which was klicked
+    * @returns {void}
+    */
     _handleClickAufgabe1(e:Event):void{
         
         if((e.target as HTMLDivElement).textContent===this.lösung){
@@ -72,14 +83,12 @@ export class SecurePassword extends LitElement {
         this.requestUpdate();
     }
 
-    /*Wird vom button im letzten Spielmodi aufgerufen */
-    _handleClickAufgabe2():void{
-        this._bearbeitePasswortEingabe();
-    }
-
-    /*übeprüft ob das angegebene Passwort den vorgaben des REGEX entsprechen */
+    /** 
+    *Is called by the button in the last gamemodi, the last gamemode is ablaufPosition==Aublauf.Aufgabe2, and checked if the passwort input is similar with the regex.
+    * @returns {void}
+    */
     private _bearbeitePasswortEingabe():void{
-        /*Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character*/
+        //Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character
         let pattern=  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-.,]).{8,}$/;
     
         this.eingabe=this._input.value;
@@ -94,12 +103,19 @@ export class SecurePassword extends LitElement {
       }
     
     
-      /*hier wird das eingegebene Passwort erstmal gespeichert */
-    _inputChanged(e: Event) {
+    /** 
+    *Saves the passwort input, after the press on the button in gamemode: Ablauf.Aufgabe2.
+    * @param e {Event} - the input Event
+    * @returns {void}
+    */
+    _inputChanged(e: Event):void{
     this._submitEnabled = !!(e.target as HTMLInputElement).value;
     }
 
-    /*liest die benötigten Daten aus der JSON datei */
+    /** 
+    *Reads the required data from the JSON file.
+    * @returns {void}
+    */
     private readData():void{
         if(this.ablaufPosition==Ablauf.Einfuehrung){
             this.joulesSource=passwortsicherheit.roboterSource;
@@ -149,7 +165,10 @@ export class SecurePassword extends LitElement {
     }
 
 
-    /*schreibt den text in die Sprechblase und gibt diese als HTML zurück*/
+    /** 
+    *Writes the text into the speech bubble and returns it as HTML.
+    * @returns {any}
+    */
     private writeText():any{
         var text:any="";
 
@@ -200,8 +219,10 @@ export class SecurePassword extends LitElement {
         return html`${text}`
     }
 
-
-    /*schreibt das img des roboters und gibt dieses als HTML zurück*/
+    /** 
+    *Writes the img of the robot and returns it as HTML.
+    * @returns {any}
+    */
     private writeRoboter():any{
         return html`
         <div class="joules">
@@ -209,8 +230,10 @@ export class SecurePassword extends LitElement {
         </div>`
     }
 
-
-    /*schreibt die Buttons und gibt diese als HTML zurück*/
+    /** 
+    *Writes the buttons and returns it as HTML.
+    * @returns {any}
+    */
     private writeButtons():any{
         var text:any="";
         if(this.ablaufPosition==Ablauf.Einfuehrung||this.ablaufPosition==Ablauf.Aufgabe2Einführung||this.ablaufPosition==Ablauf.Ende||this.erklärung){
@@ -234,8 +257,10 @@ export class SecurePassword extends LitElement {
         return html`${text}`
     }
 
-    
-    /*schreibt die aufgabe in dafür vorgesehene feld und git diese als HTML zurück*/
+    /** 
+    *Writes the task as img and returns it as HTML.
+    * @returns {any}
+    */
     private writeAufgabe():any{
         return html`
         <div id="aufgabenBild">
@@ -245,7 +270,10 @@ export class SecurePassword extends LitElement {
 
     }
 
-    /*gibt die aufgabe 2 als HTML zurück*/
+    /** 
+    *Returns task 2 (ablaufPosition==Aublauf.Aufgabe2) as HTML.
+    * @returns {any}
+    */
     private ladeAufgabe2():any{
         
         return html`
@@ -261,7 +289,7 @@ export class SecurePassword extends LitElement {
                         
                 </div>
                 <div id="passwort-button">
-                    <my-button @click=${this._handleClickAufgabe2} .disabled=${!this._submitEnabled}>
+                    <my-button @click=${this._bearbeitePasswortEingabe} .disabled=${!this._submitEnabled}>
                         Passwort überprüfen!
                     </my-button>
                 </div>
@@ -303,6 +331,11 @@ export class SecurePassword extends LitElement {
     }
 
 }
+
+/**
+ * Enum to save in which section of the game we are.
+ * @enum
+ */
 enum Ablauf{
     Einfuehrung,
     Aufgabe1,

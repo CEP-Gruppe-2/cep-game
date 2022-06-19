@@ -14,6 +14,8 @@
 
 #### Download derr Fotocollage
 
+##### Testfall 1
+
 **Testfall-ID:** 1
 
 **Zu testende Einheit:** Freischaltung des download Buttons, der dem Nutzer die Möglichkeit gibt am Ende alle Bilder in Fotocollage herunterzuladen
@@ -32,6 +34,8 @@
 **Bestanden / Nicht bestanden:** *Bestanden*
 
 **Bemerkungen:** /
+
+##### Testfall 2
 
 **Testfall-ID:** 2
 
@@ -58,6 +62,8 @@
 | 2 | 1900 Punkte | wird freigeschaltet | Bestanden |
 
 #### Download der PDF's
+
+##### Testfall 1
 
 **Testfall-ID:** 1
 

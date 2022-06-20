@@ -18,7 +18,7 @@ describe('Speichern Key und Value in Localstorage', () => {
     });
 
     /*
-        Ruft die "setItemLocalStorage" Methode auf und 
+        Ruft die "addPointsToLocalStorage" Methode auf und 
         setzt Name und Value in der Localstorage
     */
     it('Localstorage muss zurückgeben, wenn der abgefrate Key existiert', () => {

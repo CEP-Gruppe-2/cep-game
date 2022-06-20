@@ -3,16 +3,18 @@
 - [UNIT TEST SEKTION](#unit-test-section)
   - [UNIT TEST CASES](#unit-test-cases)
     - [Download der Fotocollage](#download-der-fotocollage)
-      - [Testfall 1](#testfall-id-1)
-      - [Testfall 2](#testfall-id-2)
+      - [Testfall 1](#testfall-1)
+      - [Testfall 2](#testfall-2)
     - [Download der PDF's](#download-der-fotocollage)
-      - [Testfall 1](#testfall-id-1)
+      - [Testfall 1](#testfall-1)
 
 ## UNIT TEST SECTION
 
 ### UNIT TEST CASES
 
 #### Download derr Fotocollage
+
+##### Testfall 1
 
 **Testfall-ID:** 1
 
@@ -32,6 +34,8 @@
 **Bestanden / Nicht bestanden:** *Bestanden*
 
 **Bemerkungen:** /
+
+##### Testfall 2
 
 **Testfall-ID:** 2
 
@@ -58,6 +62,8 @@
 | 2 | 1900 Punkte | wird freigeschaltet | Bestanden |
 
 #### Download der PDF's
+
+##### Testfall 1
 
 **Testfall-ID:** 1
 

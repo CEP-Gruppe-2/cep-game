@@ -17,8 +17,9 @@ describe('Abrufen der Länge des Arrays', () => {
     });
 
     /*
-        Ruft die "setItemLocalStorage" Methode auf und 
-        setzt Name und Value in der Localstorage
+        Ruft die "addPointsToLocalStorage" Methode auf und 
+        setzt Name und Value in der Localstorage und überpüft die 
+        getArrayWithGainedPoints methode anhand der länge des rückgegebenen arrays
     */
     it('Der Array der LS muss der länge gespeicherten Daten im LS entsprechen', () => {
 
